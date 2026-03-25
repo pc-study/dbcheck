@@ -1,4 +1,4 @@
-const CACHE_NAME = 'oracheck-v1';
+const CACHE_NAME = 'dbcheck-v1';
 const PRECACHE_URLS = [
     '/',
     '/index.html',
