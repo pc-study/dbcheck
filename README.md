@@ -10,7 +10,7 @@
 
 | 数据库 | 版本要求 | 脚本 |
 |--------|---------|------|
-| Oracle | 10g ~ 23ai | `scripts/oracle/oscheck.sh` (自动检测版本) |
+| Oracle | 10g ~ 26ai | `scripts/oracle/oscheck.sh` (自动检测版本) |
 | MySQL | 5.7+ / 8.0+ | `scripts/mysql/dbcheck_mysql.sql` |
 | PostgreSQL | 12+ | `scripts/postgres/dbcheck_pg.sql` |
 | SQL Server | 2016+ | `scripts/sqlserver/dbcheck_mssql.sql` |
@@ -162,7 +162,7 @@ sqlcmd -S localhost -i dbcheck_mssql.sql -o dbcheck_mssql_result.html
 |------|---------|------|
 | 10g | `dbcheck10g.sql` | Oracle 10.x |
 | 11g | `dbcheck11g.sql` | Oracle 11.x |
-| 12c+ | `dbcheck12c.sql` | Oracle 12c / 18c / 19c / 21c / 23ai |
+| 12c+ | `dbcheck12c.sql` | Oracle 12c / 18c / 19c / 21c / 26ai |
 
 ### Oracle 输出文件
 
