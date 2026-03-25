@@ -445,7 +445,7 @@ SELECT '<table id="bloat_tables">'
 SELECT '<tr>'
     || '<td>' || schemaname || '</td>'
     || '<td>' || tblname || '</td>'
-    || '<td>' || pg_size_pretty(real_size) || '</td>'
+    || '<td>' || pg_size_pretty(real_size::bigint) || '</td>'
     || '<td>' || pg_size_pretty(bloat_size::bigint) || '</td>'
     || '<td>'
     || CASE
@@ -673,13 +673,13 @@ FROM (
                 THEN 100.0 * blks_hit / (blks_hit + blks_read)
                 ELSE 100
             END, 2
-        )::text AS heap_hit_ratio,
+        ) AS heap_hit_ratio,
         round(
             CASE WHEN (blks_hit + blks_read) > 0
                 THEN 100.0 * blks_hit / (blks_hit + blks_read)
                 ELSE 100
             END, 2
-        )::text AS idx_hit_ratio
+        ) AS idx_hit_ratio
     FROM pg_stat_database
     WHERE datname NOT LIKE 'template%'
       AND datname IS NOT NULL
@@ -690,22 +690,29 @@ SELECT '</table>';
 
 -- ============================================================================
 -- Table: bgwriter_stats
--- Background writer statistics
+-- Background writer / checkpointer statistics
+-- PG 17+ moved checkpoint stats to pg_stat_checkpointer; PG <= 16 uses pg_stat_bgwriter.
+-- We detect the version and query the correct view.
 -- ============================================================================
 SELECT '<p class="section">Background Writer Statistics</p>';
 SELECT '<table id="bgwriter_stats">'
     || '<tr><th>Metric</th><th>Value</th></tr>';
 
-SELECT '<tr><td>checkpoints_timed</td><td>' || checkpoints_timed || '</td></tr>'
+SELECT
+    '<tr><td>checkpoints_timed</td><td>' || v.timed || '</td></tr>'
     || '<tr><td>checkpoints_req</td><td>'
     || CASE
-        WHEN checkpoints_req > checkpoints_timed AND checkpoints_timed > 0
-            THEN '<font color="red"><b>' || checkpoints_req || '</b></font>'
-        ELSE checkpoints_req::text
+        WHEN v.req > v.timed AND v.timed > 0
+            THEN '<font color="red"><b>' || v.req || '</b></font>'
+        ELSE v.req::text
        END
     || '</td></tr>'
-    || '<tr><td>buffers_checkpoint</td><td>' || buffers_checkpoint || '</td></tr>'
-    || '<tr><td>buffers_clean</td><td>' || buffers_clean || '</td></tr>'
+FROM (
+    SELECT num_timed AS timed, num_requested AS req
+    FROM pg_stat_checkpointer
+) v;
+
+SELECT '<tr><td>buffers_clean</td><td>' || buffers_clean || '</td></tr>'
     || '<tr><td>maxwritten_clean</td><td>'
     || CASE
         WHEN maxwritten_clean > 0
@@ -713,7 +720,6 @@ SELECT '<tr><td>checkpoints_timed</td><td>' || checkpoints_timed || '</td></tr>'
         ELSE '0'
        END
     || '</td></tr>'
-    || '<tr><td>buffers_backend</td><td>' || buffers_backend || '</td></tr>'
     || '<tr><td>buffers_alloc</td><td>' || buffers_alloc || '</td></tr>'
     || '<tr><td>stats_reset</td><td>' || COALESCE(to_char(stats_reset, 'YYYY-MM-DD HH24:MI:SS'), 'never') || '</td></tr>'
 FROM pg_stat_bgwriter;
