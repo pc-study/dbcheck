@@ -23,7 +23,7 @@
 
 ```bash
 # 下载并执行（oracle 用户）
-wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/oracle/oscheck.sh
+wget https://raw.githubusercontent.com/pc-study/dbcheck/main/scripts/oracle/oscheck.sh
 chmod +x oscheck.sh
 su - oracle
 ./oscheck.sh
@@ -37,7 +37,7 @@ su - oracle
 
 ```bash
 # 下载脚本
-wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/mysql/dbcheck_mysql.sql
+wget https://raw.githubusercontent.com/pc-study/dbcheck/main/scripts/mysql/dbcheck_mysql.sql
 
 # 执行巡检（需要 root 或具备全局权限的用户）
 mysql -u root -p < dbcheck_mysql.sql > dbcheck_mysql_result.html
@@ -49,7 +49,7 @@ mysql -u root -p < dbcheck_mysql.sql > dbcheck_mysql_result.html
 
 ```bash
 # 下载脚本
-wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/postgres/dbcheck_pg.sql
+wget https://raw.githubusercontent.com/pc-study/dbcheck/main/scripts/postgres/dbcheck_pg.sql
 
 # 执行巡检（需要 superuser 权限）
 psql -U postgres -f dbcheck_pg.sql
@@ -61,7 +61,7 @@ psql -U postgres -f dbcheck_pg.sql
 
 ```bash
 # 下载脚本
-wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/sqlserver/dbcheck_mssql.sql
+wget https://raw.githubusercontent.com/pc-study/dbcheck/main/scripts/sqlserver/dbcheck_mssql.sql
 
 # 执行巡检（需要 sysadmin 权限）
 sqlcmd -S localhost -i dbcheck_mssql.sql -o dbcheck_mssql_result.html
