@@ -1,28 +1,77 @@
-# OraCheck - Oracle 数据库巡检脚本
+# DBCheck2Word — 多数据库巡检脚本 & 报告生成平台
 
-免费开源的 Oracle 数据库健康检查脚本集，覆盖 Oracle 10g ~ 23ai 全版本。
+免费开源的数据库健康检查脚本集，支持 **Oracle / MySQL / PostgreSQL / SQL Server** 四大主流数据库。
 
-**在线报告生成工具**: [https://pc-study.github.io/oracheck](https://pc-study.github.io/oracheck) — 上传巡检文件，一键生成专业 Word 巡检报告。
+**在线报告生成**: [https://dbcheck2word.com](https://dbcheck2word.com) — 上传巡检结果，一键生成专业 Word 巡检报告。
+
+---
+
+## 支持的数据库
+
+| 数据库 | 版本要求 | 脚本 |
+|--------|---------|------|
+| Oracle | 10g ~ 23ai | `scripts/oracle/oscheck.sh` (自动检测版本) |
+| MySQL | 5.7+ / 8.0+ | `scripts/mysql/dbcheck_mysql.sql` |
+| PostgreSQL | 12+ | `scripts/postgres/dbcheck_pg.sql` |
+| SQL Server | 2016+ | `scripts/sqlserver/dbcheck_mssql.sql` |
+
+---
 
 ## 快速开始
 
+### Oracle
+
 ```bash
-# 1. 下载脚本到数据库服务器
-wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/oscheck.sh
-
-# 2. 赋予执行权限
+# 下载并执行（oracle 用户）
+wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/oracle/oscheck.sh
 chmod +x oscheck.sh
-
-# 3. 以 oracle 用户执行
 su - oracle
 ./oscheck.sh
 
-# 4. 输出文件: dbcheck_*.tar.gz（包含 HTML 报告 + OS 检查数据）
+# 输出: dbcheck_*.tar.gz（含 HTML 报告 + OS 检查数据）
 ```
 
-脚本会自动检测 Oracle 版本并选择对应的 SQL 脚本执行。
+`oscheck.sh` 自动检测 Oracle 版本并选择对应的 SQL 脚本执行。
 
-## 巡检覆盖项（20+ 项）
+### MySQL
+
+```bash
+# 下载脚本
+wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/mysql/dbcheck_mysql.sql
+
+# 执行巡检（需要 root 或具备全局权限的用户）
+mysql -u root -p < dbcheck_mysql.sql > dbcheck_mysql_result.html
+
+# 输出: dbcheck_mysql_result.html
+```
+
+### PostgreSQL
+
+```bash
+# 下载脚本
+wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/postgres/dbcheck_pg.sql
+
+# 执行巡检（需要 superuser 权限）
+psql -U postgres -f dbcheck_pg.sql
+
+# 输出: /tmp/dbcheck_pg_result.html
+```
+
+### SQL Server
+
+```bash
+# 下载脚本
+wget https://raw.githubusercontent.com/pc-study/oracheck/main/scripts/sqlserver/dbcheck_mssql.sql
+
+# 执行巡检（需要 sysadmin 权限）
+sqlcmd -S localhost -i dbcheck_mssql.sql -o dbcheck_mssql_result.html
+```
+
+---
+
+## 巡检覆盖项
+
+### Oracle（20+ 项）
 
 | 类别 | 检查项 | 异常判定 |
 |------|--------|---------|
@@ -37,28 +86,77 @@ su - oracle
 | **对象** | Top10 大表/大索引 | 超过 100G |
 | **对象** | 外键缺失索引 | 外键列无索引 |
 | **对象** | 无效对象 | 存在 INVALID 对象 |
-| **安全** | 默认密码检查 | 使用初始密码 |
-| **安全** | 密码过期检查 | 30天内过期 |
-| **安全** | 比特币勒索病毒 | 检测到特征 |
-| **安全** | 序列接近 MAXVALUE | 使用率超 80% |
+| **安全** | 默认密码 / 密码过期 / 勒索病毒检测 | — |
 | **备份** | RMAN 备份状态 | 近 10 天备份失败 |
 | **高可用** | DataGuard 同步 | 同步延迟或 GAP |
-| **性能** | AWR 负载概况 | CPU > 80% |
-| **性能** | Top10 等待事件 | 异常等待占比高 |
-| **性能** | Top10 SQL | 单次执行 > 1 分钟 |
-| **性能** | 统计信息检查 | 大表统计信息过期 |
+| **性能** | AWR 负载 / Top SQL / 等待事件 / 统计信息 | — |
 | **日志** | ALERT 日志 ORA 错误 | 存在 ORA- 错误 |
 
-### 季检附加项（oscheck.sh 采集）
+**季检附加项**（oscheck.sh 采集）: 磁盘/内存/Swap、THP 状态、CRS/OCR/Voting Disk、AWR 趋势图表
+
+### MySQL（9 项）
 
 | 类别 | 检查项 |
 |------|--------|
-| OS | 磁盘空间使用率、内存使用、Swap |
-| OS | 透明大页 (THP) 状态 |
-| 集群 | CRS 资源状态、OCR/Voting Disk |
-| 性能 | AWR 趋势图表 (CPU/连接数/提交数/等待事件) |
+| **连接** | 最大连接数、当前连接数 |
+| **性能** | 慢查询统计 |
+| **存储引擎** | InnoDB 缓冲池命中率 |
+| **复制** | Binlog 状态、主从同步 |
+| **对象** | 大表检测、索引使用率 |
+| **安全** | 用户权限审计 |
+| **备份** | 备份状态检查 |
 
-## 支持的 Oracle 版本
+### PostgreSQL（12 项）
+
+| 类别 | 检查项 |
+|------|--------|
+| **存储** | 表空间使用率、数据库大小 |
+| **连接** | 连接数统计 |
+| **性能** | 慢查询、锁冲突、膨胀表检测 |
+| **维护** | Vacuum 状态 |
+| **复制** | 流复制状态、WAL 归档 |
+| **对象** | 索引使用率、扩展列表 |
+| **备份** | 备份状态检查 |
+
+### SQL Server（10 项）
+
+| 类别 | 检查项 |
+|------|--------|
+| **存储** | 文件组使用率、事务日志 |
+| **连接** | 连接数统计 |
+| **性能** | 慢查询、等待统计、索引碎片 |
+| **高可用** | AlwaysOn 状态 |
+| **运维** | 代理作业状态 |
+| **安全** | 安全审计 |
+| **备份** | 备份状态检查 |
+
+---
+
+## 生成 Word 巡检报告
+
+巡检脚本生成 HTML 格式报告。配套的报告生成工具可以将其转换为**专业 Word 巡检报告**（含诊断建议、异常高亮、性能图表）。
+
+### 在线版（免费）
+
+访问 [https://dbcheck2word.com](https://dbcheck2word.com)，上传巡检文件，选择数据库类型和巡检深度，即时生成 Word 报告。
+
+- 支持 Oracle / MySQL / PostgreSQL / SQL Server
+- 周检 / 月检 / 季检三种模板
+- 智能诊断引擎，异常项红色高亮
+- 文件处理完即删除，保障数据安全
+
+### 桌面版（专业版）
+
+- 批量处理多个巡检文件
+- 自定义公司 Logo 和巡检人员
+- 数据不出内网，适合安全敏感环境
+- Windows / macOS 双平台
+
+联系获取专业版授权。
+
+---
+
+## Oracle 脚本说明
 
 | 版本 | SQL 脚本 | 说明 |
 |------|---------|------|
@@ -66,9 +164,7 @@ su - oracle
 | 11g | `dbcheck11g.sql` | Oracle 11.x |
 | 12c+ | `dbcheck12c.sql` | Oracle 12c / 18c / 19c / 21c / 23ai |
 
-`oscheck.sh` 会自动根据 `$ORACLE_HOME` 检测版本，选择正确的脚本。
-
-## 输出文件
+### Oracle 输出文件
 
 ```
 dbcheck_{DBID}_{DBNAME}_{VERSION}_{DATE}.tar.gz
@@ -78,37 +174,32 @@ dbcheck_{DBID}_{DBNAME}_{VERSION}_{DATE}.tar.gz
 └── alert_{INSTANCE}.log                             # ALERT 日志摘要
 ```
 
-## 生成 Word 巡检报告
-
-巡检脚本生成的是 HTML 格式报告。如果你需要生成**专业的 Word 巡检报告**（带诊断建议、异常高亮、公司 Logo），可以使用配套的报告生成工具：
-
-### 在线版（免费体验）
-
-访问 [https://pc-study.github.io/oracheck](https://pc-study.github.io/oracheck)，上传巡检文件，即时生成 Word 报告。
-
-### 桌面版（专业版）
-
-- 支持批量处理多个巡检文件
-- 自定义公司 Logo 和巡检人员
-- 周检/月检/季检三种报告模板
-- 含 AWR 性能趋势图表（季检）
-- Windows / macOS 双平台
-
-联系获取专业版授权。
+---
 
 ## 常见问题
 
 **Q: 脚本会修改数据库吗？**
-A: 不会。所有 SQL 都是只读查询（SELECT），不会对数据库做任何修改。唯一的写操作是 sqlplus 的 errorlogging 表（用于记录脚本执行错误），脚本结束后会自动清理。
+A: 不会。所有脚本都是只读查询，不会对数据库做任何修改。
 
-**Q: 需要什么权限？**
-A: 需要 `SYSDBA` 权限。脚本通过 `sqlplus / as sysdba` 连接。
+**Q: Oracle 脚本需要什么权限？**
+A: 需要 `SYSDBA` 权限，通过 `sqlplus / as sysdba` 连接。
 
-**Q: RAC 环境怎么用？**
-A: 在任一节点执行 `oscheck.sh` 即可，脚本会自动采集所有节点的信息。
+**Q: MySQL 脚本需要什么权限？**
+A: 需要 `root` 或具备 `PROCESS`、`REPLICATION CLIENT` 等全局权限的用户。
 
-**Q: 支持 PDB/CDB 吗？**
-A: 12c+ 脚本使用 `CDB_*` 视图，自动涵盖所有 PDB（排除 CDB$ROOT 和 PDB$SEED）。
+**Q: PostgreSQL 脚本需要什么权限？**
+A: 建议使用 `superuser`（如 postgres 用户）执行。
+
+**Q: SQL Server 脚本需要什么权限？**
+A: 需要 `sysadmin` 角色或等效的服务器级权限。
+
+**Q: Oracle RAC 环境怎么用？**
+A: 在任一节点执行 `oscheck.sh` 即可，脚本自动采集所有节点信息。
+
+**Q: 支持 Oracle PDB/CDB 吗？**
+A: 12c+ 脚本使用 `CDB_*` 视图，自动涵盖所有 PDB。
+
+---
 
 ## License
 
