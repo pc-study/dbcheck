@@ -438,9 +438,9 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <span class="drop-zone-icon" aria-hidden="true">&#128194;</span>
                         <p class="drop-zone-text" data-zh="拖拽文件到此处，或点击选择文件" data-en="Click to select or drag &amp; drop file here">拖拽文件到此处，或点击选择文件</p>
                         <p class="drop-zone-hint" data-zh="支持 .html、.tar.gz、.tgz 格式的巡检文件" data-en="Supports .html, .tar.gz and .tgz (max 50MB)">支持 .html、.tar.gz、.tgz 格式的巡检文件</p>
-                        <input type="file" id="fileInput" accept=".html,.gz,.tar.gz,.tgz" multiple aria-label="选择巡检文件" style="display:none" onchange="updateFileNames(this.files)">
+                        <input type="file" id="fileInput" accept=".html,.gz,.tar.gz,.tgz" aria-label="选择巡检文件" style="display:none" onchange="updateFileNames(this.files)">
                     </div>
-                    <p style="font-size:12px;color:#667085;margin:-18px 0 18px 2px;line-height:1.6;" data-zh="支持同时选择多个巡检文件批量生成报告（最多 20 个）" data-en="Select multiple inspection files for batch report generation (max 20)">支持同时选择多个巡检文件批量生成报告（最多 20 个）</p>
+                    <p style="font-size:12px;color:#667085;margin:-18px 0 18px 2px;line-height:1.6;" data-zh="网页端每次仅支持上传 1 个文件（tar.gz 仅解析首个 HTML），在线生成较慢且占用服务器资源，批量生成建议使用桌面端" data-en="Web supports 1 file per upload (tar.gz parses first HTML only). For batch processing, use the desktop app.">网页端每次仅支持上传 1 个文件（tar.gz 仅解析首个 HTML），在线生成较慢且占用服务器资源，批量生成建议使用桌面端</p>
 
                     <div class="file-name-display" id="fileNameDisplay">
                         <span class="file-icon" aria-hidden="true">&#128196;</span>
