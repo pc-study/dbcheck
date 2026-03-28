@@ -1,10 +1,8 @@
-const CACHE_NAME = 'dbcheck-v3';
+const CACHE_NAME = 'dbcheck-v4';
 const PRECACHE_URLS = [
     '/',
     '/index.html',
-    '/static/index.html',
-    '/admin',
-    '/static/admin.html'
+    '/static/index.html'
 ];
 
 // Install: precache static assets
