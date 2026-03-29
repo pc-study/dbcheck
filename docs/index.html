@@ -187,7 +187,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
 
         <!-- Oracle Panel -->
         <div class="scripts-db-panel active" id="scripts-oracle">
-            <div class="scripts-grid">
+            <div class="scripts-grid two-col">
                 <div class="script-card accent-oracle">
                     <div class="script-icon-wrap oracle"><img src="images/oracle.svg" alt="Oracle" width="32" height="32"></div>
                     <div class="script-card-body">
@@ -207,29 +207,18 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                 <div class="script-card accent-shell">
                     <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
                     <div class="script-card-body">
-                        <h3>oscheck.sh</h3>
-                        <p class="script-ver" data-zh="Linux 全量巡检（季检，含 DB + OS）" data-en="Linux Full Inspection (Quarterly, DB + OS)">Linux 全量巡检（季检，含 DB + OS）</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">RAC</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
+                        <h3 id="oracle-os-script-name">oscheck.sh</h3>
+                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
+                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag">RAC</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="/api/scripts/oracle/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                </div>
-                <div class="script-card accent-shell">
-                    <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
-                    <div class="script-card-body">
-                        <h3>oscheck_aix.sh</h3>
-                        <p class="script-ver" data-zh="AIX 全量巡检（季检，含 DB + OS）" data-en="AIX Full Inspection (Quarterly, DB + OS)">AIX 全量巡检（季检，含 DB + OS）</p>
-                        <div class="script-tags"><span class="script-tag">AIX</span><span class="script-tag">RAC</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
+                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
+                        <select id="oracle-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('oracle-os-script-name').textContent=f;document.getElementById('oracle-os-dl-btn').href='/api/scripts/oracle/'+f;">
+                            <option value="linux" selected>Linux</option>
+                            <option value="aix">AIX</option>
+                            <option value="windows">Windows（PowerShell）</option>
+                        </select>
+                        <a id="oracle-os-dl-btn" href="/api/scripts/oracle/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                     </div>
-                    <a href="/api/scripts/oracle/oscheck_aix.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                </div>
-                <div class="script-card accent-shell">
-                    <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
-                    <div class="script-card-body">
-                        <h3>oscheck_win.ps1</h3>
-                        <p class="script-ver" data-zh="Windows 全量巡检（季检，含 DB + OS）" data-en="Windows Full Inspection (Quarterly, DB + OS)">Windows 全量巡检（季检，含 DB + OS）</p>
-                        <div class="script-tags"><span class="script-tag">Windows</span><span class="script-tag">PowerShell</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
-                    </div>
-                    <a href="/api/scripts/oracle/oscheck_win.ps1" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
             </div>
         </div>
@@ -331,23 +320,37 @@ This application requires JavaScript. Please enable JavaScript and refresh.
 <span class="cmd-comment"># 3. 脚本执行完毕后，会在当前目录生成 HTML 文件</span>
 <span class="cmd-comment">#    文件名格式：dbcheck_数据库名_日期.html</span>
 <span class="cmd-comment"># 4. 将 HTML 文件下载到本地，上传到本平台即可生成报告</span></pre>
-            <pre class="scripts-howto-code" id="code-oracle-quarterly" style="display:none"><span class="cmd-comment"># oscheck.sh 会自动调用对应版本的 SQL 脚本并打包 tar.gz</span>
-<span class="cmd-comment"># 只需将 4 个脚本文件放在同一目录，以 oracle 用户执行即可</span>
+            <pre class="scripts-howto-code" id="code-oracle-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
+<span class="cmd-comment">#   Linux  → oscheck.sh</span>
+<span class="cmd-comment">#   AIX    → oscheck_aix.sh</span>
+<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
 
-<span class="cmd-comment"># 1. 上传 4 个脚本到数据库服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck10g.sql / dbcheck11g.sql / dbcheck12c.sql / oscheck.sh</span>
+<span class="cmd-comment"># ── Linux / AIX ──</span>
+<span class="cmd-comment"># 将 4 个脚本文件放在同一目录，以 oracle 用户执行</span>
+<span class="cmd-comment"># 1. 上传脚本到数据库服务器同一目录</span>
+<span class="cmd-comment">#    dbcheck10g.sql / dbcheck11g.sql / dbcheck12c.sql / oscheck.sh（或 oscheck_aix.sh）</span>
 
-<span class="cmd-comment"># 2. 执行 oscheck.sh（自动检测版本、收集 OS + DB 信息）</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>
+<span class="cmd-comment"># 2. 执行 oscheck（自动检测版本、收集 OS + DB 信息）</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>             <span class="cmd-comment"># Linux</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck_aix.sh</span>         <span class="cmd-comment"># AIX</span>
 
-<span class="cmd-comment"># 可选参数：</span>
+<span class="cmd-comment"># 可选参数（Linux / AIX 通用）：</span>
 <span class="cmd-comment">#   -o 实例名    指定巡检的实例（多个用逗号分隔，如 -o orcl,testdb）</span>
 <span class="cmd-comment">#   -a 天数      Alert 日志分析天数（默认 7 天，如 -a 30）</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -o orcl -a 30</span>
 
-<span class="cmd-comment"># 3. 执行完毕后自动在当前目录生成 tar.gz 文件</span>
-<span class="cmd-comment">#    文件名格式：dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment"># 4. 将 tar.gz 文件下载到本地，上传到本平台选择「季检」即可</span></pre>
+<span class="cmd-comment"># ── Windows ──</span>
+<span class="cmd-comment"># 以管理员身份打开 PowerShell，将 4 个脚本放在同一目录</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>
+<span class="cmd-comment"># 可选参数：</span>
+<span class="cmd-comment">#   -OracleSIDs "orcl,testdb"    指定巡检的实例</span>
+<span class="cmd-comment">#   -AlertDays 30                Alert 日志分析天数</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -OracleSIDs "orcl" -AlertDays 30</span>
+
+<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
+<span class="cmd-comment">#   Linux/AIX → dbcheck_主机名_日期.tar.gz</span>
+<span class="cmd-comment">#   Windows   → dbcheck_主机名_日期.zip</span>
+<span class="cmd-comment"># 将压缩文件下载到本地，上传到本平台选择「季检」即可</span></pre>
             <pre class="scripts-howto-code" id="code-mysql" style="display:none"><span class="cmd-comment"># 1. 将 dbcheck_mysql.sql 上传到 MySQL 服务器</span>
 <span class="cmd-comment"># 2. 以 root 或有权限的用户执行：</span>
 
