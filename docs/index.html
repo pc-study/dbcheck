@@ -196,12 +196,12 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <div class="script-tags"><span class="script-tag">10g</span><span class="script-tag">11g</span><span class="script-tag">12c</span><span class="script-tag">19c</span><span class="script-tag">21c</span><span class="script-tag">26ai</span></div>
                     </div>
                     <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
-                        <select id="oracle-ver-select" class="script-select" onchange="var m={_10g:'dbcheck10g.sql',_11g:'dbcheck11g.sql',_12c:'dbcheck12c.sql'};var k='_'+this.value;document.getElementById('oracle-script-name').textContent=m[k];document.getElementById('oracle-dl-btn').href='https://github.com/pc-study/dbcheck/raw/main/scripts/oracle/'+m[k];">
+                        <select id="oracle-ver-select" class="script-select" onchange="var m={_10g:'dbcheck10g.sql',_11g:'dbcheck11g.sql',_12c:'dbcheck12c.sql'};var k='_'+this.value;document.getElementById('oracle-script-name').textContent=m[k];document.getElementById('oracle-dl-btn').href='/api/scripts/oracle/'+m[k];">
                             <option value="12c" selected>12c+（12c / 19c / 21c / 26ai）</option>
                             <option value="11g">11g（11.1 / 11.2）</option>
                             <option value="10g">10g（10.1 / 10.2）</option>
                         </select>
-                        <a id="oracle-dl-btn" href="https://github.com/pc-study/dbcheck/raw/main/scripts/oracle/dbcheck12c.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                        <a id="oracle-dl-btn" href="/api/scripts/oracle/dbcheck12c.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                     </div>
                 </div>
                 <div class="script-card accent-shell">
@@ -211,7 +211,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="全量巡检（季检，含 DB + OS）" data-en="Full Inspection (Quarterly, DB + OS)">全量巡检（季检，含 DB + OS）</p>
                         <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">RAC</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/oracle/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/oracle/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
             </div>
         </div>
@@ -226,7 +226,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="MySQL 5.7 及以上" data-en="MySQL 5.7+">MySQL 5.7 及以上</p>
                         <div class="script-tags"><span class="script-tag">5.7</span><span class="script-tag">8.0</span><span class="script-tag">8.4</span><span class="script-tag">9.0</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/mysql/dbcheck_mysql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/mysql/dbcheck_mysql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
                 <div class="script-card accent-shell">
                     <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
@@ -235,7 +235,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="全量巡检（季检，含 DB + OS）" data-en="Full Inspection (Quarterly, DB + OS)">全量巡检（季检，含 DB + OS）</p>
                         <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/mysql/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/mysql/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
             </div>
         </div>
@@ -250,7 +250,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="PostgreSQL 12 及以上" data-en="PostgreSQL 12+">PostgreSQL 12 及以上</p>
                         <div class="script-tags"><span class="script-tag">12</span><span class="script-tag">14</span><span class="script-tag">15</span><span class="script-tag">16</span><span class="script-tag">17</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/postgres/dbcheck_pg.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/postgres/dbcheck_pg.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
                 <div class="script-card accent-shell">
                     <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
@@ -259,7 +259,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="全量巡检（季检，含 DB + OS）" data-en="Full Inspection (Quarterly, DB + OS)">全量巡检（季检，含 DB + OS）</p>
                         <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/postgres/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/postgres/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
             </div>
         </div>
@@ -274,7 +274,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="SQL Server 2016 及以上" data-en="SQL Server 2016+">SQL Server 2016 及以上</p>
                         <div class="script-tags"><span class="script-tag">2016</span><span class="script-tag">2019</span><span class="script-tag">2022</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/sqlserver/dbcheck_mssql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/sqlserver/dbcheck_mssql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
                 <div class="script-card accent-shell">
                     <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
@@ -283,7 +283,7 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                         <p class="script-ver" data-zh="全量巡检（季检，含 DB + OS）" data-en="Full Inspection (Quarterly, DB + OS)">全量巡检（季检，含 DB + OS）</p>
                         <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="https://github.com/pc-study/dbcheck/raw/main/scripts/sqlserver/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <a href="/api/scripts/sqlserver/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
                 </div>
             </div>
         </div>
