@@ -238,11 +238,18 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                 <div class="script-card accent-shell">
                     <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
                     <div class="script-card-body">
-                        <h3>oscheck.sh</h3>
-                        <p class="script-ver" data-zh="Linux 全量巡检（季检，含 DB + OS）" data-en="Linux Full Inspection (Quarterly, DB + OS)">Linux 全量巡检（季检，含 DB + OS）</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
+                        <h3 id="mysql-os-script-name">oscheck.sh</h3>
+                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
+                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="/api/scripts/mysql/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
+                        <select id="mysql-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('mysql-os-script-name').textContent=f;document.getElementById('mysql-os-dl-btn').href='/api/scripts/mysql/'+f;">
+                            <option value="linux" selected>Linux</option>
+                            <option value="aix">AIX</option>
+                            <option value="windows">Windows（PowerShell）</option>
+                        </select>
+                        <a id="mysql-os-dl-btn" href="/api/scripts/mysql/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,11 +269,18 @@ This application requires JavaScript. Please enable JavaScript and refresh.
                 <div class="script-card accent-shell">
                     <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></svg></div>
                     <div class="script-card-body">
-                        <h3>oscheck.sh</h3>
-                        <p class="script-ver" data-zh="Linux 全量巡检（季检，含 DB + OS）" data-en="Linux Full Inspection (Quarterly, DB + OS)">Linux 全量巡检（季检，含 DB + OS）</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
+                        <h3 id="pg-os-script-name">oscheck.sh</h3>
+                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
+                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
                     </div>
-                    <a href="/api/scripts/postgres/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
+                        <select id="pg-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('pg-os-script-name').textContent=f;document.getElementById('pg-os-dl-btn').href='/api/scripts/postgres/'+f;">
+                            <option value="linux" selected>Linux</option>
+                            <option value="aix">AIX</option>
+                            <option value="windows">Windows（PowerShell）</option>
+                        </select>
+                        <a id="pg-os-dl-btn" href="/api/scripts/postgres/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -364,25 +378,44 @@ This application requires JavaScript. Please enable JavaScript and refresh.
 
 <span class="cmd-comment"># 3. 执行完毕后在当前目录生成 HTML 文件</span>
 <span class="cmd-comment"># 4. 将 HTML 文件上传到本平台，选择「MySQL」数据库类型即可</span></pre>
-            <pre class="scripts-howto-code" id="code-mysql-quarterly" style="display:none"><span class="cmd-comment"># oscheck.sh 会自动调用 dbcheck_mysql.sql 并采集 OS 信息，打包 tar.gz</span>
-<span class="cmd-comment"># 将 dbcheck_mysql.sql 和 oscheck.sh 放在同一目录</span>
+            <pre class="scripts-howto-code" id="code-mysql-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
+<span class="cmd-comment">#   Linux   → oscheck.sh</span>
+<span class="cmd-comment">#   AIX     → oscheck_aix.sh</span>
+<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
 
-<span class="cmd-comment"># 1. 上传 2 个脚本到 MySQL 服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck_mysql.sql / oscheck.sh</span>
+<span class="cmd-comment"># ── Linux / AIX ──</span>
+<span class="cmd-comment"># 将 dbcheck_mysql.sql 和 oscheck 脚本放在同一目录</span>
 
-<span class="cmd-comment"># 2. 执行 oscheck.sh（默认使用 root 用户）</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>
+<span class="cmd-comment"># 1. 上传脚本到 MySQL 服务器同一目录</span>
+<span class="cmd-comment">#    dbcheck_mysql.sql / oscheck.sh（或 oscheck_aix.sh）</span>
 
-<span class="cmd-comment"># 可选参数：</span>
+<span class="cmd-comment"># 2. 执行 oscheck（默认使用 root 用户）</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>             <span class="cmd-comment"># Linux</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck_aix.sh</span>         <span class="cmd-comment"># AIX</span>
+
+<span class="cmd-comment"># 可选参数（Linux / AIX 通用）：</span>
 <span class="cmd-comment">#   -u 用户名    MySQL 用户名（默认 root）</span>
 <span class="cmd-comment">#   -p 密码      MySQL 密码</span>
 <span class="cmd-comment">#   -S socket    指定 socket 路径</span>
 <span class="cmd-comment">#   -P 端口      指定端口（默认 3306）</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -u root -p 'password' -P 3306</span>
 
-<span class="cmd-comment"># 3. 执行完毕后自动在当前目录生成 tar.gz 文件</span>
-<span class="cmd-comment">#    文件名格式：dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment"># 4. 将 tar.gz 文件上传到本平台，选择「MySQL」+「季检」即可</span></pre>
+<span class="cmd-comment"># ── Windows ──</span>
+<span class="cmd-comment"># 将 dbcheck_mysql.sql 和 oscheck_win.ps1 放在同一目录</span>
+<span class="cmd-comment"># 以管理员身份打开 PowerShell</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>
+
+<span class="cmd-comment"># 可选参数：</span>
+<span class="cmd-comment">#   -User "root"              MySQL 用户名（默认 root）</span>
+<span class="cmd-comment">#   -Password "pass"          MySQL 密码</span>
+<span class="cmd-comment">#   -Port 3306                MySQL 端口</span>
+<span class="cmd-comment">#   -Host "localhost"         MySQL 主机</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -User "root" -Password "pass" -Port 3306</span>
+
+<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
+<span class="cmd-comment">#   Linux/AIX → dbcheck_主机名_日期.tar.gz</span>
+<span class="cmd-comment">#   Windows   → dbcheck_主机名_日期.zip</span>
+<span class="cmd-comment"># 将压缩文件上传到本平台，选择「MySQL」+「季检」即可</span></pre>
             <pre class="scripts-howto-code" id="code-postgres" style="display:none"><span class="cmd-comment"># 1. 将 dbcheck_pg.sql 上传到 PostgreSQL 服务器</span>
 <span class="cmd-comment"># 2. 以 postgres 用户执行：</span>
 
@@ -390,25 +423,45 @@ This application requires JavaScript. Please enable JavaScript and refresh.
 
 <span class="cmd-comment"># 3. 脚本自动输出到 /tmp/dbcheck_pg_result.html</span>
 <span class="cmd-comment"># 4. 将 HTML 文件上传到本平台，选择「PostgreSQL」数据库类型即可</span></pre>
-            <pre class="scripts-howto-code" id="code-postgres-quarterly" style="display:none"><span class="cmd-comment"># oscheck.sh 会自动调用 dbcheck_pg.sql 并采集 OS 信息，打包 tar.gz</span>
-<span class="cmd-comment"># 将 dbcheck_pg.sql 和 oscheck.sh 放在同一目录</span>
+            <pre class="scripts-howto-code" id="code-postgres-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
+<span class="cmd-comment">#   Linux   → oscheck.sh</span>
+<span class="cmd-comment">#   AIX     → oscheck_aix.sh</span>
+<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
 
-<span class="cmd-comment"># 1. 上传 2 个脚本到 PostgreSQL 服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck_pg.sql / oscheck.sh</span>
+<span class="cmd-comment"># ── Linux / AIX ──</span>
+<span class="cmd-comment"># 将 dbcheck_pg.sql 和 oscheck 脚本放在同一目录</span>
+
+<span class="cmd-comment"># 1. 上传脚本到 PostgreSQL 服务器同一目录</span>
+<span class="cmd-comment">#    dbcheck_pg.sql / oscheck.sh（或 oscheck_aix.sh）</span>
 
 <span class="cmd-comment"># 2. 以 postgres 用户或 root 用户执行</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>             <span class="cmd-comment"># Linux</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck_aix.sh</span>         <span class="cmd-comment"># AIX</span>
 
-<span class="cmd-comment"># 可选参数：</span>
+<span class="cmd-comment"># 可选参数（Linux / AIX 通用）：</span>
 <span class="cmd-comment">#   -U 用户名    PostgreSQL 用户（默认 postgres）</span>
 <span class="cmd-comment">#   -d 数据库    连接的数据库名（默认 postgres）</span>
 <span class="cmd-comment">#   -p 端口      指定端口（默认 5432）</span>
 <span class="cmd-comment">#   -H 主机      指定远程主机（默认本地 socket）</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -U postgres -d mydb -p 5432</span>
 
-<span class="cmd-comment"># 3. 执行完毕后自动在当前目录生成 tar.gz 文件</span>
-<span class="cmd-comment">#    文件名格式：dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment"># 4. 将 tar.gz 文件上传到本平台，选择「PostgreSQL」+「季检」即可</span></pre>
+<span class="cmd-comment"># ── Windows ──</span>
+<span class="cmd-comment"># 将 dbcheck_pg.sql 和 oscheck_win.ps1 放在同一目录</span>
+<span class="cmd-comment"># 以管理员身份打开 PowerShell</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>
+
+<span class="cmd-comment"># 可选参数：</span>
+<span class="cmd-comment">#   -PgUser "postgres"        PostgreSQL 用户（默认 postgres）</span>
+<span class="cmd-comment">#   -PgPassword "pass"        PostgreSQL 密码</span>
+<span class="cmd-comment">#   -PgHost "localhost"       主机地址</span>
+<span class="cmd-comment">#   -PgPort 5432              端口</span>
+<span class="cmd-comment">#   -PgDatabase "postgres"    数据库名</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -PgUser "postgres" -PgPassword "pass" -PgPort 5432</span>
+
+<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
+<span class="cmd-comment">#   Linux/AIX → dbcheck_主机名_日期.tar.gz</span>
+<span class="cmd-comment">#   Windows   → dbcheck_主机名_日期.zip</span>
+<span class="cmd-comment"># 将压缩文件上传到本平台，选择「PostgreSQL」+「季检」即可</span></pre>
             <pre class="scripts-howto-code" id="code-sqlserver" style="display:none"><span class="cmd-comment"># 1. 将 dbcheck_mssql.sql 上传到 SQL Server 服务器</span>
 <span class="cmd-comment"># 2. 使用 sqlcmd 执行：</span>
 
