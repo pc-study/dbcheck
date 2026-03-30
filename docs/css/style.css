@@ -1301,6 +1301,40 @@ html[lang="en"] .pricing-card.featured::before {
 .footer-bottom a:hover {
   color:#fff
 }
+/* Footer enhancements */
+.footer-decoration {
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--accent), #6366f1, transparent);
+  margin-bottom:32px;
+  border-radius:2px
+}
+.footer-social {
+  margin-top:16px;
+  display:flex;
+  gap:12px
+}
+.footer-social-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  transition:all 0.2s
+}
+.footer-social-link:hover {
+  color:#fff;
+  background:rgba(255,255,255,0.1);
+  border-color:rgba(255,255,255,0.2);
+  transform:translateY(-2px)
+}
+.footer-slogan {
+  color:rgba(255,255,255,0.3);
+  font-style:italic
+}
 .scripts-intro {
   text-align:center;
   max-width:640px;
