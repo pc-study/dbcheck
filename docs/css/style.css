@@ -41,6 +41,26 @@ body.nav-open {
 :focus:not(:focus-visible) {
   outline:none
 }
+/* Skip links for keyboard a11y */
+.skip-link {
+  position:absolute;
+  top:-50px;
+  left:16px;
+  z-index:10000;
+  background:var(--primary);
+  color:#fff;
+  padding:12px 24px;
+  border-radius:0 0 8px 8px;
+  font-size:14px;
+  text-decoration:none;
+  transition:top 0.2s
+}
+.skip-link:focus {
+  top:0
+}
+.skip-link-second {
+  left:220px
+}
 .nav {
   position:fixed;
   top:0;

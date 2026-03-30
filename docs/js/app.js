@@ -1047,9 +1047,19 @@ if ('serviceWorker' in navigator) {
     function animateCounters() {
         if (animated) return;
         animated = true;
+
+        // Respect prefers-reduced-motion: show final values immediately
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         statNums.forEach(function(el) {
             var target = parseInt(el.getAttribute('data-target'), 10);
             var suffix = el.getAttribute('data-suffix') || '';
+
+            if (prefersReduced) {
+                el.textContent = target.toLocaleString() + suffix;
+                return;
+            }
+
             var duration = 1500;
             var startTime = null;
 
@@ -1088,3 +1098,9 @@ if ('serviceWorker' in navigator) {
         animateCounters();
     }
 })();
+
+/* ===== Cleanup on page unload ===== */
+window.addEventListener('beforeunload', function() {
+    if (window._loadingInterval) clearInterval(window._loadingInterval);
+    if (_wsConnection) { try { _wsConnection.close(); } catch(e) {} }
+});
