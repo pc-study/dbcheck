@@ -10,1006 +10,560 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dbcheck2word.com">
 <meta property="og:image" content="https://dbcheck2word.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DBCheck2Word - 数据库巡检报告自动生成工具">
-<meta name="twitter:description" content="上传巡检文件，一键生成专业 Word 巡检报告。支持 Oracle/MySQL/PostgreSQL/SQL Server，自动诊断健康指标。">
-<meta name="twitter:image" content="https://dbcheck2word.com/og-image.png">
-<link rel="canonical" href="https://dbcheck2word.com/">
-<link rel="alternate" hreflang="zh" href="https://dbcheck2word.com/">
-<link rel="alternate" hreflang="en" href="https://dbcheck2word.com/?lang=en">
-<link rel="alternate" hreflang="x-default" href="https://dbcheck2word.com/">
-<!-- CSP: unsafe-inline kept for inline style attributes and noscript fallback styles -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.dbcheck2word.com; font-src 'self'; object-src 'none'; base-uri 'self'">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128202;</text></svg>">
 <title>DBCheck2Word - 数据库巡检报告自动生成工具</title>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "DBCheck2Word",
-  "description": "数据库巡检报告自动生成工具，支持 Oracle/MySQL/PostgreSQL/SQL Server，覆盖 130+ 项检查指标，桌面版集成 AI 大模型智能诊断分析，自动生成专业 Word 巡检报告。",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Windows, macOS",
-  "offers": [
-    { "@type": "Offer", "price": "0", "priceCurrency": "CNY", "description": "免费体验 3 次" },
-    { "@type": "Offer", "price": "999", "priceCurrency": "CNY", "description": "桌面专业版买断" }
-  ],
-  "url": "https://dbcheck2word.com/",
-  "softwareVersion": "2.0",
-  "datePublished": "2025-01-01"
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DBCheck2Word","description":"数据库巡检报告自动生成工具","applicationCategory":"DeveloperApplication","operatingSystem":"Windows, macOS","offers":[{"@type":"Offer","price":"0","priceCurrency":"CNY","description":"免费体验 3 次"},{"@type":"Offer","price":"999","priceCurrency":"CNY","description":"桌面专业版买断"}],"url":"https://dbcheck2word.com/","softwareVersion":"2.0","datePublished":"2025-01-01"}
 </script>
-<link rel="dns-prefetch" href="https://api.dbcheck2word.com">
-<link rel="preconnect" href="https://api.dbcheck2word.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none"><defs><symbol id="icon-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 15h4" stroke-linecap="round"/></symbol></defs></svg>
 <a href="#main-content" class="skip-link" data-zh="跳转到主要内容" data-en="Skip to main content">跳转到主要内容</a>
 <a href="#demo" class="skip-link skip-link-second" data-zh="跳转到在线体验" data-en="Skip to Try Online">跳转到在线体验</a>
-<noscript>
-<div style="background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:20px;text-align:center;font-size:15px;position:fixed;top:0;left:0;right:0;z-index:99999;">
-本工具需要 JavaScript 才能运行。请启用 JavaScript 后刷新页面。<br>
-This application requires JavaScript. Please enable JavaScript and refresh.
-</div>
-</noscript>
-
-<!-- Main Content -->
-
-<!-- Navigation -->
+<noscript><div style="background:#fef2f2;border:1px solid #ef4444;color:#991b1b;padding:20px;text-align:center;font-size:15px;position:fixed;top:0;left:0;right:0;z-index:99999;">本工具需要 JavaScript 才能运行。请启用 JavaScript 后刷新页面。</div></noscript>
+<!-- ═══ NAVIGATION ═══ -->
 <nav class="nav" aria-label="主导航">
-    <div class="nav-inner">
-        <a href="#" class="nav-logo">DB<span>Check</span>2Word</a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#features" data-zh="功能特色" data-en="Features">功能特色</a></li>
-            <li><a href="#ai" data-zh="AI 分析" data-en="AI Analysis" style="background:linear-gradient(135deg,#8b5cf6,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">AI 分析</a></li>
-            <li><a href="#steps" data-zh="使用流程" data-en="How It Works">使用流程</a></li>
-            <li><a href="#scripts" data-zh="巡检脚本" data-en="Scripts">巡检脚本</a></li>
-            <li><a href="#demo" data-zh="在线体验" data-en="Try Online">在线体验</a></li>
-            <li><a href="#pricing" data-zh="定价方案" data-en="Pricing">定价方案</a></li>
-            <li class="nav-actions-mobile">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch Language" title="中文/English">EN</button>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题" title="切换亮色/暗色模式">&#9790;</button>
-            </li>
-        </ul>
-        <button class="nav-mobile-toggle" onclick="toggleNav()" aria-label="菜单">&#9776;</button>
-        <div class="nav-actions">
-            <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="Switch Language" title="中文/English">EN</button>
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题" title="切换亮色/暗色模式">&#9790;</button>
-        </div>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">DB<span>Check</span>2Word</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#features" data-zh="功能特色" data-en="Features">功能特色</a></li>
+      <li><a href="#ai" class="ai-link" data-zh="AI 分析" data-en="AI Analysis">AI 分析</a></li>
+      <li><a href="#steps" data-zh="使用流程" data-en="How It Works">使用流程</a></li>
+      <li><a href="#scripts" data-zh="巡检脚本" data-en="Scripts">巡检脚本</a></li>
+      <li><a href="#demo" data-zh="在线体验" data-en="Try Online">在线体验</a></li>
+      <li><a href="#pricing" data-zh="定价方案" data-en="Pricing">定价方案</a></li>
+      <li class="nav-actions-mobile">
+        <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch Language">EN</button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">&#9790;</button>
+      </li>
+    </ul>
+    <button class="nav-mobile-toggle" onclick="toggleNav()" aria-label="菜单">&#9776;</button>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="Switch Language">EN</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="切换主题">&#9790;</button>
     </div>
+  </div>
 </nav>
 <div class="nav-backdrop" id="navBackdrop" onclick="closeNav()" aria-hidden="true"></div>
 <main id="main-content">
-
-<!-- Hero -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-    <div class="hero-content">
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
         <div class="hero-badge" data-zh="多数据库巡检平台" data-en="Multi-Database Inspection Platform">多数据库巡检平台</div>
-        <h1 data-zh="数据库巡检报告自动生成工具" data-en="Database Inspection Report Auto-Generator">数据库巡检报告自动生成工具</h1>
+        <h1 data-zh="数据库巡检报告自动生成工具" data-en="Database Inspection Report Auto-Generator">数据库巡检报告<br>自动生成工具</h1>
         <p class="tagline">DBCheck2Word</p>
         <p class="subtitle" data-zh="上传巡检文件，智能诊断健康指标，一键生成专业 Word 报告" data-en="Upload inspection files, auto-diagnose health metrics, generate professional Word reports">上传巡检文件，智能诊断健康指标，一键生成专业 Word 报告</p>
         <div class="hero-buttons">
-            <a href="#demo" class="btn btn-primary btn-hero-primary" data-zh="立即开始使用 &#8594;" data-en="Get Started &#8594;">立即开始使用 &rarr;</a>
-            <a href="#features" class="btn btn-outline btn-hero-secondary" data-zh="了解更多" data-en="Learn More">了解更多</a>
+          <a href="#demo" class="btn btn-primary btn-hero-primary" data-zh="立即开始使用 →" data-en="Get Started →">立即开始使用 →</a>
+          <a href="#features" class="btn btn-outline btn-hero-secondary" data-zh="了解更多" data-en="Learn More">了解更多</a>
         </div>
-        <p id="heroStats" style="margin-top:24px;font-size:13px;color:rgba(255,255,255,0.4);display:none;"></p>
-        <div class="hero-demo">
-            <div class="hero-demo-step">
-                <div class="hero-demo-icon">&#128196;</div>
-                <div class="hero-demo-arrow">&#8594;</div>
-            </div>
-            <div class="hero-demo-step">
-                <div class="hero-demo-icon">&#9881;</div>
-                <div class="hero-demo-arrow">&#8594;</div>
-            </div>
-            <div class="hero-demo-step">
-                <div class="hero-demo-icon">&#128209;</div>
-            </div>
-            <div class="hero-demo-labels">
-                <span data-zh="上传巡检文件" data-en="Upload File">上传巡检文件</span>
-                <span data-zh="智能分析诊断" data-en="Smart Analysis">智能分析诊断</span>
-                <span data-zh="生成 Word 报告" data-en="Word Report">生成 Word 报告</span>
-            </div>
+        <p id="heroStats" style="margin-top:24px;font-size:13px;color:var(--text-dim);display:none;"></p>
+        <div class="hero-db-bar">
+          <span data-zh="已支持" data-en="Supports">已支持</span>
+          <div class="hero-db-icons">
+            <img src="images/oracle.svg" alt="Oracle" width="28" height="28">
+            <img src="images/mysql.svg" alt="MySQL" width="28" height="28">
+            <img src="images/postgresql.svg" alt="PostgreSQL" width="28" height="28">
+            <img src="images/sqlserver.svg" alt="SQL Server" width="28" height="28">
+          </div>
         </div>
-        <!-- Hero product visual: CSS-only mock report preview -->
-        <div class="hero-visual" aria-hidden="true">
-            <div class="hero-visual-card">
-                <div class="hv-titlebar">
-                    <span class="hv-dot red"></span><span class="hv-dot yellow"></span><span class="hv-dot green"></span>
-                    <span class="hv-filename">Oracle_巡检报告_2026Q1.docx</span>
-                </div>
-                <div class="hv-body">
-                    <div class="hv-row"><span class="hv-label">数据库</span><span class="hv-value">ORCL (19c RAC)</span></div>
-                    <div class="hv-row"><span class="hv-label">巡检日期</span><span class="hv-value">2026-03-30</span></div>
-                    <div class="hv-diag">
-                        <span class="hv-badge hv-ok">28 正常</span>
-                        <span class="hv-badge hv-warn">3 异常</span>
-                    </div>
-                    <div class="hv-bar-group">
-                        <div class="hv-bar-label">表空间使用率</div>
-                        <div class="hv-bar"><div class="hv-bar-fill" style="width:72%"></div></div>
-                        <div class="hv-bar-label">缓冲命中率</div>
-                        <div class="hv-bar"><div class="hv-bar-fill hv-bar-green" style="width:98%"></div></div>
-                    </div>
-                </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-glow"></div>
+        <div class="hero-visual-card">
+          <div class="hv-titlebar">
+            <span class="hv-dot red"></span><span class="hv-dot yellow"></span><span class="hv-dot green"></span>
+            <span class="hv-filename">Oracle_巡检报告_2026Q1.docx</span>
+          </div>
+          <div class="hv-body">
+            <div class="hv-row"><span class="hv-label">数据库</span><span class="hv-value">ORCL (19c RAC)</span></div>
+            <div class="hv-row"><span class="hv-label">巡检日期</span><span class="hv-value">2026-03-30</span></div>
+            <div class="hv-diag"><span class="hv-badge hv-ok">28 正常</span><span class="hv-badge hv-warn">3 异常</span></div>
+            <div class="hv-bar-group">
+              <div class="hv-bar-label">表空间使用率</div>
+              <div class="hv-bar"><div class="hv-bar-fill" style="--w:72%"></div></div>
+              <div class="hv-bar-label">缓冲命中率</div>
+              <div class="hv-bar"><div class="hv-bar-fill hv-bar-green" style="--w:98%"></div></div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
-
-<!-- Features -->
+<!-- ═══ FEATURES ═══ -->
+<div class="section-divider"></div>
 <section class="section" id="features">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="功能特色" data-en="Features">功能特色</h2>
-            <p data-zh="一站式多数据库巡检平台，覆盖主流数据库巡检场景" data-en="One-stop multi-database inspection platform covering all mainstream databases">一站式多数据库巡检平台，覆盖主流数据库巡检场景</p>
-            <p style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;background:rgba(16,185,129,0.08);color:var(--success);border:1px solid rgba(16,185,129,0.15);" data-zh="&#128274; 纯只读采集，零影响生产数据库运行" data-en="&#128274; Read-only collection, zero impact on production databases">&#128274; 纯只读采集，零影响生产数据库运行</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card feature-border-blue">
-                <div class="feature-icon blue" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="9" ry="3.5"/><path d="M3 5.5v5c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5v-5"/><path d="M3 10.5v5c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5v-5"/></svg>
-                </div>
-                <h3 data-zh="多数据库支持" data-en="Multi-Database Support">多数据库支持</h3>
-                <p data-zh="Oracle / MySQL / PostgreSQL / SQL Server 四大主流数据库一站式巡检，统一工作流" data-en="Oracle / MySQL / PostgreSQL / SQL Server — unified inspection workflow for four major databases">Oracle / MySQL / PostgreSQL / SQL Server 四大主流数据库一站式巡检，统一工作流</p>
-            </div>
-            <div class="feature-card feature-border-green">
-                <div class="feature-icon green" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/><circle cx="12" cy="7" r="2"/><circle cx="18" cy="4" r="0" fill="currentColor"/></svg>
-                </div>
-                <h3 data-zh="智能诊断引擎" data-en="Smart Diagnosis Engine">智能诊断引擎</h3>
-                <p data-zh="覆盖 130+ 项检查指标，基于策略模式自动分析数据库健康状态，异常项红色高亮并生成中文诊断建议" data-en="130+ check items, strategy-pattern engine analyzes health metrics, highlights anomalies in red with diagnostic recommendations">覆盖 130+ 项检查指标，基于策略模式自动分析数据库健康状态，异常项红色高亮并生成中文诊断建议</p>
-            </div>
-            <div class="feature-card feature-border-orange">
-                <div class="feature-icon orange" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                </div>
-                <h3 data-zh="专业报告输出" data-en="Professional Reports">专业报告输出</h3>
-                <p data-zh="基于 Word 模板渲染，包含数据表格、诊断建议、性能图表，开箱即用" data-en="Word template-based rendering with data tables, diagnostics, and performance charts">基于 Word 模板渲染，包含数据表格、诊断建议、性能图表，开箱即用</p>
-            </div>
-            <div class="feature-card feature-border-purple">
-                <div class="feature-icon purple" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                </div>
-                <h3 data-zh="三种巡检深度" data-en="Three Inspection Levels">三种巡检深度</h3>
-                <p data-zh="周检 / 月检 / 季检三种模式，对应不同检查深度和报告模板，灵活匹配需求" data-en="Weekly / Monthly / Quarterly modes with different check depths and report templates">周检 / 月检 / 季检三种模式，对应不同检查深度和报告模板，灵活匹配需求</p>
-            </div>
-            <div class="feature-card feature-border-red">
-                <div class="feature-icon red" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>
-                </div>
-                <h3 data-zh="零影响生产" data-en="Zero Production Impact">零影响生产</h3>
-                <p data-zh="巡检脚本仅执行只读 SELECT 查询，不创建任何对象、不修改任何数据、不申请排他锁，对生产库零影响。脚本全部开源可审计" data-en="Scripts execute read-only SELECT queries only — no object creation, no data modification, no exclusive locks. Zero impact on production. All scripts are open-source and auditable">巡检脚本仅执行只读 SELECT 查询，不创建任何对象、不修改任何数据、不申请排他锁，对生产库零影响。脚本全部开源可审计</p>
-            </div>
-            <div class="feature-card feature-border-teal">
-                <div class="feature-icon teal" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-                </div>
-                <h3 data-zh="开源可审计 + 数据安全" data-en="Open-Source &amp; Data Security">开源可审计 + 数据安全</h3>
-                <p data-zh="巡检脚本全部开源在 GitHub，可自行审计每一行代码。在线版文件处理完毕即删除；桌面版完全离线运行，数据不出内网" data-en="All scripts are open-source on GitHub, every line auditable. Online files auto-deleted after processing; Desktop version runs fully offline">巡检脚本全部开源在 GitHub，可自行审计每一行代码。在线版文件处理完毕即删除；桌面版完全离线运行，数据不出内网</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="功能特色" data-en="Features">功能特色</h2>
+      <p data-zh="一站式多数据库巡检平台，覆盖主流数据库巡检场景" data-en="One-stop multi-database inspection platform covering all mainstream databases">一站式多数据库巡检平台，覆盖主流数据库巡检场景</p>
     </div>
-</section>
-
-<!-- Steps -->
-<section class="section section-dark" id="steps">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="使用流程" data-en="How It Works">使用流程</h2>
-            <p data-zh="简单三步，快速获取专业巡检报告" data-en="Three simple steps, from inspection files to professional reports">简单三步，快速获取专业巡检报告</p>
-        </div>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num" aria-hidden="true">1</div>
-                <h3 data-zh="运行巡检脚本" data-en="Run Script">运行巡检脚本</h3>
-                <p><span data-zh="选择对应数据库的" data-en="Choose the">选择对应数据库的</span><a href="#scripts" style="color:var(--accent);text-decoration:none;font-weight:600;" data-zh="巡检脚本" data-en="inspection script">巡检脚本</a>，<span data-zh="在服务器上运行，生成 HTML 巡检文件" data-en="run on server to generate HTML inspection files">在服务器上运行，生成 HTML 巡检文件</span></p>
-            </div>
-            <div class="step">
-                <div class="step-num" aria-hidden="true">2</div>
-                <h3 data-zh="上传巡检文件" data-en="Upload File">上传巡检文件</h3>
-                <p data-zh="将生成的巡检文件上传到本平台，支持拖拽上传" data-en="Upload the generated HTML or tar.gz file to this platform">将生成的巡检文件上传到本平台，支持拖拽上传</p>
-            </div>
-            <div class="step">
-                <div class="step-num" aria-hidden="true">3</div>
-                <h3 data-zh="下载 Word 报告" data-en="Download Report">下载 Word 报告</h3>
-                <p data-zh="系统自动分析并生成专业 Word 报告，一键下载" data-en="The system automatically analyzes and generates a professional Word inspection report">系统自动分析并生成专业 Word 报告，一键下载</p>
-            </div>
-        </div>
+    <div class="features-grid">
+      <div class="feature-card" style="--card-accent:rgba(59,130,246,0.4)">
+        <div class="feature-icon blue" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5.5" rx="9" ry="3.5"/><path d="M3 5.5v5c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5v-5"/><path d="M3 10.5v5c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5v-5"/></svg></div>
+        <h3 data-zh="多数据库支持" data-en="Multi-Database Support">多数据库支持</h3>
+        <p data-zh="Oracle / MySQL / PostgreSQL / SQL Server 四大主流数据库一站式巡检，统一工作流" data-en="Oracle / MySQL / PostgreSQL / SQL Server — unified inspection workflow for four major databases">Oracle / MySQL / PostgreSQL / SQL Server 四大主流数据库一站式巡检，统一工作流</p>
+      </div>
+      <div class="feature-card" style="--card-accent:rgba(16,185,129,0.4)">
+        <div class="feature-icon green" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+        <h3 data-zh="智能诊断引擎" data-en="Smart Diagnosis Engine">智能诊断引擎</h3>
+        <p data-zh="覆盖 130+ 项检查指标，基于策略模式自动分析数据库健康状态，异常项红色高亮并生成中文诊断建议" data-en="130+ check items with strategy-pattern engine, highlights anomalies in red with diagnostic recommendations">覆盖 130+ 项检查指标，基于策略模式自动分析数据库健康状态，异常项红色高亮并生成中文诊断建议</p>
+      </div>
+      <div class="feature-card" style="--card-accent:rgba(249,115,22,0.4)">
+        <div class="feature-icon orange" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3 data-zh="专业报告输出" data-en="Professional Reports">专业报告输出</h3>
+        <p data-zh="基于 Word 模板渲染，包含数据表格、诊断建议、性能图表，开箱即用" data-en="Word template-based rendering with data tables, diagnostics, and performance charts">基于 Word 模板渲染，包含数据表格、诊断建议、性能图表，开箱即用</p>
+      </div>
+      <div class="feature-card" style="--card-accent:rgba(139,92,246,0.4)">
+        <div class="feature-icon purple" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3 data-zh="三种巡检深度" data-en="Three Inspection Levels">三种巡检深度</h3>
+        <p data-zh="周检 / 月检 / 季检三种模式，对应不同检查深度和报告模板，灵活匹配需求" data-en="Weekly / Monthly / Quarterly modes with different check depths and report templates">周检 / 月检 / 季检三种模式，对应不同检查深度和报告模板，灵活匹配需求</p>
+      </div>
+      <div class="feature-card" style="--card-accent:rgba(239,68,68,0.4)">
+        <div class="feature-icon red" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 data-zh="零影响生产" data-en="Zero Production Impact">零影响生产</h3>
+        <p data-zh="巡检脚本仅执行只读 SELECT 查询，不创建任何对象、不修改任何数据、不申请排他锁，对生产库零影响。脚本全部开源可审计" data-en="Read-only SELECT queries only — zero impact on production. All scripts open-source and auditable">巡检脚本仅执行只读 SELECT 查询，不创建任何对象、不修改任何数据、不申请排他锁，对生产库零影响。脚本全部开源可审计</p>
+      </div>
+      <div class="feature-card" style="--card-accent:rgba(6,182,212,0.4)">
+        <div class="feature-icon teal" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-zh="开源可审计 + 数据安全" data-en="Open-Source & Data Security">开源可审计 + 数据安全</h3>
+        <p data-zh="巡检脚本全部开源在 GitHub，可自行审计每一行代码。在线版文件处理完毕即删除；桌面版完全离线运行，数据不出内网" data-en="All scripts open-source on GitHub. Online files auto-deleted; Desktop runs fully offline">巡检脚本全部开源在 GitHub，可自行审计每一行代码。在线版文件处理完毕即删除；桌面版完全离线运行，数据不出内网</p>
+      </div>
     </div>
+  </div>
 </section>
-
-<!-- Testimonials -->
+<!-- ═══ STEPS ═══ -->
+<div class="section-divider"></div>
+<section class="section" id="steps">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="使用流程" data-en="How It Works">使用流程</h2>
+      <p data-zh="简单三步，快速获取专业巡检报告" data-en="Three simple steps to professional inspection reports">简单三步，快速获取专业巡检报告</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num" aria-hidden="true">1</div><h3 data-zh="运行巡检脚本" data-en="Run Script">运行巡检脚本</h3><p><span data-zh="选择对应数据库的" data-en="Choose the">选择对应数据库的</span><a href="#scripts" data-zh="巡检脚本" data-en="inspection script">巡检脚本</a>，<span data-zh="在服务器上运行，生成 HTML 巡检文件" data-en="run on server to generate HTML files">在服务器上运行，生成 HTML 巡检文件</span></p></div>
+      <div class="step"><div class="step-num" aria-hidden="true">2</div><h3 data-zh="上传巡检文件" data-en="Upload File">上传巡检文件</h3><p data-zh="将生成的巡检文件上传到本平台，支持拖拽上传" data-en="Upload the generated file to this platform">将生成的巡检文件上传到本平台，支持拖拽上传</p></div>
+      <div class="step"><div class="step-num" aria-hidden="true">3</div><h3 data-zh="下载 Word 报告" data-en="Download Report">下载 Word 报告</h3><p data-zh="系统自动分析并生成专业 Word 报告，一键下载" data-en="Auto-analyze and generate professional Word report">系统自动分析并生成专业 Word 报告，一键下载</p></div>
+    </div>
+  </div>
+</section>
+<!-- ═══ TESTIMONIALS ═══ -->
+<div class="section-divider"></div>
 <section class="section" id="testimonials">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="用户反馈" data-en="What Users Say">用户反馈</h2>
-            <p data-zh="来自一线 DBA 的真实评价" data-en="Real feedback from frontline DBAs">来自一线 DBA 的真实评价</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-quote" data-zh="以前写一份 Oracle 巡检报告至少半天，现在上传文件几分钟就出来了，格式还很专业。团队效率提升太明显了。" data-en="Writing an Oracle inspection report used to take half a day. Now it takes minutes with professional formatting. The team efficiency improvement is remarkable.">以前写一份 Oracle 巡检报告至少半天，现在上传文件几分钟就出来了，格式还很专业。团队效率提升太明显了。</div>
-                <div class="testimonial-author"><strong data-zh="资深 Oracle DBA" data-en="Senior Oracle DBA">资深 Oracle DBA</strong><span data-zh="某金融企业" data-en="Financial Enterprise">某金融企业</span></div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote" data-zh="管理 20+ 套 MySQL 实例，每月巡检报告是最头疼的事。用了桌面版批量生成，一次搞定全部，AI 分析的建议也很实用。" data-en="Managing 20+ MySQL instances, monthly reports were the biggest headache. Desktop batch processing handles everything at once, and the AI suggestions are practical.">管理 20+ 套 MySQL 实例，每月巡检报告是最头疼的事。用了桌面版批量生成，一次搞定全部，AI 分析的建议也很实用。</div>
-                <div class="testimonial-author"><strong data-zh="MySQL DBA" data-en="MySQL DBA">MySQL DBA</strong><span data-zh="某互联网公司" data-en="Internet Company">某互联网公司</span></div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-quote" data-zh="最担心的是安全问题，审查了巡检脚本全是 SELECT 查询，桌面版完全离线。这让我们信息安全部门也放心了。" data-en="Security was our biggest concern. After reviewing scripts — all read-only SELECT queries — and confirming the desktop version is fully offline, our security team approved it.">最担心的是安全问题，审查了巡检脚本全是 SELECT 查询，桌面版完全离线。这让我们信息安全部门也放心了。</div>
-                <div class="testimonial-author"><strong data-zh="PostgreSQL DBA" data-en="PostgreSQL DBA">PostgreSQL DBA</strong><span data-zh="某政企客户" data-en="Government Enterprise">某政企客户</span></div>
-            </div>
-        </div>
-        <div class="stats-bar">
-            <div class="stat-item"><span class="stat-num" data-target="10000" data-suffix="+">0</span><span class="stat-label" data-zh="报告已生成" data-en="Reports Generated">报告已生成</span></div>
-            <div class="stat-item"><span class="stat-num" data-target="500" data-suffix="+">0</span><span class="stat-label" data-zh="企业用户" data-en="Enterprise Users">企业用户</span></div>
-            <div class="stat-item"><span class="stat-num" data-target="130" data-suffix="+">0</span><span class="stat-label" data-zh="检查指标" data-en="Check Items">检查指标</span></div>
-            <div class="stat-item"><span class="stat-num" data-target="4" data-suffix="">0</span><span class="stat-label" data-zh="数据库支持" data-en="Databases Supported">数据库支持</span></div>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="用户反馈" data-en="What Users Say">用户反馈</h2>
+      <p data-zh="来自一线 DBA 的真实评价" data-en="Real feedback from frontline DBAs">来自一线 DBA 的真实评价</p>
     </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card"><div class="testimonial-quote" data-zh="以前写一份 Oracle 巡检报告至少半天，现在上传文件几分钟就出来了，格式还很专业。团队效率提升太明显了。" data-en="Writing an Oracle inspection report used to take half a day. Now it takes minutes with professional formatting.">以前写一份 Oracle 巡检报告至少半天，现在上传文件几分钟就出来了，格式还很专业。团队效率提升太明显了。</div><div class="testimonial-author"><strong data-zh="资深 Oracle DBA" data-en="Senior Oracle DBA">资深 Oracle DBA</strong><span data-zh="某金融企业" data-en="Financial Enterprise">某金融企业</span></div></div>
+      <div class="testimonial-card"><div class="testimonial-quote" data-zh="管理 20+ 套 MySQL 实例，每月巡检报告是最头疼的事。用了桌面版批量生成，一次搞定全部，AI 分析的建议也很实用。" data-en="Managing 20+ MySQL instances, monthly reports were the biggest headache. Desktop batch handles everything.">管理 20+ 套 MySQL 实例，每月巡检报告是最头疼的事。用了桌面版批量生成，一次搞定全部，AI 分析的建议也很实用。</div><div class="testimonial-author"><strong data-zh="MySQL DBA" data-en="MySQL DBA">MySQL DBA</strong><span data-zh="某互联网公司" data-en="Internet Company">某互联网公司</span></div></div>
+      <div class="testimonial-card"><div class="testimonial-quote" data-zh="最担心的是安全问题，审查了巡检脚本全是 SELECT 查询，桌面版完全离线。这让我们信息安全部门也放心了。" data-en="Security was our biggest concern. All read-only queries, desktop fully offline. Our security team approved it.">最担心的是安全问题，审查了巡检脚本全是 SELECT 查询，桌面版完全离线。这让我们信息安全部门也放心了。</div><div class="testimonial-author"><strong data-zh="PostgreSQL DBA" data-en="PostgreSQL DBA">PostgreSQL DBA</strong><span data-zh="某政企客户" data-en="Government Enterprise">某政企客户</span></div></div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item"><span class="stat-num" data-target="10000" data-suffix="+">0</span><span class="stat-label" data-zh="报告已生成" data-en="Reports Generated">报告已生成</span></div>
+      <div class="stat-item"><span class="stat-num" data-target="500" data-suffix="+">0</span><span class="stat-label" data-zh="企业用户" data-en="Enterprise Users">企业用户</span></div>
+      <div class="stat-item"><span class="stat-num" data-target="130" data-suffix="+">0</span><span class="stat-label" data-zh="检查指标" data-en="Check Items">检查指标</span></div>
+      <div class="stat-item"><span class="stat-num" data-target="4" data-suffix="">0</span><span class="stat-label" data-zh="数据库支持" data-en="Databases Supported">数据库支持</span></div>
+    </div>
+  </div>
 </section>
-
-<!-- AI Analysis Promotion Banner -->
+<!-- ═══ AI BANNER ═══ -->
 <section class="ai-banner" id="ai">
-    <div class="ai-banner-inner">
-        <div class="ai-banner-text">
-            <div class="ai-badge"><span class="ai-sparkle">&#10024;</span> <span data-zh="桌面专业版独占" data-en="DESKTOP PRO EXCLUSIVE">桌面专业版独占</span></div>
-            <h2 data-zh="AI 智能诊断分析&#10;让巡检报告从数据到洞察" data-en="AI-Powered Diagnostics&#10;From Data to Insights">AI 智能诊断分析<br>让巡检报告从数据到洞察</h2>
-            <p class="ai-desc" data-zh="桌面专业版集成大模型 AI 分析引擎，在传统规则诊断之上，对每一项巡检结果进行深度语义分析，自动生成专家级诊断结论和优化建议。从「数据罗列」升级到「智能洞察」，让你的巡检报告真正具备专业分析价值。" data-en="Desktop Pro integrates an AI analysis engine powered by large language models. Beyond rule-based diagnostics, it performs deep semantic analysis on every inspection result, automatically generating expert-level conclusions and optimization recommendations.">
-                桌面专业版集成大模型 AI 分析引擎，在传统规则诊断之上，对每一项巡检结果进行深度语义分析，自动生成专家级诊断结论和优化建议。从「数据罗列」升级到「智能洞察」，让你的巡检报告真正具备专业分析价值。
-            </p>
-            <ul class="ai-features-list">
-                <li>
-                    <span class="ai-feat-icon">&#129504;</span>
-                    <div><strong data-zh="深度语义分析" data-en="Deep Semantic Analysis">深度语义分析</strong><br><span data-zh="AI 理解每项指标的业务含义，不只判断阈值，更分析异常原因和潜在关联影响" data-en="AI understands the business meaning of each metric, analyzing root causes and potential cascading effects">AI 理解每项指标的业务含义，不只判断阈值，更分析异常原因和潜在关联影响</span></div>
-                </li>
-                <li>
-                    <span class="ai-feat-icon">&#128209;</span>
-                    <div><strong data-zh="专家级优化建议" data-en="Expert-Level Recommendations">专家级优化建议</strong><br><span data-zh="基于行业最佳实践，自动生成可执行的 SQL 调优、参数调整、架构优化建议" data-en="Generates actionable SQL tuning, parameter adjustment, and architecture optimization recommendations based on industry best practices">基于行业最佳实践，自动生成可执行的 SQL 调优、参数调整、架构优化建议</span></div>
-                </li>
-                <li>
-                    <span class="ai-feat-icon">&#128200;</span>
-                    <div><strong data-zh="全局关联诊断" data-en="Holistic Correlation">全局关联诊断</strong><br><span data-zh="跨检查项关联分析，发现单项检查无法识别的系统性风险和性能瓶颈" data-en="Cross-item correlation analysis to discover systemic risks and performance bottlenecks invisible to single-item checks">跨检查项关联分析，发现单项检查无法识别的系统性风险和性能瓶颈</span></div>
-                </li>
-                <li>
-                    <span class="ai-feat-icon">&#128274;</span>
-                    <div><strong data-zh="本地运行，数据安全" data-en="Local Processing, Data Safe">本地运行，数据安全</strong><br><span data-zh="支持接入私有化部署的大模型 API，巡检数据无需上传公网，满足等保合规要求" data-en="Supports private LLM API deployment. Inspection data never leaves your network, meeting security compliance requirements">支持接入私有化部署的大模型 API，巡检数据无需上传公网，满足等保合规要求</span></div>
-                </li>
-            </ul>
-            <div class="ai-banner-cta">
-                <a href="#pricing" class="btn-ai" data-zh="&#10024; 获取桌面专业版" data-en="&#10024; Get Desktop Pro">&#10024; 获取桌面专业版</a>
-                <span class="ai-exclusive-tag" data-zh="&#128274; 仅桌面专业版支持" data-en="&#128274; Desktop Pro only">&#128274; 仅桌面专业版支持</span>
-            </div>
-        </div>
-        <div class="ai-visual">
-            <div class="ai-visual-glow"></div>
-            <div class="ai-visual-card">
-                <div class="ai-visual-header">
-                    <div class="ai-v-icon">&#10024;</div>
-                    <div>
-                        <div class="ai-v-title" data-zh="AI 诊断分析报告" data-en="AI Diagnostic Report">AI 诊断分析报告</div>
-                        <div class="ai-v-subtitle" data-zh="Oracle 19c &#8212; 季度巡检" data-en="Oracle 19c &#8212; Quarterly">Oracle 19c &mdash; 季度巡检</div>
-                    </div>
-                </div>
-                <div class="ai-visual-item">
-                    <span class="ai-v-dot red"></span>
-                    <div class="ai-v-label">
-                        <strong data-zh="表空间 USERS 使用率 94%" data-en="Tablespace USERS usage 94%">表空间 USERS 使用率 94%</strong>
-                        <div class="ai-v-conclusion" data-zh="&#129504; AI 分析：USERS 表空间剩余 1.2GB，按近 30 天增长趋势预估 18 天后耗尽。建议立即扩容数据文件或启用自动扩展，同时清理 AUDIT_TRAIL 历史数据释放约 800MB 空间。" data-en="&#129504; AI: USERS tablespace has 1.2GB remaining. At current growth rate, it will be exhausted in ~18 days. Recommend expanding datafiles and purging AUDIT_TRAIL history.">&#129504; AI 分析：USERS 表空间剩余 1.2GB，按近 30 天增长趋势预估 18 天后耗尽。建议立即扩容数据文件或启用自动扩展，同时清理 AUDIT_TRAIL 历史数据释放约 800MB 空间。</div>
-                    </div>
-                </div>
-                <div class="ai-visual-item">
-                    <span class="ai-v-dot yellow"></span>
-                    <div class="ai-v-label">
-                        <strong data-zh="日志切换频率偏高" data-en="Redo log switch frequency high">日志切换频率偏高</strong>
-                        <div class="ai-v-conclusion" data-zh="&#129504; AI 分析：高峰期每小时切换 23 次，当前 Redo 日志组 200MB 偏小。建议将 Redo 日志组大小调整至 1GB，减少切换频率，降低 LGWR 和归档进程负担。" data-en="&#129504; AI: 23 switches/hour during peak. Current 200MB redo log size is too small. Recommend resizing to 1GB to reduce switch frequency.">&#129504; AI 分析：高峰期每小时切换 23 次，当前 Redo 日志组 200MB 偏小。建议将 Redo 日志组大小调整至 1GB，减少切换频率，降低 LGWR 和归档进程负担。</div>
-                    </div>
-                </div>
-                <div class="ai-visual-item">
-                    <span class="ai-v-dot green"></span>
-                    <div class="ai-v-label">
-                        <strong data-zh="SGA 缓冲命中率 99.7%" data-en="SGA buffer hit ratio 99.7%">SGA 缓冲命中率 99.7%</strong>
-                        <div class="ai-v-conclusion" data-zh="&#129504; AI 分析：缓冲池命中率优秀，db_cache_size 配置 8GB 与当前活跃数据集匹配良好，物理读比例极低，无需调整。" data-en="&#129504; AI: Excellent buffer hit ratio. 8GB db_cache_size matches active dataset well. Minimal physical reads, no adjustment needed.">&#129504; AI 分析：缓冲池命中率优秀，db_cache_size 配置 8GB 与当前活跃数据集匹配良好，物理读比例极低，无需调整。</div>
-                    </div>
-                </div>
-                <div style="margin-top:20px;padding:16px;background:linear-gradient(135deg,rgba(139,92,246,0.08),rgba(59,130,246,0.06));border:1px solid rgba(139,92,246,0.12);border-radius:10px;">
-                    <div style="font-size:12px;font-weight:600;color:#c4b5fd;margin-bottom:8px;" data-zh="&#128161; AI 全局洞察" data-en="&#128161; AI Global Insight">&#128161; AI 全局洞察</div>
-                    <div style="font-size:12px;color:rgba(255,255,255,0.7);line-height:1.7;" data-zh="综合分析：表空间增长与 Redo 切换频率偏高存在关联——大批量 DML 操作同时推高了空间消耗和日志写入。建议在扩容表空间的同时优化批量写入的事务粒度，可有效缓解两项指标。" data-en="Correlation: Tablespace growth and high redo switch frequency are linked — bulk DML operations drive both space consumption and log writes. Optimizing batch transaction granularity alongside tablespace expansion can address both issues.">综合分析：表空间增长与 Redo 切换频率偏高存在关联——大批量 DML 操作同时推高了空间消耗和日志写入。建议在扩容表空间的同时优化批量写入的事务粒度，可有效缓解两项指标。</div>
-                </div>
-            </div>
-        </div>
+  <div class="ai-banner-inner">
+    <div class="ai-banner-text">
+      <div class="ai-badge"><span class="ai-sparkle">&#10024;</span> <span data-zh="桌面专业版独占" data-en="DESKTOP PRO EXCLUSIVE">桌面专业版独占</span></div>
+      <h2 data-zh="AI 智能诊断分析&#10;让巡检报告从数据到洞察" data-en="AI-Powered Diagnostics&#10;From Data to Insights">AI 智能诊断分析<br>让巡检报告从数据到洞察</h2>
+      <p class="ai-desc" data-zh="桌面专业版集成大模型 AI 分析引擎，在传统规则诊断之上，对每一项巡检结果进行深度语义分析，自动生成专家级诊断结论和优化建议。从「数据罗列」升级到「智能洞察」，让你的巡检报告真正具备专业分析价值。" data-en="Desktop Pro integrates an AI analysis engine for deep semantic analysis beyond rule-based diagnostics, generating expert-level conclusions and optimization recommendations.">桌面专业版集成大模型 AI 分析引擎，在传统规则诊断之上，对每一项巡检结果进行深度语义分析，自动生成专家级诊断结论和优化建议。从「数据罗列」升级到「智能洞察」，让你的巡检报告真正具备专业分析价值。</p>
+      <ul class="ai-features-list">
+        <li><span class="ai-feat-icon">&#129504;</span><div><strong data-zh="深度语义分析" data-en="Deep Semantic Analysis">深度语义分析</strong><br><span data-zh="AI 理解每项指标的业务含义，不只判断阈值，更分析异常原因和潜在关联影响" data-en="AI understands business meaning, analyzing root causes and cascading effects">AI 理解每项指标的业务含义，不只判断阈值，更分析异常原因和潜在关联影响</span></div></li>
+        <li><span class="ai-feat-icon">&#128209;</span><div><strong data-zh="专家级优化建议" data-en="Expert-Level Recommendations">专家级优化建议</strong><br><span data-zh="基于行业最佳实践，自动生成可执行的 SQL 调优、参数调整、架构优化建议" data-en="Generates actionable SQL tuning and architecture optimization recommendations">基于行业最佳实践，自动生成可执行的 SQL 调优、参数调整、架构优化建议</span></div></li>
+        <li><span class="ai-feat-icon">&#128200;</span><div><strong data-zh="全局关联诊断" data-en="Holistic Correlation">全局关联诊断</strong><br><span data-zh="跨检查项关联分析，发现单项检查无法识别的系统性风险和性能瓶颈" data-en="Cross-item correlation to discover systemic risks and bottlenecks">跨检查项关联分析，发现单项检查无法识别的系统性风险和性能瓶颈</span></div></li>
+        <li><span class="ai-feat-icon">&#128274;</span><div><strong data-zh="本地运行，数据安全" data-en="Local Processing, Data Safe">本地运行，数据安全</strong><br><span data-zh="支持接入私有化部署的大模型 API，巡检数据无需上传公网，满足等保合规要求" data-en="Supports private LLM API, data never leaves your network">支持接入私有化部署的大模型 API，巡检数据无需上传公网，满足等保合规要求</span></div></li>
+      </ul>
+      <div class="ai-banner-cta">
+        <a href="#pricing" class="btn-ai" data-zh="&#10024; 获取桌面专业版" data-en="&#10024; Get Desktop Pro">&#10024; 获取桌面专业版</a>
+        <span class="ai-exclusive-tag" data-zh="&#128274; 仅桌面专业版支持" data-en="&#128274; Desktop Pro only">&#128274; 仅桌面专业版支持</span>
+      </div>
     </div>
+    <div class="ai-visual">
+      <div class="ai-visual-glow"></div>
+      <div class="ai-visual-card">
+        <div class="ai-visual-header"><div class="ai-v-icon">&#10024;</div><div><div class="ai-v-title" data-zh="AI 诊断分析报告" data-en="AI Diagnostic Report">AI 诊断分析报告</div><div class="ai-v-subtitle" data-zh="Oracle 19c — 季度巡检" data-en="Oracle 19c — Quarterly">Oracle 19c — 季度巡检</div></div></div>
+        <div class="ai-visual-item"><span class="ai-v-dot red"></span><div class="ai-v-label"><strong data-zh="表空间 USERS 使用率 94%" data-en="Tablespace USERS usage 94%">表空间 USERS 使用率 94%</strong><div class="ai-v-conclusion" data-zh="&#129504; AI 分析：USERS 表空间剩余 1.2GB，按近 30 天增长趋势预估 18 天后耗尽。建议立即扩容数据文件或启用自动扩展，同时清理 AUDIT_TRAIL 历史数据释放约 800MB 空间。" data-en="&#129504; AI: USERS tablespace has 1.2GB remaining, estimated ~18 days to exhaustion.">&#129504; AI 分析：USERS 表空间剩余 1.2GB，按近 30 天增长趋势预估 18 天后耗尽。建议立即扩容数据文件或启用自动扩展，同时清理 AUDIT_TRAIL 历史数据释放约 800MB 空间。</div></div></div>
+        <div class="ai-visual-item"><span class="ai-v-dot yellow"></span><div class="ai-v-label"><strong data-zh="日志切换频率偏高" data-en="Redo log switch frequency high">日志切换频率偏高</strong><div class="ai-v-conclusion" data-zh="&#129504; AI 分析：高峰期每小时切换 23 次，当前 Redo 日志组 200MB 偏小。建议将 Redo 日志组大小调整至 1GB，减少切换频率，降低 LGWR 和归档进程负担。" data-en="&#129504; AI: 23 switches/hour during peak. Recommend resizing to 1GB.">&#129504; AI 分析：高峰期每小时切换 23 次，当前 Redo 日志组 200MB 偏小。建议将 Redo 日志组大小调整至 1GB，减少切换频率，降低 LGWR 和归档进程负担。</div></div></div>
+        <div class="ai-visual-item"><span class="ai-v-dot green"></span><div class="ai-v-label"><strong data-zh="SGA 缓冲命中率 99.7%" data-en="SGA buffer hit ratio 99.7%">SGA 缓冲命中率 99.7%</strong><div class="ai-v-conclusion" data-zh="&#129504; AI 分析：缓冲池命中率优秀，db_cache_size 配置 8GB 与当前活跃数据集匹配良好，物理读比例极低，无需调整。" data-en="&#129504; AI: Excellent buffer hit ratio. No adjustment needed.">&#129504; AI 分析：缓冲池命中率优秀，db_cache_size 配置 8GB 与当前活跃数据集匹配良好，物理读比例极低，无需调整。</div></div></div>
+        <div style="margin:16px 20px 20px;padding:16px;background:linear-gradient(135deg,rgba(139,92,246,0.06),rgba(59,130,246,0.04));border:1px solid rgba(139,92,246,0.1);border-radius:10px;">
+          <div style="font-size:12px;font-weight:600;color:#c4b5fd;margin-bottom:8px;" data-zh="&#128161; AI 全局洞察" data-en="&#128161; AI Global Insight">&#128161; AI 全局洞察</div>
+          <div style="font-size:12px;color:var(--text-secondary);line-height:1.7;" data-zh="综合分析：表空间增长与 Redo 切换频率偏高存在关联——大批量 DML 操作同时推高了空间消耗和日志写入。建议在扩容表空间的同时优化批量写入的事务粒度，可有效缓解两项指标。" data-en="Correlation: Tablespace growth and high redo frequency are linked by bulk DML operations.">综合分析：表空间增长与 Redo 切换频率偏高存在关联——大批量 DML 操作同时推高了空间消耗和日志写入。建议在扩容表空间的同时优化批量写入的事务粒度，可有效缓解两项指标。</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-<!-- Scripts Download -->
+<!-- ═══ SCRIPTS ═══ -->
+<div class="section-divider"></div>
 <section class="section" id="scripts">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="获取巡检脚本" data-en="Inspection Scripts">获取巡检脚本</h2>
-            <p data-zh="开源免费的数据库巡检脚本，在服务器上运行即可生成巡检文件" data-en="Free, open-source database inspection scripts. Run on the server to generate inspection files">开源免费的数据库巡检脚本，在服务器上运行即可生成巡检文件</p>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="获取巡检脚本" data-en="Inspection Scripts">获取巡检脚本</h2>
+      <p data-zh="开源免费的数据库巡检脚本，在服务器上运行即可生成巡检文件" data-en="Free, open-source scripts — run on server to generate inspection files">开源免费的数据库巡检脚本，在服务器上运行即可生成巡检文件</p>
+    </div>
+    <div class="scripts-db-tabs" role="tablist">
+      <button class="scripts-db-tab active" role="tab" aria-selected="true" aria-controls="scripts-oracle" onclick="switchDbScriptTab('oracle',this)"><img src="images/oracle.svg" alt="" width="18" height="18">Oracle</button>
+      <button class="scripts-db-tab" role="tab" aria-selected="false" aria-controls="scripts-mysql" onclick="switchDbScriptTab('mysql',this)"><img src="images/mysql.svg" alt="" width="18" height="18">MySQL</button>
+      <button class="scripts-db-tab" role="tab" aria-selected="false" aria-controls="scripts-postgres" onclick="switchDbScriptTab('postgres',this)"><img src="images/postgresql.svg" alt="" width="18" height="18">PostgreSQL</button>
+      <button class="scripts-db-tab" role="tab" aria-selected="false" aria-controls="scripts-sqlserver" onclick="switchDbScriptTab('sqlserver',this)"><img src="images/sqlserver.svg" alt="" width="18" height="18">SQL Server</button>
+    </div>
+    <!-- Oracle -->
+    <div class="scripts-db-panel active" role="tabpanel" id="scripts-oracle">
+      <div class="scripts-grid two-col">
+        <div class="script-card"><div class="script-icon-wrap"><img src="images/oracle.svg" alt="Oracle" width="32" height="32"></div><div class="script-card-body"><h3 id="oracle-script-name">dbcheck12c.sql</h3><p class="script-ver" data-zh="根据版本选择对应脚本下载" data-en="Choose script for your version">根据版本选择对应脚本下载</p><div class="script-tags"><span class="script-tag">10g</span><span class="script-tag">11g</span><span class="script-tag">12c</span><span class="script-tag">19c</span><span class="script-tag">21c</span><span class="script-tag">26ai</span></div></div><div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;"><select id="oracle-ver-select" class="script-select" onchange="var m={_auto:'dbcheck.sql',_10g:'dbcheck10g.sql',_11g:'dbcheck11g.sql',_12c:'dbcheck12c.sql'};var k='_'+this.value;document.getElementById('oracle-script-name').textContent=m[k];document.getElementById('oracle-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/'+m[k];"><option value="auto" selected>通用版（自动适配 10g~23ai）</option><option value="12c">12c+（12c / 19c / 21c / 26ai）</option><option value="11g">11g（11.1 / 11.2）</option><option value="10g">10g（10.1 / 10.2）</option></select><a id="oracle-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/dbcheck.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div></div>
+        <div class="script-card"><div class="script-icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div><div class="script-card-body"><h3 id="oracle-os-script-name">oscheck.sh</h3><p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose script for your OS">根据操作系统选择对应脚本下载</p><div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag">RAC</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div></div><div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;"><select id="oracle-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('oracle-os-script-name').textContent=f;document.getElementById('oracle-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/'+f;"><option value="linux" selected>Linux</option><option value="aix">AIX</option><option value="windows">Windows（PowerShell）</option></select><a id="oracle-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div></div>
+      </div>
+    </div>
+    <!-- MySQL -->
+    <div class="scripts-db-panel" role="tabpanel" id="scripts-mysql">
+      <div class="scripts-grid two-col">
+        <div class="script-card"><div class="script-icon-wrap"><img src="images/mysql.svg" alt="MySQL" width="32" height="32"></div><div class="script-card-body"><h3>dbcheck_mysql.sql</h3><p class="script-ver" data-zh="MySQL 5.7 及以上" data-en="MySQL 5.7+">MySQL 5.7 及以上</p><div class="script-tags"><span class="script-tag">5.7</span><span class="script-tag">8.0</span><span class="script-tag">8.4</span><span class="script-tag">9.0</span></div></div><a href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/mysql/dbcheck_mysql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div>
+        <div class="script-card"><div class="script-icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div><div class="script-card-body"><h3 id="mysql-os-script-name">oscheck.sh</h3><p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose script for your OS">根据操作系统选择对应脚本下载</p><div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div></div><div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;"><select id="mysql-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('mysql-os-script-name').textContent=f;document.getElementById('mysql-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/mysql/'+f;"><option value="linux" selected>Linux</option><option value="aix">AIX</option><option value="windows">Windows（PowerShell）</option></select><a id="mysql-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/mysql/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div></div>
+      </div>
+    </div>
+    <!-- PostgreSQL -->
+    <div class="scripts-db-panel" role="tabpanel" id="scripts-postgres">
+      <div class="scripts-grid two-col">
+        <div class="script-card"><div class="script-icon-wrap"><img src="images/postgresql.svg" alt="PostgreSQL" width="32" height="32"></div><div class="script-card-body"><h3>dbcheck_pg.sql</h3><p class="script-ver" data-zh="PostgreSQL 12 及以上" data-en="PostgreSQL 12+">PostgreSQL 12 及以上</p><div class="script-tags"><span class="script-tag">12</span><span class="script-tag">14</span><span class="script-tag">15</span><span class="script-tag">16</span><span class="script-tag">17</span></div></div><a href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/postgres/dbcheck_pg.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div>
+        <div class="script-card"><div class="script-icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div><div class="script-card-body"><h3 id="pg-os-script-name">oscheck.sh</h3><p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose script for your OS">根据操作系统选择对应脚本下载</p><div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div></div><div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;"><select id="pg-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('pg-os-script-name').textContent=f;document.getElementById('pg-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/postgres/'+f;"><option value="linux" selected>Linux</option><option value="aix">AIX</option><option value="windows">Windows（PowerShell）</option></select><a id="pg-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/postgres/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div></div>
+      </div>
+    </div>
+    <!-- SQL Server -->
+    <div class="scripts-db-panel" role="tabpanel" id="scripts-sqlserver">
+      <div class="scripts-grid two-col">
+        <div class="script-card"><div class="script-icon-wrap"><img src="images/sqlserver.svg" alt="SQL Server" width="32" height="32"></div><div class="script-card-body"><h3>dbcheck_mssql.sql</h3><p class="script-ver" data-zh="SQL Server 2016 及以上" data-en="SQL Server 2016+">SQL Server 2016 及以上</p><div class="script-tags"><span class="script-tag">2016</span><span class="script-tag">2019</span><span class="script-tag">2022</span></div></div><a href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/sqlserver/dbcheck_mssql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div>
+        <div class="script-card"><div class="script-icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div><div class="script-card-body"><h3 id="mssql-os-script-name">oscheck.sh</h3><p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose script for your OS">根据操作系统选择对应脚本下载</p><div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div></div><div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;"><select id="mssql-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('mssql-os-script-name').textContent=f;document.getElementById('mssql-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/sqlserver/'+f;"><option value="linux" selected>Linux</option><option value="windows">Windows（PowerShell）</option></select><a id="mssql-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/sqlserver/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a></div></div>
+      </div>
+    </div>
 
-        <!-- Database Tabs -->
-        <div class="scripts-db-tabs" role="tablist">
-            <button class="scripts-db-tab active" role="tab" aria-selected="true" aria-controls="scripts-oracle" onclick="switchDbScriptTab('oracle',this)" data-zh="Oracle" data-en="Oracle"><img src="images/oracle.svg" alt="" width="18" height="18">Oracle</button>
-            <button class="scripts-db-tab" role="tab" aria-selected="false" aria-controls="scripts-mysql" onclick="switchDbScriptTab('mysql',this)" data-zh="MySQL" data-en="MySQL"><img src="images/mysql.svg" alt="" width="18" height="18">MySQL</button>
-            <button class="scripts-db-tab" role="tab" aria-selected="false" aria-controls="scripts-postgres" onclick="switchDbScriptTab('postgres',this)" data-zh="PostgreSQL" data-en="PostgreSQL"><img src="images/postgresql.svg" alt="" width="18" height="18">PostgreSQL</button>
-            <button class="scripts-db-tab" role="tab" aria-selected="false" aria-controls="scripts-sqlserver" onclick="switchDbScriptTab('sqlserver',this)" data-zh="SQL Server" data-en="SQL Server"><img src="images/sqlserver.svg" alt="" width="18" height="18">SQL Server</button>
-        </div>
-
-        <!-- Oracle Panel -->
-        <div class="scripts-db-panel active" role="tabpanel" id="scripts-oracle">
-            <div class="scripts-grid two-col">
-                <div class="script-card accent-oracle">
-                    <div class="script-icon-wrap oracle"><img src="images/oracle.svg" alt="Oracle" width="32" height="32"></div>
-                    <div class="script-card-body">
-                        <h3 id="oracle-script-name">dbcheck12c.sql</h3>
-                        <p class="script-ver" data-zh="根据版本选择对应脚本下载" data-en="Choose the script matching your Oracle version">根据版本选择对应脚本下载</p>
-                        <div class="script-tags"><span class="script-tag">10g</span><span class="script-tag">11g</span><span class="script-tag">12c</span><span class="script-tag">19c</span><span class="script-tag">21c</span><span class="script-tag">26ai</span></div>
-                    </div>
-                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
-                        <select id="oracle-ver-select" class="script-select" onchange="var m={_auto:'dbcheck.sql',_10g:'dbcheck10g.sql',_11g:'dbcheck11g.sql',_12c:'dbcheck12c.sql'};var k='_'+this.value;document.getElementById('oracle-script-name').textContent=m[k];document.getElementById('oracle-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/'+m[k];">
-                            <option value="auto" selected>通用版（自动适配 10g~23ai）</option>
-                            <option value="12c">12c+（12c / 19c / 21c / 26ai）</option>
-                            <option value="11g">11g（11.1 / 11.2）</option>
-                            <option value="10g">10g（10.1 / 10.2）</option>
-                        </select>
-                        <a id="oracle-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/dbcheck.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                    </div>
-                </div>
-                <div class="script-card accent-shell">
-                    <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div>
-                    <div class="script-card-body">
-                        <h3 id="oracle-os-script-name">oscheck.sh</h3>
-                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag">RAC</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
-                    </div>
-                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
-                        <select id="oracle-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('oracle-os-script-name').textContent=f;document.getElementById('oracle-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/'+f;">
-                            <option value="linux" selected>Linux</option>
-                            <option value="aix">AIX</option>
-                            <option value="windows">Windows（PowerShell）</option>
-                        </select>
-                        <a id="oracle-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/oracle/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MySQL Panel -->
-        <div class="scripts-db-panel" role="tabpanel" id="scripts-mysql">
-            <div class="scripts-grid two-col">
-                <div class="script-card accent-mysql">
-                    <div class="script-icon-wrap mysql"><img src="images/mysql.svg" alt="MySQL" width="32" height="32"></div>
-                    <div class="script-card-body">
-                        <h3>dbcheck_mysql.sql</h3>
-                        <p class="script-ver" data-zh="MySQL 5.7 及以上" data-en="MySQL 5.7+">MySQL 5.7 及以上</p>
-                        <div class="script-tags"><span class="script-tag">5.7</span><span class="script-tag">8.0</span><span class="script-tag">8.4</span><span class="script-tag">9.0</span></div>
-                    </div>
-                    <a href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/mysql/dbcheck_mysql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                </div>
-                <div class="script-card accent-shell">
-                    <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div>
-                    <div class="script-card-body">
-                        <h3 id="mysql-os-script-name">oscheck.sh</h3>
-                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
-                    </div>
-                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
-                        <select id="mysql-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('mysql-os-script-name').textContent=f;document.getElementById('mysql-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/mysql/'+f;">
-                            <option value="linux" selected>Linux</option>
-                            <option value="aix">AIX</option>
-                            <option value="windows">Windows（PowerShell）</option>
-                        </select>
-                        <a id="mysql-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/mysql/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PostgreSQL Panel -->
-        <div class="scripts-db-panel" role="tabpanel" id="scripts-postgres">
-            <div class="scripts-grid two-col">
-                <div class="script-card accent-pg">
-                    <div class="script-icon-wrap pg"><img src="images/postgresql.svg" alt="PostgreSQL" width="32" height="32"></div>
-                    <div class="script-card-body">
-                        <h3>dbcheck_pg.sql</h3>
-                        <p class="script-ver" data-zh="PostgreSQL 12 及以上" data-en="PostgreSQL 12+">PostgreSQL 12 及以上</p>
-                        <div class="script-tags"><span class="script-tag">12</span><span class="script-tag">14</span><span class="script-tag">15</span><span class="script-tag">16</span><span class="script-tag">17</span></div>
-                    </div>
-                    <a href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/postgres/dbcheck_pg.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                </div>
-                <div class="script-card accent-shell">
-                    <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div>
-                    <div class="script-card-body">
-                        <h3 id="pg-os-script-name">oscheck.sh</h3>
-                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">AIX</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
-                    </div>
-                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
-                        <select id="pg-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',aix:'oscheck_aix.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('pg-os-script-name').textContent=f;document.getElementById('pg-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/postgres/'+f;">
-                            <option value="linux" selected>Linux</option>
-                            <option value="aix">AIX</option>
-                            <option value="windows">Windows（PowerShell）</option>
-                        </select>
-                        <a id="pg-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/postgres/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SQL Server Panel -->
-        <div class="scripts-db-panel" role="tabpanel" id="scripts-sqlserver">
-            <div class="scripts-grid two-col">
-                <div class="script-card accent-mssql">
-                    <div class="script-icon-wrap mssql"><img src="images/sqlserver.svg" alt="SQL Server" width="32" height="32"></div>
-                    <div class="script-card-body">
-                        <h3>dbcheck_mssql.sql</h3>
-                        <p class="script-ver" data-zh="SQL Server 2016 及以上" data-en="SQL Server 2016+">SQL Server 2016 及以上</p>
-                        <div class="script-tags"><span class="script-tag">2016</span><span class="script-tag">2019</span><span class="script-tag">2022</span></div>
-                    </div>
-                    <a href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/sqlserver/dbcheck_mssql.sql" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                </div>
-                <div class="script-card accent-shell">
-                    <div class="script-icon-wrap shell"><svg viewBox="0 0 24 24"><use href="#icon-terminal"/></svg></div>
-                    <div class="script-card-body">
-                        <h3 id="mssql-os-script-name">oscheck.sh</h3>
-                        <p class="script-ver" data-zh="根据操作系统选择对应脚本下载" data-en="Choose the script matching your OS platform">根据操作系统选择对应脚本下载</p>
-                        <div class="script-tags"><span class="script-tag">Linux</span><span class="script-tag">Windows</span><span class="script-tag" data-zh="自动打包" data-en="Auto-Pack">自动打包</span></div>
-                    </div>
-                    <div style="display:flex;gap:8px;align-items:center;width:100%;margin-top:auto;justify-content:center;">
-                        <select id="mssql-os-select" class="script-select" onchange="var m={linux:'oscheck.sh',windows:'oscheck_win.ps1'};var f=m[this.value];document.getElementById('mssql-os-script-name').textContent=f;document.getElementById('mssql-os-dl-btn').href='https://gitee.com/luciferlpc/dbcheck2word/raw/master/sqlserver/'+f;">
-                            <option value="linux" selected>Linux</option>
-                            <option value="windows">Windows（PowerShell）</option>
-                        </select>
-                        <a id="mssql-os-dl-btn" href="https://gitee.com/luciferlpc/dbcheck2word/raw/master/sqlserver/oscheck.sh" class="btn-dl" download data-zh="&#8681; 下载" data-en="&#8681; Download">&#8681; 下载</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <details class="scripts-howto">
-            <summary class="scripts-howto-summary">
-                <h3 data-zh="运行方式" data-en="Usage">运行方式</h3>
-                <span class="scripts-howto-arrow">&#9660;</span>
-            </summary>
-            <p style="padding:0 32px;font-size:14px;color:var(--text-light);" data-zh="选择对应数据库的脚本，在服务器上执行以下命令" data-en="Choose the script for your database and run the following commands on the server">选择对应数据库的脚本，在服务器上执行以下命令</p>
-            <div class="scripts-howto-tabs" id="howtoTabs">
-                <button class="scripts-howto-tab active" data-db="oracle" data-code="code-oracle-weekly" onclick="switchScriptTab(this, 'code-oracle-weekly')" data-zh="周/月检" data-en="Weekly/Monthly">周/月检</button>
-                <button class="scripts-howto-tab" data-db="oracle" data-code="code-oracle-quarterly" onclick="switchScriptTab(this, 'code-oracle-quarterly')" data-zh="季检" data-en="Quarterly">季检</button>
-                <button class="scripts-howto-tab active" data-db="mysql" data-code="code-mysql" onclick="switchScriptTab(this, 'code-mysql')" style="display:none" data-zh="周/月检" data-en="Weekly/Monthly">周/月检</button>
-                <button class="scripts-howto-tab" data-db="mysql" data-code="code-mysql-quarterly" onclick="switchScriptTab(this, 'code-mysql-quarterly')" style="display:none" data-zh="季检" data-en="Quarterly">季检</button>
-                <button class="scripts-howto-tab active" data-db="postgres" data-code="code-postgres" onclick="switchScriptTab(this, 'code-postgres')" style="display:none" data-zh="周/月检" data-en="Weekly/Monthly">周/月检</button>
-                <button class="scripts-howto-tab" data-db="postgres" data-code="code-postgres-quarterly" onclick="switchScriptTab(this, 'code-postgres-quarterly')" style="display:none" data-zh="季检" data-en="Quarterly">季检</button>
-                <button class="scripts-howto-tab active" data-db="sqlserver" data-code="code-sqlserver" onclick="switchScriptTab(this, 'code-sqlserver')" style="display:none" data-zh="周/月检" data-en="Weekly/Monthly">周/月检</button>
-                <button class="scripts-howto-tab" data-db="sqlserver" data-code="code-sqlserver-quarterly" onclick="switchScriptTab(this, 'code-sqlserver-quarterly')" style="display:none" data-zh="季检" data-en="Quarterly">季检</button>
-            </div>
-            <pre class="scripts-howto-code" id="code-oracle-weekly"><span class="cmd-comment"># 1. 将脚本上传到数据库服务器（选择与版本对应的 SQL 文件）</span>
-<span class="cmd-comment"># 2. 以 oracle 用户执行（以 19c 为例）：</span>
+    <details class="scripts-howto">
+      <summary class="scripts-howto-summary"><h3 data-zh="运行方式" data-en="Usage">运行方式</h3><span class="scripts-howto-arrow">&#9660;</span></summary>
+      <p style="padding:0 24px;font-size:14px;color:var(--text-secondary);" data-zh="选择对应数据库的脚本，在服务器上执行以下命令" data-en="Choose the script and run the following commands">选择对应数据库的脚本，在服务器上执行以下命令</p>
+      <div class="scripts-howto-tabs" id="howtoTabs">
+        <button class="scripts-howto-tab active" data-db="oracle" data-code="code-oracle-weekly" onclick="switchScriptTab(this, 'code-oracle-weekly')" data-zh="周/月检" data-en="Weekly/Monthly">周/月检</button>
+        <button class="scripts-howto-tab" data-db="oracle" data-code="code-oracle-quarterly" onclick="switchScriptTab(this, 'code-oracle-quarterly')" data-zh="季检" data-en="Quarterly">季检</button>
+        <button class="scripts-howto-tab active" data-db="mysql" data-code="code-mysql" onclick="switchScriptTab(this, 'code-mysql')" style="display:none">周/月检</button>
+        <button class="scripts-howto-tab" data-db="mysql" data-code="code-mysql-quarterly" onclick="switchScriptTab(this, 'code-mysql-quarterly')" style="display:none">季检</button>
+        <button class="scripts-howto-tab active" data-db="postgres" data-code="code-postgres" onclick="switchScriptTab(this, 'code-postgres')" style="display:none">周/月检</button>
+        <button class="scripts-howto-tab" data-db="postgres" data-code="code-postgres-quarterly" onclick="switchScriptTab(this, 'code-postgres-quarterly')" style="display:none">季检</button>
+        <button class="scripts-howto-tab active" data-db="sqlserver" data-code="code-sqlserver" onclick="switchScriptTab(this, 'code-sqlserver')" style="display:none">周/月检</button>
+        <button class="scripts-howto-tab" data-db="sqlserver" data-code="code-sqlserver-quarterly" onclick="switchScriptTab(this, 'code-sqlserver-quarterly')" style="display:none">季检</button>
+      </div>
+      <pre class="scripts-howto-code" id="code-oracle-weekly"><span class="cmd-comment"># 1. 将脚本上传到数据库服务器</span>
+<span class="cmd-comment"># 2. 以 oracle 用户执行：</span>
 
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sqlplus / as sysdba</span>
-
 <span class="cmd-prompt">SQL&gt; </span><span class="cmd-highlight">@dbcheck.sql</span>          <span class="cmd-comment">-- 通用版，自动适配 10g~23ai</span>
 
-<span class="cmd-comment"># 3. 脚本执行完毕后，会在当前目录生成 HTML 文件</span>
-<span class="cmd-comment">#    文件名格式：dbcheck_数据库名_日期.html</span>
-<span class="cmd-comment"># 4. 将 HTML 文件下载到本地，上传到本平台即可生成报告</span></pre>
-            <pre class="scripts-howto-code" id="code-oracle-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
-<span class="cmd-comment">#   Linux  → oscheck.sh</span>
-<span class="cmd-comment">#   AIX    → oscheck_aix.sh</span>
-<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
+<span class="cmd-comment"># 3. 执行完毕后在当前目录生成 HTML 文件</span>
+<span class="cmd-comment"># 4. 将 HTML 文件上传到本平台即可生成报告</span></pre>
+      <pre class="scripts-howto-code" id="code-oracle-quarterly" style="display:none"><span class="cmd-comment"># Linux: oscheck.sh / AIX: oscheck_aix.sh / Windows: oscheck_win.ps1</span>
+<span class="cmd-comment"># 将脚本放在同一目录，以 oracle 用户执行</span>
 
-<span class="cmd-comment"># ── Linux / AIX ──</span>
-<span class="cmd-comment"># 将 4 个脚本文件放在同一目录，以 oracle 用户执行</span>
-<span class="cmd-comment"># 1. 上传脚本到数据库服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck.sql（通用版，自动适配）/ oscheck.sh（或 oscheck_aix.sh）</span>
-
-<span class="cmd-comment"># 2. 执行 oscheck（自动检测版本、收集 OS + DB 信息）</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>             <span class="cmd-comment"># Linux</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck_aix.sh</span>         <span class="cmd-comment"># AIX</span>
-
-<span class="cmd-comment"># 可选参数（Linux / AIX 通用）：</span>
-<span class="cmd-comment">#   -o 实例名    指定巡检的实例（多个用逗号分隔，如 -o orcl,testdb）</span>
-<span class="cmd-comment">#   -a 天数      Alert 日志分析天数（默认 7 天，如 -a 30）</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -o orcl -a 30</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>      <span class="cmd-comment"># Windows</span>
 
-<span class="cmd-comment"># ── Windows ──</span>
-<span class="cmd-comment"># 以管理员身份打开 PowerShell，将 4 个脚本放在同一目录</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>
-<span class="cmd-comment"># 可选参数：</span>
-<span class="cmd-comment">#   -OracleSIDs "orcl,testdb"    指定巡检的实例</span>
-<span class="cmd-comment">#   -AlertDays 30                Alert 日志分析天数</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -OracleSIDs "orcl" -AlertDays 30</span>
+<span class="cmd-comment"># 生成 dbcheck_主机名_日期.tar.gz（或 .zip）</span>
+<span class="cmd-comment"># 上传到本平台选择「季检」即可</span></pre>
+      <pre class="scripts-howto-code" id="code-mysql" style="display:none"><span class="cmd-prompt">$ </span><span class="cmd-highlight">mysql -u root -p &lt; dbcheck_mysql.sql &gt; dbcheck_mysql_result.html</span>
 
-<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
-<span class="cmd-comment">#   Linux/AIX → dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment">#   Windows   → dbcheck_主机名_日期.zip</span>
-<span class="cmd-comment"># 将压缩文件下载到本地，上传到本平台选择「季检」即可</span></pre>
-            <pre class="scripts-howto-code" id="code-mysql" style="display:none"><span class="cmd-comment"># 1. 将 dbcheck_mysql.sql 上传到 MySQL 服务器</span>
-<span class="cmd-comment"># 2. 以 root 或有权限的用户执行：</span>
-
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">mysql -u root -p &lt; dbcheck_mysql.sql &gt; dbcheck_mysql_result.html</span>
-
-<span class="cmd-comment"># 3. 执行完毕后在当前目录生成 HTML 文件</span>
-<span class="cmd-comment"># 4. 将 HTML 文件上传到本平台，选择「MySQL」数据库类型即可</span></pre>
-            <pre class="scripts-howto-code" id="code-mysql-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
-<span class="cmd-comment">#   Linux   → oscheck.sh</span>
-<span class="cmd-comment">#   AIX     → oscheck_aix.sh</span>
-<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
-
-<span class="cmd-comment"># ── Linux / AIX ──</span>
-<span class="cmd-comment"># 将 dbcheck_mysql.sql 和 oscheck 脚本放在同一目录</span>
-
-<span class="cmd-comment"># 1. 上传脚本到 MySQL 服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck_mysql.sql / oscheck.sh（或 oscheck_aix.sh）</span>
-
-<span class="cmd-comment"># 2. 执行 oscheck（默认使用 root 用户）</span>
+<span class="cmd-comment"># 将 HTML 文件上传到本平台，选择「MySQL」即可</span></pre>
+      <pre class="scripts-howto-code" id="code-mysql-quarterly" style="display:none"><span class="cmd-comment"># 将 dbcheck_mysql.sql 和 oscheck 脚本放在同一目录</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>             <span class="cmd-comment"># Linux</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck_aix.sh</span>         <span class="cmd-comment"># AIX</span>
-
-<span class="cmd-comment"># 可选参数（Linux / AIX 通用）：</span>
-<span class="cmd-comment">#   -u 用户名    MySQL 用户名（默认 root）</span>
-<span class="cmd-comment">#   -p 密码      MySQL 密码</span>
-<span class="cmd-comment">#   -S socket    指定 socket 路径</span>
-<span class="cmd-comment">#   -P 端口      指定端口（默认 3306）</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -u root -p 'password' -P 3306</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -User "root" -Password "pass"</span>
 
-<span class="cmd-comment"># ── Windows ──</span>
-<span class="cmd-comment"># 将 dbcheck_mysql.sql 和 oscheck_win.ps1 放在同一目录</span>
-<span class="cmd-comment"># 以管理员身份打开 PowerShell</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>
+<span class="cmd-comment"># 上传 tar.gz/zip 到本平台，选择「MySQL」+「季检」</span></pre>
+      <pre class="scripts-howto-code" id="code-postgres" style="display:none"><span class="cmd-prompt">$ </span><span class="cmd-highlight">psql -U postgres -f dbcheck_pg.sql</span>
 
-<span class="cmd-comment"># 可选参数：</span>
-<span class="cmd-comment">#   -User "root"              MySQL 用户名（默认 root）</span>
-<span class="cmd-comment">#   -Password "pass"          MySQL 密码</span>
-<span class="cmd-comment">#   -Port 3306                MySQL 端口</span>
-<span class="cmd-comment">#   -Host "localhost"         MySQL 主机</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -User "root" -Password "pass" -Port 3306</span>
-
-<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
-<span class="cmd-comment">#   Linux/AIX → dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment">#   Windows   → dbcheck_主机名_日期.zip</span>
-<span class="cmd-comment"># 将压缩文件上传到本平台，选择「MySQL」+「季检」即可</span></pre>
-            <pre class="scripts-howto-code" id="code-postgres" style="display:none"><span class="cmd-comment"># 1. 将 dbcheck_pg.sql 上传到 PostgreSQL 服务器</span>
-<span class="cmd-comment"># 2. 以 postgres 用户执行：</span>
-
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">psql -U postgres -f dbcheck_pg.sql</span>
-
-<span class="cmd-comment"># 3. 脚本自动输出到 /tmp/dbcheck_pg_result.html</span>
-<span class="cmd-comment"># 4. 将 HTML 文件上传到本平台，选择「PostgreSQL」数据库类型即可</span></pre>
-            <pre class="scripts-howto-code" id="code-postgres-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
-<span class="cmd-comment">#   Linux   → oscheck.sh</span>
-<span class="cmd-comment">#   AIX     → oscheck_aix.sh</span>
-<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
-
-<span class="cmd-comment"># ── Linux / AIX ──</span>
-<span class="cmd-comment"># 将 dbcheck_pg.sql 和 oscheck 脚本放在同一目录</span>
-
-<span class="cmd-comment"># 1. 上传脚本到 PostgreSQL 服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck_pg.sql / oscheck.sh（或 oscheck_aix.sh）</span>
-
-<span class="cmd-comment"># 2. 以 postgres 用户或 root 用户执行</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>             <span class="cmd-comment"># Linux</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck_aix.sh</span>         <span class="cmd-comment"># AIX</span>
-
-<span class="cmd-comment"># 可选参数（Linux / AIX 通用）：</span>
-<span class="cmd-comment">#   -U 用户名    PostgreSQL 用户（默认 postgres）</span>
-<span class="cmd-comment">#   -d 数据库    连接的数据库名（默认 postgres）</span>
-<span class="cmd-comment">#   -p 端口      指定端口（默认 5432）</span>
-<span class="cmd-comment">#   -H 主机      指定远程主机（默认本地 socket）</span>
+<span class="cmd-comment"># 输出到 /tmp/dbcheck_pg_result.html</span>
+<span class="cmd-comment"># 上传到本平台，选择「PostgreSQL」即可</span></pre>
+      <pre class="scripts-howto-code" id="code-postgres-quarterly" style="display:none"><span class="cmd-comment"># 将 dbcheck_pg.sql 和 oscheck 脚本放在同一目录</span>
+<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -U postgres -d mydb -p 5432</span>
+<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -PgUser "postgres" -PgPassword "pass"</span>
 
-<span class="cmd-comment"># ── Windows ──</span>
-<span class="cmd-comment"># 将 dbcheck_pg.sql 和 oscheck_win.ps1 放在同一目录</span>
-<span class="cmd-comment"># 以管理员身份打开 PowerShell</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1</span>
+<span class="cmd-comment"># 上传到本平台，选择「PostgreSQL」+「季检」</span></pre>
+      <pre class="scripts-howto-code" id="code-sqlserver" style="display:none"><span class="cmd-prompt">&gt; </span><span class="cmd-highlight">sqlcmd -S localhost -i dbcheck_mssql.sql -o dbcheck_mssql_result.html</span>
 
-<span class="cmd-comment"># 可选参数：</span>
-<span class="cmd-comment">#   -PgUser "postgres"        PostgreSQL 用户（默认 postgres）</span>
-<span class="cmd-comment">#   -PgPassword "pass"        PostgreSQL 密码</span>
-<span class="cmd-comment">#   -PgHost "localhost"       主机地址</span>
-<span class="cmd-comment">#   -PgPort 5432              端口</span>
-<span class="cmd-comment">#   -PgDatabase "postgres"    数据库名</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -PgUser "postgres" -PgPassword "pass" -PgPort 5432</span>
-
-<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
-<span class="cmd-comment">#   Linux/AIX → dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment">#   Windows   → dbcheck_主机名_日期.zip</span>
-<span class="cmd-comment"># 将压缩文件上传到本平台，选择「PostgreSQL」+「季检」即可</span></pre>
-            <pre class="scripts-howto-code" id="code-sqlserver" style="display:none"><span class="cmd-comment"># 1. 将 dbcheck_mssql.sql 上传到 SQL Server 服务器</span>
-<span class="cmd-comment"># 2. 使用 sqlcmd 执行：</span>
-
-<span class="cmd-prompt">&gt; </span><span class="cmd-highlight">sqlcmd -S localhost -i dbcheck_mssql.sql -o dbcheck_mssql_result.html</span>
-
-<span class="cmd-comment"># 3. 执行完毕后在当前目录生成 HTML 文件</span>
-<span class="cmd-comment"># 4. 将 HTML 文件上传到本平台，选择「SQL Server」数据库类型即可</span></pre>
-            <pre class="scripts-howto-code" id="code-sqlserver-quarterly" style="display:none"><span class="cmd-comment"># 根据操作系统选择对应的 oscheck 脚本：</span>
-<span class="cmd-comment">#   Linux   → oscheck.sh</span>
-<span class="cmd-comment">#   Windows → oscheck_win.ps1</span>
-
-<span class="cmd-comment"># ── Linux ──</span>
-<span class="cmd-comment"># 将 dbcheck_mssql.sql 和 oscheck.sh 放在同一目录</span>
-
-<span class="cmd-comment"># 1. 上传 2 个脚本到 SQL Server 所在 Linux 服务器同一目录</span>
-<span class="cmd-comment">#    dbcheck_mssql.sql / oscheck.sh</span>
-
-<span class="cmd-comment"># 2. 执行 oscheck.sh（需要提供 SA 密码）</span>
-<span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -P 'yourpassword'</span>
-
-<span class="cmd-comment"># 可选参数：</span>
-<span class="cmd-comment">#   -U 用户名    SQL Server 用户（默认 SA）</span>
-<span class="cmd-comment">#   -P 密码      SQL Server 密码（必填）</span>
-<span class="cmd-comment">#   -S 服务器    服务器地址和端口（默认 localhost）</span>
+<span class="cmd-comment"># 上传到本平台，选择「SQL Server」即可</span></pre>
+      <pre class="scripts-howto-code" id="code-sqlserver-quarterly" style="display:none"><span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -P 'yourpassword'</span>
 <span class="cmd-prompt">$ </span><span class="cmd-highlight">sh oscheck.sh -U sa -P 'pass' -S localhost,1433</span>
-
-<span class="cmd-comment"># ── Windows ──</span>
-<span class="cmd-comment"># 将 dbcheck_mssql.sql 和 oscheck_win.ps1 放在同一目录</span>
-<span class="cmd-comment"># 以管理员身份打开 PowerShell</span>
 <span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -Password "yourpassword"</span>
-
-<span class="cmd-comment"># 可选参数：</span>
-<span class="cmd-comment">#   -User "sa"                   SQL Server 用户（默认 SA）</span>
-<span class="cmd-comment">#   -Password "pass"             SQL Server 密码</span>
-<span class="cmd-comment">#   -Server "localhost,1433"     服务器地址和端口</span>
-<span class="cmd-comment">#   -TrustedConnection           使用 Windows 认证（无需用户名密码）</span>
-<span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -User "sa" -Password "pass" -Server "localhost,1433"</span>
 <span class="cmd-prompt">PS&gt; </span><span class="cmd-highlight">.\oscheck_win.ps1 -TrustedConnection</span>
 
-<span class="cmd-comment"># 执行完毕后自动在当前目录生成压缩文件</span>
-<span class="cmd-comment">#   Linux   → dbcheck_主机名_日期.tar.gz</span>
-<span class="cmd-comment">#   Windows → dbcheck_主机名_日期.zip</span>
-<span class="cmd-comment"># 将压缩文件上传到本平台，选择「SQL Server」+「季检」即可</span></pre>
-        </details>
-
-        <div class="scripts-note">
-            <span class="note-icon">&#128274;</span>
-            <span data-i18n-html data-zh="安全保障：所有脚本仅使用 SELECT 只读查询，不执行任何写操作、不创建任何对象、不影响生产数据库性能。全部脚本已开源，源码托管在 <a href=&quot;https://github.com/pc-study/dbcheck&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;color:var(--accent);text-decoration:none;font-weight:600;&quot;>GitHub</a>，可自行审计每一行 SQL。" data-en="Safety guarantee: All scripts use read-only SELECT queries only — no write operations, no object creation, no impact on production performance. All scripts are open-source on <a href=&quot;https://github.com/pc-study/dbcheck&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;color:var(--accent);text-decoration:none;font-weight:600;&quot;>GitHub</a>, every SQL line is auditable.">安全保障：所有脚本仅使用 SELECT 只读查询，不执行任何写操作、不创建任何对象、不影响生产数据库性能。全部脚本已开源，源码托管在
-                <a href="https://github.com/pc-study/dbcheck" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:600;">GitHub</a>，可自行审计每一行 SQL。</span>
-        </div>
-    </div>
+<span class="cmd-comment"># 上传到本平台，选择「SQL Server」+「季检」</span></pre>
+    </details>
+    <div class="scripts-note"><span class="note-icon">&#128274;</span><span data-i18n-html data-zh="安全保障：所有脚本仅使用 SELECT 只读查询，全部开源在 <a href='https://github.com/pc-study/dbcheck' target='_blank' rel='noopener'>GitHub</a>，可自行审计每一行 SQL。" data-en="All scripts use read-only SELECT queries, open-source on <a href='https://github.com/pc-study/dbcheck' target='_blank' rel='noopener'>GitHub</a>.">安全保障：所有脚本仅使用 SELECT 只读查询，全部开源在 <a href="https://github.com/pc-study/dbcheck" target="_blank" rel="noopener" style="color:var(--text-accent);font-weight:600;">GitHub</a>，可自行审计每一行 SQL。</span></div>
+  </div>
 </section>
-
-<!-- Demo / Upload -->
+<!-- ═══ DEMO / UPLOAD ═══ -->
+<div class="section-divider"></div>
 <section class="section" id="demo">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="在线体验" data-en="Try Online">在线体验</h2>
-            <p data-zh="上传您的巡检文件，立即生成报告" data-en="Upload your inspection file and generate a report instantly">上传您的巡检文件，立即生成报告</p>
-        </div>
-        <div class="demo-container">
-            <div class="upload-card">
-                <!-- Error Message -->
-                <div class="error-msg" id="errorMsg" role="alert" aria-live="assertive">
-                    <span>&#9888;</span>
-                    <span id="errorText"></span>
-                </div>
-
-                <!-- Upload Form -->
-                <div id="uploadForm">
-                    <button type="button" class="btn-sample-hero" onclick="useSampleFile()">
-                        <span class="sample-icon" aria-hidden="true">&#128640;</span>
-                        <span data-zh="使用示例文件体验" data-en="Try with a Sample File">使用示例文件体验</span>
-                        <span class="sample-subtitle" data-zh="无需巡检文件，立即查看报告效果" data-en="No inspection file needed — see the report instantly">无需巡检文件，立即查看报告效果</span>
-                    </button>
-                    <div class="demo-divider" data-zh="或上传自己的文件" data-en="or upload your own file">或上传自己的文件</div>
-                    <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="文件上传区域 - 拖拽或点击选择文件" onclick="document.getElementById('fileInput').click()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('fileInput').click();}">
-                        <span class="drop-zone-icon" aria-hidden="true">&#128194;</span>
-                        <p class="drop-zone-text" data-zh="拖拽文件到此处，或点击选择文件" data-en="Click to select or drag &amp; drop file here">拖拽文件到此处，或点击选择文件</p>
-                        <p class="drop-zone-hint" data-zh="支持 .html、.tar.gz、.tgz 格式的巡检文件" data-en="Supports .html, .tar.gz and .tgz (max 50MB)">支持 .html、.tar.gz、.tgz 格式的巡检文件</p>
-                        <input type="file" id="fileInput" accept=".html,.gz,.tar.gz,.tgz" aria-label="选择巡检文件" style="display:none" onchange="updateFileNames(this.files)">
-                    </div>
-                    <p style="font-size:12px;color:var(--text-light);margin:-18px 0 18px 2px;line-height:1.6;" data-zh="网页端每次仅支持上传 1 个文件（tar.gz 仅解析首个 HTML），在线生成较慢且占用服务器资源，批量生成建议使用桌面端" data-en="Web supports 1 file per upload (tar.gz parses first HTML only). For batch processing, use the desktop app.">网页端每次仅支持上传 1 个文件（tar.gz 仅解析首个 HTML），在线生成较慢且占用服务器资源，批量生成建议使用桌面端</p>
-
-                    <div class="file-name-display" id="fileNameDisplay">
-                        <span class="file-icon" aria-hidden="true">&#128196;</span>
-                        <span id="fileName"></span>
-                        <button class="file-remove" onclick="clearFile()" title="移除文件" aria-label="移除文件">&times;</button>
-                    </div>
-
-                    <div class="report-type-group">
-                        <label class="group-label" data-zh="数据库类型" data-en="Database Type">数据库类型</label>
-                        <div class="db-type-options">
-                            <label class="db-type-option">
-                                <input type="radio" name="dbType" value="auto" checked>
-                                <span class="db-type-label" data-zh="&#128270; 自动识别" data-en="&#128270; Auto Detect">&#128270; 自动识别</span>
-                            </label>
-                            <label class="db-type-option">
-                                <input type="radio" name="dbType" value="oracle">
-                                <span class="db-type-label"><img src="images/oracle.svg" alt="" width="20" height="20">Oracle</span>
-                            </label>
-                            <label class="db-type-option">
-                                <input type="radio" name="dbType" value="mysql">
-                                <span class="db-type-label"><img src="images/mysql.svg" alt="" width="20" height="20">MySQL</span>
-                            </label>
-                            <label class="db-type-option">
-                                <input type="radio" name="dbType" value="postgres">
-                                <span class="db-type-label"><img src="images/postgresql.svg" alt="" width="20" height="20">PostgreSQL</span>
-                            </label>
-                            <label class="db-type-option">
-                                <input type="radio" name="dbType" value="sqlserver">
-                                <span class="db-type-label"><img src="images/sqlserver.svg" alt="" width="20" height="20">SQL Server</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="report-type-group">
-                        <label class="group-label" data-zh="报告类型" data-en="Report Type">报告类型</label>
-                        <div class="report-type-options">
-                            <label class="report-type-option">
-                                <input type="radio" name="reportType" value="周" checked>
-                                <span class="option-label">&#128197; <span data-zh="周检" data-en="Weekly">周检</span><span class="option-desc" id="weeklyDesc" data-zh="基础健康检查" data-en="Regular periodic inspection">基础健康检查</span></span>
-                            </label>
-                            <label class="report-type-option">
-                                <input type="radio" name="reportType" value="月">
-                                <span class="option-label">&#128198; <span data-zh="月检" data-en="Monthly">月检</span><span class="option-desc" id="monthlyDesc" data-zh="含性能与 AWR 分析" data-en="Monthly deep inspection">含性能与 AWR 分析</span></span>
-                            </label>
-                            <label class="report-type-option">
-                                <input type="radio" name="reportType" value="季">
-                                <span class="option-label">&#128203; <span data-zh="季检" data-en="Quarterly">季检</span><span class="option-desc" id="quarterlyDesc" data-zh="含 OS 巡检 + 趋势图表" data-en="Includes OS inspection + trend charts">含 OS 巡检 + 趋势图表</span></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="report-type-group">
-                        <label class="group-label" for="inviteCode" data-zh="邀请码" data-en="Invite Code">邀请码 <span style="font-weight:400;color:var(--text-light);font-size:12px;" data-zh="（必填）" data-en="(required)">（必填）</span></label>
-                        <p style="font-size:13px;color:var(--text-light);margin:4px 0 10px;line-height:1.6;" data-i18n-html data-zh="每位用户可 <a href=&quot;#pricing&quot; style=&quot;color:var(--accent);font-weight:600;text-decoration:none;&quot;>免费体验 3 次</a>，添加微信即可领取体验邀请码" data-en="Enter your invite code. <a href=&quot;#pricing&quot; style=&quot;color:var(--accent);font-weight:600;text-decoration:none;&quot;>3 free trials</a> available — add WeChat for a free trial code">每位用户可 <a href="#pricing" style="color:var(--accent);font-weight:600;text-decoration:none;">免费体验 3 次</a>，添加微信即可领取体验邀请码</p>
-                        <div id="inviteCodeWrap" style="position:relative;">
-                            <input type="text" id="inviteCode" placeholder="请输入邀请码（如 ORA-XXXX）" data-zh="请输入邀请码（如 ORA-XXXX）" data-en="Enter invite code (e.g. ORA-XXXX)" maxlength="30"
-                                style="width:100%;padding:10px 14px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;box-sizing:border-box;text-transform:uppercase;letter-spacing:2px;text-align:center;transition:border-color .2s,box-shadow .2s;">
-                            <div id="inviteCodeHint" style="display:none;color:#dc2626;font-size:12px;margin-top:6px;text-align:center;"></div>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary btn-upload" onclick="handleUpload()" data-zh="&#9654; 开始分析" data-en="&#9654; Start Analysis">&#9654; 开始分析</button>
-                    <button class="btn btn-outline" id="cancelUpload" data-zh="取消上传" data-en="Cancel Upload" style="display:none;margin-top:8px;width:100%;" onclick="cancelUpload()">取消上传</button>
-                </div>
-
-                <!-- Loading -->
-                <div class="loading-overlay" id="loadingOverlay" role="status" aria-live="polite">
-                    <div class="spinner"></div>
-                    <span class="loading-text" id="loadingText" data-zh="正在分析巡检文件，请稍候..." data-en="Analyzing inspection file, please wait...">正在分析巡检文件，请稍候...</span>
-<div id="progressBarContainer" style="display:none;width:100%;max-width:400px;margin-top:12px;">
-<div style="background:var(--border);border-radius:8px;height:8px;overflow:hidden;">
-<div id="progressBar" style="width:0%;height:100%;background:linear-gradient(90deg,var(--accent),#10b981);border-radius:8px;transition:width 0.4s ease;"></div>
-</div>
-<div id="progressPercent" style="text-align:center;font-size:13px;color:var(--text-light);margin-top:6px;">0%</div>
-</div>
-                </div>
-
-                <!-- Results -->
-                <div class="results-panel" id="resultsPanel" aria-live="polite"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="在线体验" data-en="Try Online">在线体验</h2>
+      <p data-zh="上传您的巡检文件，立即生成报告" data-en="Upload your inspection file and generate a report instantly">上传您的巡检文件，立即生成报告</p>
     </div>
-</section>
-
-<!-- Pricing -->
-<section class="section section-dark" id="pricing">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="版本与定价" data-en="Pricing">版本与定价</h2>
-            <p data-zh="灵活的定价方案，满足不同规模的巡检需求" data-en="Flexible pricing plans for inspection needs of any scale">灵活的定价方案，满足不同规模的巡检需求</p>
+    <div class="demo-container">
+      <div class="upload-card">
+        <div class="error-msg" id="errorMsg" role="alert" aria-live="assertive"><span>&#9888;</span><span id="errorText"></span></div>
+        <div id="uploadForm">
+          <button type="button" class="btn-sample-hero" onclick="useSampleFile()">
+            <span class="sample-icon" aria-hidden="true">&#128640;</span>
+            <span data-zh="使用示例文件体验" data-en="Try with a Sample File">使用示例文件体验</span>
+            <span class="sample-subtitle" data-zh="无需巡检文件，立即查看报告效果" data-en="No inspection file needed">无需巡检文件，立即查看报告效果</span>
+          </button>
+          <div class="demo-divider" data-zh="或上传自己的文件" data-en="or upload your own file">或上传自己的文件</div>
+          <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="文件上传区域" onclick="document.getElementById('fileInput').click()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('fileInput').click();}">
+            <span class="drop-zone-icon" aria-hidden="true">&#128194;</span>
+            <p class="drop-zone-text" data-zh="拖拽文件到此处，或点击选择文件" data-en="Click to select or drag & drop">拖拽文件到此处，或点击选择文件</p>
+            <p class="drop-zone-hint" data-zh="支持 .html、.tar.gz、.tgz 格式" data-en="Supports .html, .tar.gz, .tgz (max 50MB)">支持 .html、.tar.gz、.tgz 格式的巡检文件</p>
+            <input type="file" id="fileInput" accept=".html,.gz,.tar.gz,.tgz" style="display:none" onchange="updateFileNames(this.files)">
+          </div>
+          <p style="font-size:12px;color:var(--text-dim);margin:-12px 0 16px;line-height:1.6;" data-zh="网页端每次仅支持上传 1 个文件，批量生成建议使用桌面端" data-en="Web supports 1 file per upload. For batch processing, use desktop.">网页端每次仅支持上传 1 个文件（tar.gz 仅解析首个 HTML），批量生成建议使用桌面端</p>
+          <div class="file-name-display" id="fileNameDisplay"><span class="file-icon" aria-hidden="true">&#128196;</span><span id="fileName"></span><button class="file-remove" onclick="clearFile()" title="移除文件">&times;</button></div>
+          <div class="report-type-group">
+            <label class="group-label" data-zh="数据库类型" data-en="Database Type">数据库类型</label>
+            <div class="db-type-options">
+              <label class="db-type-option"><input type="radio" name="dbType" value="auto" checked><span class="db-type-label" data-zh="&#128270; 自动识别" data-en="&#128270; Auto">&#128270; 自动识别</span></label>
+              <label class="db-type-option"><input type="radio" name="dbType" value="oracle"><span class="db-type-label"><img src="images/oracle.svg" alt="" width="18" height="18">Oracle</span></label>
+              <label class="db-type-option"><input type="radio" name="dbType" value="mysql"><span class="db-type-label"><img src="images/mysql.svg" alt="" width="18" height="18">MySQL</span></label>
+              <label class="db-type-option"><input type="radio" name="dbType" value="postgres"><span class="db-type-label"><img src="images/postgresql.svg" alt="" width="18" height="18">PostgreSQL</span></label>
+              <label class="db-type-option"><input type="radio" name="dbType" value="sqlserver"><span class="db-type-label"><img src="images/sqlserver.svg" alt="" width="18" height="18">SQL Server</span></label>
+            </div>
+          </div>
+          <div class="report-type-group">
+            <label class="group-label" data-zh="报告类型" data-en="Report Type">报告类型</label>
+            <div class="report-type-options">
+              <label class="report-type-option"><input type="radio" name="reportType" value="周" checked><span class="option-label">&#128197; <span data-zh="周检" data-en="Weekly">周检</span><span class="option-desc" id="weeklyDesc" data-zh="基础健康检查" data-en="Basic health check">基础健康检查</span></span></label>
+              <label class="report-type-option"><input type="radio" name="reportType" value="月"><span class="option-label">&#128198; <span data-zh="月检" data-en="Monthly">月检</span><span class="option-desc" id="monthlyDesc" data-zh="含性能与 AWR 分析" data-en="With performance analysis">含性能与 AWR 分析</span></span></label>
+              <label class="report-type-option"><input type="radio" name="reportType" value="季"><span class="option-label">&#128203; <span data-zh="季检" data-en="Quarterly">季检</span><span class="option-desc" id="quarterlyDesc" data-zh="含 OS 巡检 + 趋势图表" data-en="OS inspection + charts">含 OS 巡检 + 趋势图表</span></span></label>
+            </div>
+          </div>
+          <div class="report-type-group">
+            <label class="group-label" for="inviteCode" data-zh="邀请码" data-en="Invite Code">邀请码 <span style="font-weight:400;color:var(--text-dim);font-size:12px;" data-zh="（必填）" data-en="(required)">（必填）</span></label>
+            <p style="font-size:13px;color:var(--text-dim);margin:4px 0 10px;line-height:1.6;" data-i18n-html data-zh="每位用户可 <a href='#pricing' style='color:var(--text-accent);font-weight:600;'>免费体验 3 次</a>，添加微信即可领取体验邀请码" data-en="<a href='#pricing' style='color:var(--text-accent);font-weight:600;'>3 free trials</a> available — add WeChat for code">每位用户可 <a href="#pricing" style="color:var(--text-accent);font-weight:600;">免费体验 3 次</a>，添加微信即可领取体验邀请码</p>
+            <div id="inviteCodeWrap" style="position:relative;">
+              <input type="text" id="inviteCode" placeholder="请输入邀请码（如 ORA-XXXX）" maxlength="30" style="width:100%;padding:12px 16px;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);font-size:14px;background:var(--bg-elevated);color:var(--text-primary);text-transform:uppercase;letter-spacing:2px;text-align:center;transition:border-color .2s;">
+              <div id="inviteCodeHint" style="display:none;color:#f87171;font-size:12px;margin-top:6px;text-align:center;"></div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-upload" onclick="handleUpload()" data-zh="&#9654; 开始分析" data-en="&#9654; Start Analysis">&#9654; 开始分析</button>
+          <button class="btn btn-outline" id="cancelUpload" data-zh="取消上传" data-en="Cancel Upload" style="display:none;margin-top:8px;width:100%;" onclick="cancelUpload()">取消上传</button>
         </div>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="plan-name" data-zh="免费体验" data-en="Free Trial">免费体验</div>
-                <div class="plan-price">&#165;0</div>
-                <p class="plan-desc" data-zh="添加微信申请免费体验邀请码，零成本感受报告质量" data-en="Apply for a free trial invite code via WeChat, experience report quality at zero cost">添加微信申请免费体验邀请码，零成本感受报告质量</p>
-                <ul class="pricing-features">
-                    <li data-zh="免费生成 3 份报告" data-en="Generate 3 reports free">免费生成 3 份报告</li>
-                    <li data-zh="支持 Oracle/MySQL/PG/MSSQL" data-en="Oracle/MySQL/PG/MSSQL support">支持 Oracle/MySQL/PG/MSSQL</li>
-                    <li data-zh="在线上传，即时生成" data-en="Online upload, instant generation">在线上传，即时生成</li>
-                    <li data-zh="标准报告模板" data-en="Standard report template">标准报告模板</li>
-                    <li data-zh="自动诊断建议" data-en="Automatic diagnostics">自动诊断建议</li>
-                    <li class="ai-disabled" data-zh="AI 智能分析（仅桌面版）" data-en="AI Analysis (Desktop only)">AI 智能分析（仅桌面版）</li>
-                </ul>
-                <a href="javascript:void(0)" class="btn btn-secondary btn-pricing" onclick="openWechatModal()" data-zh="添加微信申请" data-en="Apply via WeChat">添加微信申请</a>
+        <div class="loading-overlay" id="loadingOverlay" role="status" aria-live="polite">
+          <div class="spinner"></div>
+          <span class="loading-text" id="loadingText" data-zh="正在分析巡检文件，请稍候..." data-en="Analyzing, please wait...">正在分析巡检文件，请稍候...</span>
+          <div id="progressBarContainer" style="display:none;width:100%;max-width:400px;margin-top:12px;">
+            <div style="background:var(--border-dim);border-radius:8px;height:6px;overflow:hidden;">
+              <div id="progressBar" style="width:0%;height:100%;background:var(--grad-accent);border-radius:8px;transition:width 0.4s ease;"></div>
             </div>
-            <div class="pricing-card">
-                <div class="plan-name" data-zh="按次付费" data-en="Pay Per Use">按次付费</div>
-                <div class="plan-price">&#165;15 <span data-zh="/ 次" data-en="/ use">/ 次</span></div>
-                <p class="plan-desc" data-zh="按需购买生成次数，使用邀请码上传，批量购买更优惠" data-en="Purchase generation credits as needed, bulk discounts available">按需购买生成次数，使用邀请码上传，批量购买更优惠</p>
-                <div class="pricing-detail">
-                    <div class="pack-row"><span data-zh="单次购买" data-en="Single use">单次购买</span><span>&#165;15 / <span data-zh="次" data-en="use">次</span></span></div>
-                    <div class="pack-row"><span data-zh="10 次套餐" data-en="10-use pack">10 次套餐</span><span>&#165;99 <span class="pack-save" data-zh="省 34%" data-en="Save 34%">省 34%</span></span></div>
-                    <div class="pack-row"><span data-zh="50 次套餐" data-en="50-use pack">50 次套餐</span><span>&#165;399 <span class="pack-save" data-zh="省 47%" data-en="Save 47%">省 47%</span></span></div>
-                    <div class="pack-row"><span data-zh="100 次套餐" data-en="100-use pack">100 次套餐</span><span>&#165;699 <span class="pack-save" data-zh="省 53%" data-en="Save 53%">省 53%</span></span></div>
-                </div>
-                <ul class="pricing-features">
-                    <li data-zh="在线上传，即时生成" data-en="Online upload, instant generation">在线上传，即时生成</li>
-                    <li data-zh="标准报告模板" data-en="Standard report template">标准报告模板</li>
-                    <li data-zh="自动诊断建议" data-en="Automatic diagnostics">自动诊断建议</li>
-                    <li data-zh="次数永久有效" data-en="Credits never expire">次数永久有效</li>
-                    <li class="ai-disabled" data-zh="AI 智能分析（仅桌面版）" data-en="AI Analysis (Desktop only)">AI 智能分析（仅桌面版）</li>
-                </ul>
-                <a href="javascript:void(0)" class="btn btn-secondary btn-pricing" onclick="openWechatModal()" data-zh="添加微信 / 购买" data-en="WeChat / Purchase">添加微信 / 购买</a>
-            </div>
-            <div class="pricing-card featured">
-                <div class="plan-name" data-zh="桌面专业版" data-en="Desktop Pro">桌面专业版</div>
-                <div class="plan-price">&#165;999 <span data-zh="/ 买断" data-en="/ one-time">/ 买断</span></div>
-                <p class="plan-desc" data-zh="一次购买，永久使用。本地离线运行，数据不出服务器" data-en="One-time purchase, use forever. Runs offline locally, data never leaves your server">一次购买，永久使用。本地离线运行，数据不出服务器</p>
-                <div class="pricing-equiv" data-zh="&#128161; 相当于按次购买 67 次的价格，使用越多越划算" data-en="&#128161; Equivalent to 67 pay-per-use credits — the more you use, the more you save">&#128161; 相当于按次购买 67 次的价格，使用越多越划算</div>
-                <ul class="pricing-features">
-                    <li class="ai-feature" data-zh="AI 智能诊断分析 &#10024; 独占" data-en="AI Diagnostics &#10024; Exclusive">AI 智能诊断分析 &#10024; 独占</li>
-                    <li data-zh="桌面客户端，离线运行" data-en="Desktop client, runs offline">桌面客户端，离线运行</li>
-                    <li data-zh="无限制使用次数" data-en="Unlimited uses">无限制使用次数</li>
-                    <li data-zh="批量处理多个巡检文件" data-en="Batch process multiple files">批量处理多个巡检文件</li>
-                    <li data-zh="自定义模板和 Logo" data-en="Custom templates and logo">自定义模板和 Logo</li>
-                    <li data-zh="数据不出内网，安全合规" data-en="Data stays on-premise, security compliant">数据不出内网，安全合规</li>
-                    <li data-zh="优先技术支持" data-en="Priority technical support">优先技术支持</li>
-                </ul>
-                <a href="javascript:void(0)" class="btn btn-primary btn-pricing" onclick="openWechatModal()" data-zh="获取授权" data-en="Get License">获取授权</a>
-            </div>
+            <div id="progressPercent" style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:6px;">0%</div>
+          </div>
         </div>
-        <div class="pricing-comparison">
-            <h3 data-zh="功能对比" data-en="Feature Comparison">功能对比</h3>
-            <div class="pricing-table-wrap">
-                <table class="pricing-table">
-                    <thead><tr><th data-zh="功能" data-en="Feature">功能</th><th data-zh="免费体验" data-en="Free Trial">免费体验</th><th data-zh="按次付费" data-en="Pay Per Use">按次付费</th><th class="pt-featured" data-zh="桌面专业版" data-en="Desktop Pro">桌面专业版</th></tr></thead>
-                    <tbody>
-                        <tr><td data-zh="数据库支持" data-en="Database Support">数据库支持</td><td>Oracle/MySQL/PG/MSSQL</td><td>Oracle/MySQL/PG/MSSQL</td><td class="pt-featured">Oracle/MySQL/PG/MSSQL</td></tr>
-                        <tr><td data-zh="生成次数" data-en="Usage Limit">生成次数</td><td data-zh="3 次" data-en="3 times">3 次</td><td data-zh="按量购买" data-en="As purchased">按量购买</td><td class="pt-featured" data-zh="无限制" data-en="Unlimited">无限制</td></tr>
-                        <tr><td data-zh="AI 智能分析" data-en="AI Analysis">AI 智能分析</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#10024;</td></tr>
-                        <tr><td data-zh="批量处理" data-en="Batch Processing">批量处理</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#9989;</td></tr>
-                        <tr><td data-zh="自定义模板" data-en="Custom Templates">自定义模板</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#9989;</td></tr>
-                        <tr><td data-zh="离线运行" data-en="Offline Mode">离线运行</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#9989;</td></tr>
-                        <tr><td data-zh="数据安全" data-en="Data Security">数据安全</td><td data-zh="处理后删除" data-en="Deleted after processing">处理后删除</td><td data-zh="处理后删除" data-en="Deleted after processing">处理后删除</td><td class="pt-featured" data-zh="数据不出内网" data-en="Data stays on-premise">数据不出内网</td></tr>
-                        <tr><td data-zh="技术支持" data-en="Support">技术支持</td><td data-zh="社区" data-en="Community">社区</td><td data-zh="微信支持" data-en="WeChat Support">微信支持</td><td class="pt-featured" data-zh="优先支持" data-en="Priority Support">优先支持</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <div class="results-panel" id="resultsPanel" aria-live="polite"></div>
+      </div>
     </div>
+  </div>
 </section>
-
-<!-- FAQ -->
+<!-- ═══ PRICING ═══ -->
+<div class="section-divider"></div>
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="版本与定价" data-en="Pricing">版本与定价</h2>
+      <p data-zh="灵活的定价方案，满足不同规模的巡检需求" data-en="Flexible pricing for inspection needs of any scale">灵活的定价方案，满足不同规模的巡检需求</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="plan-name" data-zh="免费体验" data-en="Free Trial">免费体验</div>
+        <div class="plan-price">&#165;0</div>
+        <p class="plan-desc" data-zh="添加微信申请免费体验邀请码，零成本感受报告质量" data-en="Apply for free trial via WeChat">添加微信申请免费体验邀请码，零成本感受报告质量</p>
+        <ul class="pricing-features">
+          <li data-zh="免费生成 3 份报告" data-en="Generate 3 reports free">免费生成 3 份报告</li>
+          <li data-zh="支持 Oracle/MySQL/PG/MSSQL" data-en="All 4 databases">支持 Oracle/MySQL/PG/MSSQL</li>
+          <li data-zh="在线上传，即时生成" data-en="Online upload, instant">在线上传，即时生成</li>
+          <li data-zh="标准报告模板" data-en="Standard template">标准报告模板</li>
+          <li data-zh="自动诊断建议" data-en="Auto diagnostics">自动诊断建议</li>
+          <li class="ai-disabled" data-zh="AI 智能分析（仅桌面版）" data-en="AI Analysis (Desktop only)">AI 智能分析（仅桌面版）</li>
+        </ul>
+        <a href="javascript:void(0)" class="btn btn-secondary btn-pricing" onclick="openWechatModal()" data-zh="添加微信申请" data-en="Apply via WeChat">添加微信申请</a>
+      </div>
+      <div class="pricing-card">
+        <div class="plan-name" data-zh="按次付费" data-en="Pay Per Use">按次付费</div>
+        <div class="plan-price">&#165;15 <span data-zh="/ 次" data-en="/ use">/ 次</span></div>
+        <p class="plan-desc" data-zh="按需购买，批量购买更优惠" data-en="Buy as needed, bulk discounts available">按需购买生成次数，批量购买更优惠</p>
+        <div class="pricing-detail">
+          <div class="pack-row"><span data-zh="单次购买" data-en="Single">单次购买</span><span>&#165;15 / <span data-zh="次" data-en="use">次</span></span></div>
+          <div class="pack-row"><span data-zh="10 次套餐" data-en="10-pack">10 次套餐</span><span>&#165;99 <span class="pack-save" data-zh="省 34%" data-en="Save 34%">省 34%</span></span></div>
+          <div class="pack-row"><span data-zh="50 次套餐" data-en="50-pack">50 次套餐</span><span>&#165;399 <span class="pack-save" data-zh="省 47%" data-en="Save 47%">省 47%</span></span></div>
+          <div class="pack-row"><span data-zh="100 次套餐" data-en="100-pack">100 次套餐</span><span>&#165;699 <span class="pack-save" data-zh="省 53%" data-en="Save 53%">省 53%</span></span></div>
+        </div>
+        <ul class="pricing-features">
+          <li data-zh="在线上传，即时生成" data-en="Online, instant">在线上传，即时生成</li>
+          <li data-zh="标准报告模板" data-en="Standard template">标准报告模板</li>
+          <li data-zh="次数永久有效" data-en="Credits never expire">次数永久有效</li>
+          <li class="ai-disabled" data-zh="AI 智能分析（仅桌面版）" data-en="AI (Desktop only)">AI 智能分析（仅桌面版）</li>
+        </ul>
+        <a href="javascript:void(0)" class="btn btn-secondary btn-pricing" onclick="openWechatModal()" data-zh="添加微信 / 购买" data-en="WeChat / Purchase">添加微信 / 购买</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="plan-name" data-zh="桌面专业版" data-en="Desktop Pro">桌面专业版</div>
+        <div class="plan-price">&#165;999 <span data-zh="/ 买断" data-en="/ one-time">/ 买断</span></div>
+        <p class="plan-desc" data-zh="一次购买，永久使用。本地离线，数据不出服务器" data-en="One-time purchase, forever. Offline, data stays local">一次购买，永久使用。本地离线运行，数据不出服务器</p>
+        <div class="pricing-equiv" data-zh="&#128161; 相当于按次购买 67 次的价格，使用越多越划算" data-en="&#128161; Equivalent to 67 pay-per-use credits">&#128161; 相当于按次购买 67 次的价格，使用越多越划算</div>
+        <ul class="pricing-features">
+          <li class="ai-feature" data-zh="AI 智能诊断分析 &#10024; 独占" data-en="AI Diagnostics &#10024; Exclusive">AI 智能诊断分析 &#10024; 独占</li>
+          <li data-zh="桌面客户端，离线运行" data-en="Desktop, offline">桌面客户端，离线运行</li>
+          <li data-zh="无限制使用次数" data-en="Unlimited">无限制使用次数</li>
+          <li data-zh="批量处理多个文件" data-en="Batch processing">批量处理多个巡检文件</li>
+          <li data-zh="自定义模板和 Logo" data-en="Custom templates">自定义模板和 Logo</li>
+          <li data-zh="数据不出内网" data-en="Data stays local">数据不出内网，安全合规</li>
+          <li data-zh="优先技术支持" data-en="Priority support">优先技术支持</li>
+        </ul>
+        <a href="javascript:void(0)" class="btn btn-primary btn-pricing" onclick="openWechatModal()" data-zh="获取授权" data-en="Get License">获取授权</a>
+      </div>
+    </div>
+    <div class="pricing-comparison">
+      <h3 data-zh="功能对比" data-en="Feature Comparison">功能对比</h3>
+      <div class="pricing-table-wrap">
+        <table class="pricing-table">
+          <thead><tr><th data-zh="功能" data-en="Feature">功能</th><th data-zh="免费体验" data-en="Free">免费体验</th><th data-zh="按次付费" data-en="Pay Per Use">按次付费</th><th class="pt-featured" data-zh="桌面专业版" data-en="Desktop Pro">桌面专业版</th></tr></thead>
+          <tbody>
+            <tr><td data-zh="数据库支持" data-en="Databases">数据库支持</td><td>4 种</td><td>4 种</td><td class="pt-featured">4 种</td></tr>
+            <tr><td data-zh="生成次数" data-en="Usage">生成次数</td><td data-zh="3 次" data-en="3">3 次</td><td data-zh="按量购买" data-en="As purchased">按量购买</td><td class="pt-featured" data-zh="无限制" data-en="Unlimited">无限制</td></tr>
+            <tr><td data-zh="AI 智能分析" data-en="AI">AI 智能分析</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#10024;</td></tr>
+            <tr><td data-zh="批量处理" data-en="Batch">批量处理</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#9989;</td></tr>
+            <tr><td data-zh="自定义模板" data-en="Templates">自定义模板</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#9989;</td></tr>
+            <tr><td data-zh="离线运行" data-en="Offline">离线运行</td><td>&#10060;</td><td>&#10060;</td><td class="pt-featured">&#9989;</td></tr>
+            <tr><td data-zh="数据安全" data-en="Security">数据安全</td><td data-zh="处理后删除" data-en="Deleted">处理后删除</td><td data-zh="处理后删除" data-en="Deleted">处理后删除</td><td class="pt-featured" data-zh="数据不出内网" data-en="On-premise">数据不出内网</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ FAQ ═══ -->
+<div class="section-divider"></div>
 <section class="section" id="faq">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-zh="常见问题" data-en="FAQ">常见问题</h2>
-            <p data-zh="关于 DBCheck2Word 的常见疑问" data-en="Common questions about DBCheck2Word">关于 DBCheck2Word 的常见疑问</p>
-        </div>
-        <div class="faq-list">
-            <details class="faq-item">
-                <summary data-zh="巡检脚本在生产库运行安全吗？" data-en="Is it safe to run inspection scripts on production databases?">巡检脚本在生产库运行安全吗？</summary>
-                <div class="faq-answer" data-zh="完全安全。所有巡检脚本仅使用 SELECT 只读查询，不执行任何写操作、不创建任何对象、不申请排他锁。脚本全部开源在 GitHub，您可以审计每一行 SQL 代码。" data-en="Completely safe. All scripts use read-only SELECT queries — no write operations, no object creation, no exclusive locks. All scripts are open-source on GitHub for full audit.">完全安全。所有巡检脚本仅使用 SELECT 只读查询，不执行任何写操作、不创建任何对象、不申请排他锁。脚本全部开源在 GitHub，您可以审计每一行 SQL 代码。</div>
-            </details>
-            <details class="faq-item">
-                <summary data-zh="支持哪些数据库版本？" data-en="Which database versions are supported?">支持哪些数据库版本？</summary>
-                <div class="faq-answer" data-zh="Oracle 10g~26ai（含 RAC/DG/CDB）、MySQL 5.7+、PostgreSQL 12+、SQL Server 2016+。巡检脚本会自动适配对应版本。" data-en="Oracle 10g-26ai (including RAC/DG/CDB), MySQL 5.7+, PostgreSQL 12+, SQL Server 2016+. Scripts automatically adapt to the detected version.">Oracle 10g~26ai（含 RAC/DG/CDB）、MySQL 5.7+、PostgreSQL 12+、SQL Server 2016+。巡检脚本会自动适配对应版本。</div>
-            </details>
-            <details class="faq-item">
-                <summary data-zh="在线版和桌面版有什么区别？" data-en="What's the difference between online and desktop versions?">在线版和桌面版有什么区别？</summary>
-                <div class="faq-answer" data-zh="在线版通过网页上传文件生成报告，适合快速体验；桌面版安装在本地电脑，支持离线运行、批量处理、自定义模板和 AI 智能分析，数据完全不出内网，适合企业正式使用。" data-en="The online version generates reports via web upload for quick trials. The desktop version runs locally with offline support, batch processing, custom templates, and AI analysis — data never leaves your network, ideal for enterprise use.">在线版通过网页上传文件生成报告，适合快速体验；桌面版安装在本地电脑，支持离线运行、批量处理、自定义模板和 AI 智能分析，数据完全不出内网，适合企业正式使用。</div>
-            </details>
-            <details class="faq-item">
-                <summary data-zh="上传的巡检文件数据安全吗？" data-en="Is my uploaded inspection data secure?">上传的巡检文件数据安全吗？</summary>
-                <div class="faq-answer" data-zh="在线版：文件上传后仅在内存中处理，报告生成完毕后立即删除原始文件，不做任何持久化存储。桌面版：所有数据处理完全在本地完成，不连接任何外部网络。" data-en="Online: Files are processed in memory only and deleted immediately after report generation — no persistent storage. Desktop: All processing happens locally with no external network connections.">在线版：文件上传后仅在内存中处理，报告生成完毕后立即删除原始文件，不做任何持久化存储。桌面版：所有数据处理完全在本地完成，不连接任何外部网络。</div>
-            </details>
-            <details class="faq-item">
-                <summary data-zh="如何获取邀请码？" data-en="How do I get an invite code?">如何获取邀请码？</summary>
-                <div class="faq-answer" data-i18n-html data-zh="添加微信 <strong>Lucifer-0622</strong> 即可免费领取体验邀请码（3 次免费使用），也可直接购买按次套餐或桌面专业版授权。" data-en="Add WeChat <strong>Lucifer-0622</strong> for a free trial code (3 free uses), or purchase pay-per-use credits or a Desktop Pro license directly.">添加微信 <strong>Lucifer-0622</strong> 即可免费领取体验邀请码（3 次免费使用），也可直接购买按次套餐或桌面专业版授权。</div>
-            </details>
-            <details class="faq-item">
-                <summary data-zh="桌面版支持自定义报告模板吗？" data-en="Does the desktop version support custom report templates?">桌面版支持自定义报告模板吗？</summary>
-                <div class="faq-answer" data-zh="支持。桌面专业版可以替换 Logo、调整报告封面信息、修改模板格式，满足企业品牌化需求。报告基于 Word 模板渲染，可直接编辑 .docx 模板文件。" data-en="Yes. Desktop Pro supports logo replacement, cover page customization, and template format modifications for enterprise branding. Reports are rendered from editable .docx templates.">支持。桌面专业版可以替换 Logo、调整报告封面信息、修改模板格式，满足企业品牌化需求。报告基于 Word 模板渲染，可直接编辑 .docx 模板文件。</div>
-            </details>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 data-zh="常见问题" data-en="FAQ">常见问题</h2>
+      <p data-zh="关于 DBCheck2Word 的常见疑问" data-en="Common questions about DBCheck2Word">关于 DBCheck2Word 的常见疑问</p>
     </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary data-zh="巡检脚本在生产库运行安全吗？" data-en="Is it safe to run on production?">巡检脚本在生产库运行安全吗？</summary><div class="faq-answer" data-zh="完全安全。所有巡检脚本仅使用 SELECT 只读查询，不执行任何写操作、不创建任何对象、不申请排他锁。脚本全部开源在 GitHub，您可以审计每一行 SQL 代码。" data-en="Completely safe. Read-only SELECT queries only. All open-source on GitHub.">完全安全。所有巡检脚本仅使用 SELECT 只读查询，不执行任何写操作、不创建任何对象、不申请排他锁。脚本全部开源在 GitHub，您可以审计每一行 SQL 代码。</div></details>
+      <details class="faq-item"><summary data-zh="支持哪些数据库版本？" data-en="Which versions are supported?">支持哪些数据库版本？</summary><div class="faq-answer" data-zh="Oracle 10g~26ai（含 RAC/DG/CDB）、MySQL 5.7+、PostgreSQL 12+、SQL Server 2016+。巡检脚本会自动适配对应版本。" data-en="Oracle 10g-26ai (RAC/DG/CDB), MySQL 5.7+, PostgreSQL 12+, SQL Server 2016+.">Oracle 10g~26ai（含 RAC/DG/CDB）、MySQL 5.7+、PostgreSQL 12+、SQL Server 2016+。巡检脚本会自动适配对应版本。</div></details>
+      <details class="faq-item"><summary data-zh="在线版和桌面版有什么区别？" data-en="Online vs Desktop?">在线版和桌面版有什么区别？</summary><div class="faq-answer" data-zh="在线版通过网页上传文件生成报告，适合快速体验；桌面版安装在本地电脑，支持离线运行、批量处理、自定义模板和 AI 智能分析，数据完全不出内网，适合企业正式使用。" data-en="Online for quick trials. Desktop for offline, batch, custom templates, AI analysis.">在线版通过网页上传文件生成报告，适合快速体验；桌面版安装在本地电脑，支持离线运行、批量处理、自定义模板和 AI 智能分析，数据完全不出内网，适合企业正式使用。</div></details>
+      <details class="faq-item"><summary data-zh="上传的巡检文件数据安全吗？" data-en="Is uploaded data secure?">上传的巡检文件数据安全吗？</summary><div class="faq-answer" data-zh="在线版：文件上传后仅在内存中处理，报告生成完毕后立即删除原始文件。桌面版：所有数据处理完全在本地完成，不连接外部网络。" data-en="Online: processed in memory, deleted after. Desktop: fully local, no network.">在线版：文件上传后仅在内存中处理，报告生成完毕后立即删除原始文件。桌面版：所有数据处理完全在本地完成，不连接任何外部网络。</div></details>
+      <details class="faq-item"><summary data-zh="如何获取邀请码？" data-en="How to get invite code?">如何获取邀请码？</summary><div class="faq-answer" data-i18n-html data-zh="添加微信 <strong>Lucifer-0622</strong> 即可免费领取体验邀请码（3 次免费使用）。" data-en="Add WeChat <strong>Lucifer-0622</strong> for a free trial code (3 free uses).">添加微信 <strong>Lucifer-0622</strong> 即可免费领取体验邀请码（3 次免费使用），也可直接购买按次套餐或桌面专业版授权。</div></details>
+      <details class="faq-item"><summary data-zh="桌面版支持自定义报告模板吗？" data-en="Custom templates?">桌面版支持自定义报告模板吗？</summary><div class="faq-answer" data-zh="支持。桌面专业版可以替换 Logo、调整报告封面信息、修改模板格式，满足企业品牌化需求。" data-en="Yes. Replace logo, customize cover, modify format for enterprise branding.">支持。桌面专业版可以替换 Logo、调整报告封面信息、修改模板格式，满足企业品牌化需求。报告基于 Word 模板渲染，可直接编辑 .docx 模板文件。</div></details>
+    </div>
+  </div>
 </section>
-
-<!-- Desktop Showcase -->
+<!-- ═══ DESKTOP SHOWCASE ═══ -->
 <section class="desktop-section" id="desktop">
-    <div class="desktop-inner">
-        <div class="desktop-text">
-            <span class="desktop-badge" data-zh="桌面客户端" data-en="Desktop Client">桌面客户端</span>
-            <h2 data-zh="AI 智能分析加持&#10;离线运行，数据安全" data-en="AI-Powered Analysis&#10;Offline Mode, Data Security">AI 智能分析加持<br>离线运行，数据安全</h2>
-            <p class="desktop-desc" data-zh="DBCheck2Word 桌面专业版集成 AI 大模型智能分析，在传统规则引擎基础上提供深度语义诊断。支持 Oracle / MySQL / PostgreSQL / SQL Server 四大数据库巡检，完全离线运行，数据不出内网。一次授权，永久使用。" data-en="DBCheck2Word Desktop Pro integrates AI-powered analysis with large language models for deep semantic diagnostics beyond rule-based engines. Supports Oracle / MySQL / PostgreSQL / SQL Server, runs fully offline, data stays on-premise. One-time license, use forever.">
-                DBCheck2Word 桌面专业版集成 AI 大模型智能分析，在传统规则引擎基础上提供深度语义诊断。
-                支持 Oracle / MySQL / PostgreSQL / SQL Server 四大数据库巡检，完全离线运行，数据不出内网。一次授权，永久使用。
-            </p>
-            <ul class="desktop-features">
-                <li><span class="df-icon ai-glow" aria-hidden="true">&#10024;</span><strong data-zh="AI 智能分析" data-en="AI Analysis">AI 智能分析</strong><span class="df-dash">&mdash;</span><span data-zh="大模型深度诊断，自动生成专家级结论与优化建议" data-en="LLM-powered deep diagnostics with expert-level conclusions and optimization advice">大模型深度诊断，自动生成专家级结论与优化建议</span></li>
-                <li><span class="df-icon" aria-hidden="true">&#128450;</span><strong data-zh="多数据库" data-en="Multi-Database">多数据库</strong><span class="df-dash">&mdash;</span><span data-zh="Oracle / MySQL / PostgreSQL / SQL Server 全支持" data-en="Oracle / MySQL / PostgreSQL / SQL Server all supported">Oracle / MySQL / PostgreSQL / SQL Server 全支持</span></li>
-                <li><span class="df-icon" aria-hidden="true">&#128274;</span><strong data-zh="离线运行" data-en="Offline Mode">离线运行</strong><span class="df-dash">&mdash;</span><span data-zh="数据不出内网，满足等保合规" data-en="Data stays on-premise, meets compliance requirements">数据不出内网，满足等保合规</span></li>
-                <li><span class="df-icon" aria-hidden="true">&#9889;</span><strong data-zh="无限次数" data-en="Unlimited Uses">无限次数</strong><span class="df-dash">&mdash;</span><span data-zh="不限生成次数，一次授权永久使用" data-en="No usage limits, one-time license for permanent use">不限生成次数，一次授权永久使用</span></li>
-                <li><span class="df-icon" aria-hidden="true">&#128196;</span><strong data-zh="批量处理" data-en="Batch Processing">批量处理</strong><span class="df-dash">&mdash;</span><span data-zh="支持同时处理多个巡检文件" data-en="Process multiple inspection files simultaneously">支持同时处理多个巡检文件</span></li>
-                <li><span class="df-icon" aria-hidden="true">&#127912;</span><strong data-zh="自定义模板" data-en="Custom Templates">自定义模板</strong><span class="df-dash">&mdash;</span><span data-zh="支持替换 Logo、调整报告格式" data-en="Replace logo, customize report format">支持替换 Logo、调整报告格式</span></li>
-                <li><span class="df-icon" aria-hidden="true">&#128640;</span><strong data-zh="极速生成" data-en="Lightning Fast">极速生成</strong><span class="df-dash">&mdash;</span><span data-zh="本地计算，秒级出报告" data-en="Local processing, reports in seconds">本地计算，秒级出报告</span></li>
-            </ul>
-            <div class="desktop-platforms">
-                <span class="platform-tag">&#128187; Windows</span>
-                <span class="platform-tag">&#128421; macOS</span>
-            </div>
-        </div>
-        <div class="desktop-preview">
-            <div class="preview-glow"></div>
-            <div class="desktop-carousel" id="desktopCarousel">
-                <div class="carousel-track">
-                    <img src="desktop-preview.jpg" alt="DBCheck2Word 桌面客户端界面 - 报告生成" width="1200" height="750" class="carousel-slide active" loading="lazy" style="background:#1e293b;min-height:200px;">
-                    <img src="desktop-preview-2.jpg" alt="DBCheck2Word 桌面客户端界面 - AI 分析" width="1200" height="750" class="carousel-slide" loading="lazy" style="background:#1e293b;min-height:200px;" onerror="this.src='desktop-preview.jpg'">
-                    <img src="desktop-preview-3.jpg" alt="DBCheck2Word 桌面客户端界面 - 批量处理" width="1200" height="750" class="carousel-slide" loading="lazy" style="background:#1e293b;min-height:200px;" onerror="this.src='desktop-preview.jpg'">
-                </div>
-                <div class="carousel-dots">
-                    <button class="carousel-dot active" onclick="showSlide(0)" aria-label="Slide 1"></button>
-                    <button class="carousel-dot" onclick="showSlide(1)" aria-label="Slide 2"></button>
-                    <button class="carousel-dot" onclick="showSlide(2)" aria-label="Slide 3"></button>
-                </div>
-            </div>
-        </div>
+  <div class="desktop-inner">
+    <div class="desktop-text">
+      <span class="desktop-badge" data-zh="桌面客户端" data-en="Desktop Client">桌面客户端</span>
+      <h2 data-zh="AI 智能分析加持&#10;离线运行，数据安全" data-en="AI-Powered, Offline, Secure">AI 智能分析加持<br>离线运行，数据安全</h2>
+      <p class="desktop-desc" data-zh="DBCheck2Word 桌面专业版集成 AI 大模型智能分析，支持四大数据库巡检，完全离线运行，数据不出内网。一次授权，永久使用。" data-en="Desktop Pro with AI analysis, all 4 databases, fully offline. One-time license, forever.">DBCheck2Word 桌面专业版集成 AI 大模型智能分析，在传统规则引擎基础上提供深度语义诊断。支持四大数据库巡检，完全离线运行，数据不出内网。一次授权，永久使用。</p>
+      <ul class="desktop-features">
+        <li><span class="df-icon ai-glow">&#10024;</span><strong data-zh="AI 智能分析" data-en="AI Analysis">AI 智能分析</strong><span class="df-dash">&mdash;</span><span data-zh="大模型深度诊断，自动生成专家级结论与优化建议" data-en="LLM-powered deep diagnostics">大模型深度诊断，自动生成专家级结论与优化建议</span></li>
+        <li><span class="df-icon">&#128450;</span><strong data-zh="多数据库" data-en="Multi-DB">多数据库</strong><span class="df-dash">&mdash;</span><span data-zh="Oracle / MySQL / PostgreSQL / SQL Server 全支持" data-en="All 4 databases">Oracle / MySQL / PostgreSQL / SQL Server 全支持</span></li>
+        <li><span class="df-icon">&#128274;</span><strong data-zh="离线运行" data-en="Offline">离线运行</strong><span class="df-dash">&mdash;</span><span data-zh="数据不出内网，满足等保合规" data-en="On-premise, compliance ready">数据不出内网，满足等保合规</span></li>
+        <li><span class="df-icon">&#9889;</span><strong data-zh="无限次数" data-en="Unlimited">无限次数</strong><span class="df-dash">&mdash;</span><span data-zh="不限生成次数，一次授权永久使用" data-en="No limits, permanent license">不限生成次数，一次授权永久使用</span></li>
+        <li><span class="df-icon">&#128196;</span><strong data-zh="批量处理" data-en="Batch">批量处理</strong><span class="df-dash">&mdash;</span><span data-zh="支持同时处理多个巡检文件" data-en="Process multiple files at once">支持同时处理多个巡检文件</span></li>
+        <li><span class="df-icon">&#127912;</span><strong data-zh="自定义模板" data-en="Templates">自定义模板</strong><span class="df-dash">&mdash;</span><span data-zh="支持替换 Logo、调整报告格式" data-en="Custom logo and format">支持替换 Logo、调整报告格式</span></li>
+        <li><span class="df-icon">&#128640;</span><strong data-zh="极速生成" data-en="Fast">极速生成</strong><span class="df-dash">&mdash;</span><span data-zh="本地计算，秒级出报告" data-en="Local, seconds to report">本地计算，秒级出报告</span></li>
+      </ul>
+      <div class="desktop-platforms"><span class="platform-tag">&#128187; Windows</span><span class="platform-tag">&#128421; macOS</span></div>
     </div>
+    <div class="desktop-preview">
+      <div class="preview-glow"></div>
+      <div class="desktop-carousel" id="desktopCarousel">
+        <div class="carousel-track">
+          <img src="desktop-preview.jpg" alt="DBCheck2Word 桌面版" width="1200" height="750" class="carousel-slide active" loading="lazy" style="background:var(--bg-elevated);">
+          <img src="desktop-preview-2.jpg" alt="AI 分析" width="1200" height="750" class="carousel-slide" loading="lazy" style="background:var(--bg-elevated);" onerror="this.src='desktop-preview.jpg'">
+          <img src="desktop-preview-3.jpg" alt="批量处理" width="1200" height="750" class="carousel-slide" loading="lazy" style="background:var(--bg-elevated);" onerror="this.src='desktop-preview.jpg'">
+        </div>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" onclick="showSlide(0)" aria-label="Slide 1"></button>
+          <button class="carousel-dot" onclick="showSlide(1)" aria-label="Slide 2"></button>
+          <button class="carousel-dot" onclick="showSlide(2)" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-<!-- WeChat QR Modal -->
-<div class="wechat-modal" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wechatTitle" onclick="if(event.target===this)closeWechatModal()">
-    <div class="wechat-modal-card">
-        <button class="wechat-modal-close" aria-label="关闭" onclick="closeWechatModal()">&times;</button>
-        <img src="wechat-qr.jpg" alt="微信二维码 - 扫码添加 Lucifer-0622" class="wechat-modal-qr" id="wechatQrImg" loading="lazy" width="240" height="240" onerror="this.style.display='none';document.getElementById('wechatQrFallback').style.display=''">
-        <div class="wechat-qr-fallback" id="wechatQrFallback" style="display:none">
-            <div style="font-size:48px;margin-bottom:12px;">&#128172;</div>
-            <p style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;" data-zh="微信号" data-en="WeChat ID">微信号</p>
-            <div class="wechat-id-copy" id="wechatIdCopy">
-                <span>Lucifer-0622</span>
-                <button onclick="navigator.clipboard.writeText('Lucifer-0622');this.textContent='&#10004;';setTimeout(()=>this.textContent='&#128203;',2000)" data-zh="复制" data-en="Copy" aria-label="复制微信号">&#128203;</button>
-            </div>
-        </div>
-        <p class="wechat-modal-id" id="wechatTitle" data-zh="微信号：Lucifer-0622" data-en="WeChat ID: Lucifer-0622">微信号：Lucifer-0622</p>
-        <p class="wechat-modal-hint" data-zh="添加好友，咨询购买或免费体验" data-en="Add as friend to inquire about purchase or free trial">添加好友，咨询购买或免费体验</p>
-        <div class="wechat-modal-divider" data-zh="或" data-en="or">或</div>
-        <a href="mailto:pc1107750981@163.com" class="wechat-modal-email">&#9993; pc1107750981@163.com</a>
-    </div>
-</div>
-
-<!-- Footer -->
+<!-- ═══ WECHAT MODAL ═══ -->
 </main>
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-decoration" aria-hidden="true"></div>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="brand-name">DB<span>Check</span>2Word</div>
-                <div class="brand-desc" data-zh="数据库巡检报告自动生成工具，让巡检报告不再是体力活。" data-en="Database inspection report auto-generator. No more manual report writing.">数据库巡检报告自动生成工具，让巡检报告不再是体力活。</div>
-                <div class="footer-social">
-                    <a href="https://github.com/pc-study/dbcheck2word" target="_blank" rel="noopener" aria-label="GitHub" class="footer-social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-cols">
-                <div class="footer-col">
-                    <h3 data-zh="导航" data-en="Navigation">导航</h3>
-                    <a href="#features" data-zh="功能特色" data-en="Features">功能特色</a>
-                    <a href="#scripts" data-zh="巡检脚本" data-en="Scripts">巡检脚本</a>
-                    <a href="#demo" data-zh="在线体验" data-en="Try Online">在线体验</a>
-                    <a href="#pricing" data-zh="定价方案" data-en="Pricing">定价方案</a>
-                </div>
-                <div class="footer-col">
-                    <h3 data-zh="联系" data-en="Contact">联系</h3>
-                    <span data-zh="微信：Lucifer-0622" data-en="WeChat: Lucifer-0622">微信：Lucifer-0622</span>
-                    <a href="mailto:pc1107750981@163.com">pc1107750981@163.com</a>
-                </div>
-                <div class="footer-col">
-                    <h3 data-zh="资源" data-en="Resources">资源</h3>
-                    <a href="https://github.com/pc-study/dbcheck2word" target="_blank" rel="noopener" data-zh="GitHub 仓库" data-en="GitHub Repo">GitHub 仓库</a>
-                    <a href="#faq" data-zh="常见问题" data-en="FAQ">常见问题</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 DBCheck2Word</span>
-            <span class="footer-slogan" data-zh="让巡检报告不再是体力活" data-en="No more manual report writing">让巡检报告不再是体力活</span>
-        </div>
+<div class="wechat-modal" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wechatTitle" onclick="if(event.target===this)closeWechatModal()">
+  <div class="wechat-modal-card">
+    <button class="wechat-modal-close" aria-label="关闭" onclick="closeWechatModal()">&times;</button>
+    <img src="wechat-qr.jpg" alt="微信二维码" class="wechat-modal-qr" id="wechatQrImg" loading="lazy" width="200" height="200" onerror="this.style.display='none';document.getElementById('wechatQrFallback').style.display=''">
+    <div class="wechat-qr-fallback" id="wechatQrFallback" style="display:none">
+      <div style="font-size:48px;margin-bottom:12px;">&#128172;</div>
+      <p style="font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:8px;">微信号</p>
+      <div class="wechat-id-copy" id="wechatIdCopy"><span>Lucifer-0622</span><button onclick="navigator.clipboard.writeText('Lucifer-0622');this.textContent='&#10004;';setTimeout(()=>this.textContent='&#128203;',2000)" aria-label="复制">&#128203;</button></div>
     </div>
+    <p class="wechat-modal-id" id="wechatTitle" data-zh="微信号：Lucifer-0622" data-en="WeChat: Lucifer-0622">微信号：Lucifer-0622</p>
+    <p class="wechat-modal-hint" data-zh="添加好友，咨询购买或免费体验" data-en="Add friend for purchase or free trial">添加好友，咨询购买或免费体验</p>
+    <div class="wechat-modal-divider" data-zh="或" data-en="or">或</div>
+    <a href="mailto:pc1107750981@163.com" class="wechat-modal-email">&#9993; pc1107750981@163.com</a>
+  </div>
+</div>
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-name">DB<span>Check</span>2Word</div>
+        <div class="brand-desc" data-zh="数据库巡检报告自动生成工具，让巡检报告不再是体力活。" data-en="Database inspection report auto-generator.">数据库巡检报告自动生成工具，让巡检报告不再是体力活。</div>
+        <div class="footer-social"><a href="https://github.com/pc-study/dbcheck2word" target="_blank" rel="noopener" aria-label="GitHub" class="footer-social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a></div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h3 data-zh="导航" data-en="Navigation">导航</h3><a href="#features" data-zh="功能特色" data-en="Features">功能特色</a><a href="#scripts" data-zh="巡检脚本" data-en="Scripts">巡检脚本</a><a href="#demo" data-zh="在线体验" data-en="Try Online">在线体验</a><a href="#pricing" data-zh="定价方案" data-en="Pricing">定价方案</a></div>
+        <div class="footer-col"><h3 data-zh="联系" data-en="Contact">联系</h3><span data-zh="微信：Lucifer-0622" data-en="WeChat: Lucifer-0622">微信：Lucifer-0622</span><a href="mailto:pc1107750981@163.com">pc1107750981@163.com</a></div>
+        <div class="footer-col"><h3 data-zh="资源" data-en="Resources">资源</h3><a href="https://github.com/pc-study/dbcheck2word" target="_blank" rel="noopener" data-zh="GitHub 仓库" data-en="GitHub">GitHub 仓库</a><a href="#faq" data-zh="常见问题" data-en="FAQ">常见问题</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 DBCheck2Word</span><span class="footer-slogan" data-zh="让巡检报告不再是体力活" data-en="No more manual report writing">让巡检报告不再是体力活</span></div>
+  </div>
 </footer>
 <script src="js/app.js"></script>
-
-<!-- Baidu Analytics — replace YOUR_SITE_ID with your Baidu tongji site ID -->
-<!--
-<script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?YOUR_SITE_ID";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script>
--->
-
+<script>
+/* Scroll-in animations */
+(function(){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.feature-card,.step,.testimonial-card,.pricing-card,.faq-item').forEach(function(el){el.classList.add('animate-on-scroll');obs.observe(el)});
+})();
+/* Bar fill animation */
+(function(){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('.hv-bar-fill').forEach(function(b){b.style.width=getComputedStyle(b).getPropertyValue('--w')});obs.unobserve(e.target)}})},{threshold:0.3});
+  document.querySelectorAll('.hv-bar-group').forEach(function(el){obs.observe(el)});
+})();
+</script>
 </body>
 </html>
