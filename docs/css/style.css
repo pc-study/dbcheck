@@ -487,8 +487,8 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
   .stat-label{font-size:12px}
   .step-num{width:56px;height:56px;font-size:20px}
   .step{margin-bottom:8px}
-  .hero-buttons{flex-direction:column;gap:10px;align-items:stretch}
-  .hero-buttons .btn{text-align:center}
+  .hero-buttons{flex-direction:column;gap:10px;align-items:center;max-width:280px;margin:0 auto}
+  .hero-buttons .btn{text-align:center;width:100%}
   .feature-card{padding:24px 20px}
   .feature-card h3{font-size:15px}
   .feature-card p{font-size:13px}
