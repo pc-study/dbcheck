@@ -171,6 +171,20 @@ function switchScriptTab(btn, codeId) {
 }
 /* Report type descriptions per database type */
 var _reportDescMap = {
+    auto: {
+        weekly: {
+            zh: '基础健康检查',
+            en: 'Regular periodic inspection'
+        },
+        monthly: {
+            zh: '标准巡检分析',
+            en: 'Standard inspection analysis'
+        },
+        quarterly: {
+            zh: '含 OS 巡检 + 趋势图表',
+            en: 'Includes OS inspection + trend charts'
+        }
+    },
     oracle: {
         weekly: {
             zh: '基础健康检查',
@@ -256,7 +270,7 @@ document.querySelectorAll('input[name="dbType"]').forEach(function(radio) {
         updateReportDescs(this.value);
     });
 });
-updateReportDescs('oracle');
+updateReportDescs('auto');
 const dropZone = document.getElementById('dropZone');
 const fileInput = document.getElementById('fileInput');
 dropZone.addEventListener('dragover', function(e) {
@@ -467,7 +481,7 @@ async function handleUpload() {
             btn.disabled = false;
             btn.innerHTML = '&#9654; 开始分析';
             if (wsResult.success) {
-                showResults(wsResult.reports);
+                showResults(wsResult.reports, wsResult.detected_db_type);
             } else {
                 showError(wsResult.error || '处理失败');
             }
@@ -514,7 +528,7 @@ async function handleUpload() {
             return;
         }
         if (data.success) {
-            showResults(data.reports);
+            showResults(data.reports, data.detected_db_type);
             if (isBatch && data.errors && data.errors.length > 0) {
                 var errPanel = document.getElementById('resultsPanel');
                 var errHtml = '<div class="results-error-panel">';
@@ -734,6 +748,7 @@ var ITEM_NAMES = ITEM_NAMES_DB['oracle'];
 
 function friendlyName(key) {
     var dbType = (document.querySelector('input[name="dbType"]:checked') || {}).value || 'oracle';
+    if (dbType === 'auto') dbType = 'oracle';
     var names = ITEM_NAMES_DB[dbType] || ITEM_NAMES_DB['oracle'];
     return names[key] || ITEM_NAMES[key] || key;
 }
@@ -746,9 +761,17 @@ function shortVersion(ver) {
     return ver;
 }
 
-function showResults(reports) {
+function showResults(reports, detectedDbType) {
+    var _DB_TYPE_LABELS = {oracle:'Oracle',mysql:'MySQL',mysql57:'MySQL 5.7',mariadb:'MariaDB',postgres:'PostgreSQL',sqlserver:'SQL Server'};
     var panel = document.getElementById('resultsPanel');
     var html = '';
+    if (detectedDbType) {
+        var detectedLabel = _DB_TYPE_LABELS[detectedDbType] || detectedDbType;
+        var isEn = _currentLang === 'en';
+        html += '<div style="padding:8px 16px;margin-bottom:12px;background:var(--accent-light,#e8f4fd);border-radius:8px;font-size:13px;color:var(--text-light);">'
+            + (isEn ? 'Auto-detected database type: ' : '自动识别数据库类型: ')
+            + '<strong style="color:var(--accent);">' + escapeHtml(detectedLabel) + '</strong></div>';
+    }
     if (!reports || !reports.length) {
         html = '<div class="results-empty"><div style="font-size:48px;opacity:0.3;margin-bottom:16px;">&#128203;</div><p style="color:var(--text-light);font-size:15px;">未获取到报告数据</p><p style="color:var(--text-light);font-size:13px;margin-top:8px;opacity:0.6;">请检查上传的文件是否为有效的巡检文件</p></div>';
         panel.innerHTML = html;
@@ -769,7 +792,8 @@ function showResults(reports) {
             html += '<a class="btn-download" href="' + API_BASE + '/api/download/' + encodeURIComponent(downloadFile) + '">&#11015; 下载 Word 报告</a>';
         }
         html += '</div>';
-        var dbType = (document.querySelector('input[name="dbType"]:checked') || {}).value || 'oracle';
+        var dbType = detectedDbType || (document.querySelector('input[name="dbType"]:checked') || {}).value || 'oracle';
+        if (dbType === 'auto') dbType = 'oracle';
         var infoItems = [{
             label: '数据库名称',
             value: r.dbname || '-'
@@ -941,7 +965,7 @@ function handleUploadWS(file, reportType, inviteCode) {
                 report_type: reportType,
                 invite_code: inviteCode,
                 filename: file.name,
-                db_type: (document.querySelector('input[name="dbType"]:checked') || {}).value || 'oracle'
+                db_type: (document.querySelector('input[name="dbType"]:checked') || {}).value || 'auto'
             }));
         };
         ws.onmessage = function(ev) {
