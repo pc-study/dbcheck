@@ -173,16 +173,16 @@ function switchScriptTab(btn, codeId) {
 var _reportDescMap = {
     auto: {
         weekly: {
-            zh: '基础健康检查',
-            en: 'Regular periodic inspection'
+            zh: '常规健康巡检',
+            en: 'Regular health check'
         },
         monthly: {
-            zh: '标准巡检分析',
-            en: 'Standard inspection analysis'
+            zh: '深度性能分析',
+            en: 'In-depth performance analysis'
         },
         quarterly: {
-            zh: '含 OS 巡检 + 趋势图表',
-            en: 'Includes OS inspection + trend charts'
+            zh: '全面巡检（含 OS 层）',
+            en: 'Full inspection (incl. OS layer)'
         }
     },
     oracle: {
