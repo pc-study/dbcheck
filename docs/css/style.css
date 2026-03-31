@@ -2381,7 +2381,7 @@ html[lang="en"] .pricing-card.featured::before {
   color:var(--accent)
 }
 .pricing-features li.ai-feature::before {
-  content:'\\2728';
+  content:'\2728';
   color:#8b5cf6
 }
 .pricing-features li.ai-disabled {
@@ -2389,7 +2389,7 @@ html[lang="en"] .pricing-card.featured::before {
   text-decoration:line-through
 }
 .pricing-features li.ai-disabled::before {
-  content:'\\2716';
+  content:'\2716';
   color:#94a3b8
 }
 .desktop-features li .df-icon.ai-glow {
