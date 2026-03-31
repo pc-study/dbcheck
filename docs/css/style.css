@@ -12,8 +12,8 @@
 }
 html[data-theme="light"] {
   --bg-void:#ffffff;--bg-surface:#f8fafc;--bg-elevated:#f1f5f9;--bg-card:#ffffff;
-  --border-dim:rgba(0,0,0,0.06);--border-subtle:rgba(0,0,0,0.1);--border-accent:rgba(59,130,246,0.25);
-  --text-primary:#1e293b;--text-secondary:#475569;--text-dim:#94a3b8;--text-accent:#0284c7;
+  --border-dim:rgba(0,0,0,0.08);--border-subtle:rgba(0,0,0,0.15);--border-accent:rgba(59,130,246,0.3);
+  --text-primary:#0f172a;--text-secondary:#334155;--text-dim:#64748b;--text-accent:#0369a1;
 }
 html[data-theme="light"] body::before{background-image:radial-gradient(rgba(0,0,0,0.04) 1px,transparent 1px)}
 html[data-theme="light"] .nav{background:rgba(255,255,255,0.82)}
@@ -24,7 +24,7 @@ html[data-theme="light"] .section-header h2{background:linear-gradient(180deg,#0
 html[data-theme="light"] .ai-visual-card{background:#f1f5f9;box-shadow:0 20px 60px rgba(0,0,0,0.08)}
 html[data-theme="light"] .hv-titlebar,html[data-theme="light"] .ai-visual-header{background:rgba(0,0,0,0.03)}
 html[data-theme="light"] .stat-num{background:linear-gradient(135deg,#1e40af,#0284c7);-webkit-background-clip:text;background-clip:text}
-html[data-theme="light"] .step-num{color:#1e293b;background:#f1f5f9;border-color:rgba(0,0,0,0.1)}
+html[data-theme="light"] .step-num{color:#0f172a;background:#f1f5f9;border-color:rgba(0,0,0,0.12)}
 html[data-theme="light"] .step:hover .step-num{border-color:var(--accent-cyan);box-shadow:0 0 20px rgba(6,182,212,0.15)}
 html[data-theme="light"] .feature-card{background:#ffffff;border-color:rgba(0,0,0,0.06)}
 html[data-theme="light"] .feature-card:hover{background:#f8fafc;border-color:rgba(0,0,0,0.12)}
@@ -58,13 +58,13 @@ html[data-theme="light"] .ai-banner-text h2{background:linear-gradient(135deg,#9
 html[data-theme="light"] .ai-visual-card{background:#ffffff;border-color:rgba(245,158,11,0.1);box-shadow:0 20px 60px rgba(0,0,0,0.06)}
 html[data-theme="light"] .scripts-howto-code{background:#f1f5f9;border-color:rgba(0,0,0,0.08)}
 html[data-theme="light"] .cmd-comment{color:#64748b}
-html[data-theme="light"] .btn-primary{box-shadow:0 0 16px rgba(59,130,246,0.2),inset 0 1px 0 rgba(255,255,255,0.15)}
-html[data-theme="light"] .btn-outline{border-color:rgba(0,0,0,0.12);color:#475569;background:rgba(0,0,0,0.02)}
-html[data-theme="light"] .btn-outline:hover{border-color:rgba(0,0,0,0.2);color:#1e293b;background:rgba(0,0,0,0.04)}
+html[data-theme="light"] .btn-primary{box-shadow:0 2px 12px rgba(59,130,246,0.3),inset 0 1px 0 rgba(255,255,255,0.2)}
+html[data-theme="light"] .btn-outline{border-color:rgba(0,0,0,0.18);color:#334155;background:rgba(0,0,0,0.03)}
+html[data-theme="light"] .btn-outline:hover{border-color:rgba(0,0,0,0.3);color:#0f172a;background:rgba(0,0,0,0.06)}
 html[data-theme="light"] .btn-secondary{background:#f1f5f9;border-color:rgba(0,0,0,0.08);color:#475569}
 html[data-theme="light"] .btn-secondary:hover{color:#1e293b;border-color:rgba(0,0,0,0.15)}
-html[data-theme="light"] .lang-toggle,html[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.08);color:#475569}
-html[data-theme="light"] .lang-toggle:hover,html[data-theme="light"] .theme-toggle:hover{border-color:rgba(0,0,0,0.15);background:rgba(0,0,0,0.03);color:#1e293b}
+html[data-theme="light"] .lang-toggle,html[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,0.12);color:#334155}
+html[data-theme="light"] .lang-toggle:hover,html[data-theme="light"] .theme-toggle:hover{border-color:rgba(0,0,0,0.2);background:rgba(0,0,0,0.04);color:#0f172a}
 html[data-theme="light"] .wechat-modal-card{background:#ffffff;border-color:rgba(0,0,0,0.06)}
 html[data-theme="light"] .footer{border-top-color:rgba(0,0,0,0.06)}
 html[data-theme="light"] .footer-social-link{border-color:rgba(0,0,0,0.06);color:#94a3b8}
@@ -74,12 +74,15 @@ html[data-theme="light"] .section-divider{background:linear-gradient(90deg,trans
 html[data-theme="light"] .script-select{background:#f8fafc;border-color:rgba(0,0,0,0.08);color:#1e293b}
 html[data-theme="light"] .db-type-option input:checked+.db-type-label,html[data-theme="light"] .report-type-option input:checked+.option-label{color:#0284c7;border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.04)}
 html[data-theme="light"] .db-type-label,html[data-theme="light"] .option-label{background:#f8fafc;border-color:rgba(0,0,0,0.06);color:#475569}
-html[data-theme="light"] .hero-badge{color:#0284c7;background:rgba(59,130,246,0.06);border-color:rgba(59,130,246,0.12)}
+html[data-theme="light"] .hero-badge{color:#0369a1;background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.18)}
 html[data-theme="light"] .script-tag{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.06);color:#64748b}
 html[data-theme="light"] .scripts-note{background:rgba(16,185,129,0.04);border-color:rgba(16,185,129,0.08)}
 html[data-theme="light"] .hv-bar{background:rgba(0,0,0,0.06)}
 html[data-theme="light"] .stats-bar{border-top-color:rgba(0,0,0,0.06);border-bottom-color:rgba(0,0,0,0.06)}
-html[data-theme="light"] .hero-db-bar{border-top-color:rgba(0,0,0,0.06)}
+html[data-theme="light"] .hero-db-bar{border-top-color:rgba(0,0,0,0.08)}
+html[data-theme="light"] .hero-db-icons img{opacity:.85;filter:grayscale(0)}
+html[data-theme="light"] .hero .tagline{color:#475569}
+html[data-theme="light"] .hero .subtitle{color:#334155}
 html[data-theme="light"] .pricing-equiv{background:rgba(59,130,246,0.04);border-color:rgba(59,130,246,0.08)}
 html[data-theme="light"] .error-msg{background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.1)}
 html[data-theme="light"] #inviteCode{background:#f8fafc;border-color:rgba(0,0,0,0.1)}
@@ -427,7 +430,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
   .hero-db-bar{justify-content:center}
 }
 @media(max-width:768px){
-  .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--bg-void);flex-direction:column;padding:24px;gap:0;z-index:1000;overflow-y:auto}
+  .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;height:calc(100dvh - var(--nav-h));background:var(--bg-void);flex-direction:column;padding:24px;gap:0;z-index:1000;overflow-y:auto}
   .nav-links.open{display:flex}
   .nav-links li{width:100%}
   .nav-links a{display:block;padding:14px 0;font-size:16px;border-bottom:1px solid var(--border-dim)}
