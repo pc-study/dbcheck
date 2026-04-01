@@ -311,6 +311,7 @@ function showError(msg) {
     var el = document.getElementById('errorMsg');
     document.getElementById('errorText').textContent = msg;
     el.style.display = 'flex';
+    document.getElementById('uploadForm').style.display = '';
 }
 
 function hideError() {
@@ -325,8 +326,8 @@ document.getElementById('inviteCode').addEventListener('input', function() {
 
 function showLoading(show) {
     document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
-    document.getElementById('uploadForm').style.display = show ? 'none' : '';
     if (show) {
+        document.getElementById('uploadForm').style.display = 'none';
         var texts = _currentLang === 'en' ? ['Uploading file...', 'Parsing inspection data...', 'Running diagnostics...', 'Generating Word report...'] : ['正在上传文件...', '正在解析巡检数据...', '正在诊断分析...', '正在生成 Word 报告...'];
         var idx = 0;
         var el = document.getElementById('loadingText');
