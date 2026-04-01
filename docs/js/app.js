@@ -289,6 +289,8 @@ dropZone.addEventListener('drop', function(e) {
     }
 });
 
+var _isDemoFile = false;   // 标记当前文件是否由示例按钮加载
+
 function updateFileNames(files) {
     if (!files || !files.length) return;
     var names = [];
@@ -299,12 +301,32 @@ function updateFileNames(files) {
     document.getElementById('fileNameDisplay').style.display = 'flex';
     dropZone.style.display = 'none';
     hideError();
+    /* 用户自行上传文件时，清除演示邀请码 */
+    if (!_isDemoFile) {
+        var codeInput = document.getElementById('inviteCode');
+        if (codeInput.value === 'DEMO-TRIAL') {
+            codeInput.value = '';
+            codeInput.style.borderColor = '#d0d5dd';
+            codeInput.style.boxShadow = '';
+            var hint = document.getElementById('inviteCodeHint');
+            hint.style.display = 'none';
+        }
+    }
+    _isDemoFile = false;
 }
 
 function clearFile() {
     fileInput.value = '';
     document.getElementById('fileNameDisplay').style.display = 'none';
     dropZone.style.display = '';
+    /* 清除演示邀请码 */
+    var codeInput = document.getElementById('inviteCode');
+    if (codeInput.value === 'DEMO-TRIAL') {
+        codeInput.value = '';
+        codeInput.style.borderColor = '#d0d5dd';
+        codeInput.style.boxShadow = '';
+        document.getElementById('inviteCodeHint').style.display = 'none';
+    }
 }
 
 function showError(msg) {
@@ -1096,6 +1118,7 @@ function useSampleFile() {
         var dt = new DataTransfer();
         dt.items.add(file);
         fileInput.files = dt.files;
+        _isDemoFile = true;
         updateFileNames(dt.files);
         /* 自动选择 Oracle 数据库类型 */
         var oracleRadio = document.querySelector('input[name="dbType"][value="oracle"]');
