@@ -763,6 +763,7 @@ function shortVersion(ver) {
 
 function showResults(reports, detectedDbType) {
     var _DB_TYPE_LABELS = {oracle:'Oracle',mysql:'MySQL',mysql57:'MySQL 5.7',mariadb:'MariaDB',postgres:'PostgreSQL',sqlserver:'SQL Server'};
+    document.getElementById('uploadForm').style.display = 'none';
     var panel = document.getElementById('resultsPanel');
     var html = '';
     if (detectedDbType) {
@@ -843,12 +844,64 @@ function showResults(reports, detectedDbType) {
             });
             html += '</div>';
         }
-        if (problems.length) {
-            html += '<div class="problems-section"><h4>&#128221; ' + (_currentLang === 'en' ? 'Problem Summary' : '问题汇总') + '</h4>';
-            problems.forEach(function(p) {
-                html += '<div class="problem-item">' + escapeHtml(p) + '</div>';
+        if (abnormalCount > 0) {
+            var isEn = _currentLang === 'en';
+            html += '<div class="summary-section"><h4>&#128161; ' + (isEn ? 'Optimization Recommendations' : '优化建议') + '</h4>';
+            html += '<div class="summary-card">';
+            html += '<p class="summary-intro">' + (isEn
+                ? 'This inspection found <strong>' + abnormalCount + '</strong> abnormal item(s) out of <strong>' + (normalCount + abnormalCount) + '</strong> total checks. Recommended actions:'
+                : '本次巡检共检查 <strong>' + (normalCount + abnormalCount) + '</strong> 项，发现 <strong>' + abnormalCount + '</strong> 项异常。建议按以下优先级处理：') + '</p>';
+            html += '<div class="summary-priorities">';
+            /* 根据异常项类型生成分级建议 */
+            var _priorities = {high:[],medium:[],low:[]};
+            var _issueAdvice = {
+                'adrcierror':     {p:'high',  zh:'排查 ALERT 日志中的 ORA 错误，定位根因并修复，避免潜在的数据库故障',       en:'Investigate ORA errors in ALERT log to prevent potential database failures'},
+                'tablespaces':    {p:'high',  zh:'扩展高使用率表空间或清理历史数据，防止空间耗尽导致业务中断',             en:'Expand high-usage tablespaces or purge historical data to prevent outages'},
+                'lock_waits':     {p:'high',  zh:'分析当前锁等待链，终止阻塞会话或优化事务粒度',                         en:'Analyze lock wait chains, kill blocking sessions or optimize transaction granularity'},
+                'long_transactions':{p:'high',zh:'检查长事务的 SQL 及业务逻辑，避免 UNDO 空间耗尽和锁资源长期占用',       en:'Review long-running transactions to prevent UNDO exhaustion and lock contention'},
+                'dgapply':        {p:'high',  zh:'检查 Data Guard 日志传输和应用状态，确保主备库同步正常',                en:'Check Data Guard log transport and apply status for proper synchronization'},
+                'userpasswd':     {p:'high',  zh:'立即修改使用默认密码的账户，消除安全隐患',                              en:'Change accounts using default passwords immediately to eliminate security risks'},
+                'dbinvalid':      {p:'medium',zh:'重新编译无效对象（ALTER ... COMPILE），恢复依赖模块的正常执行',         en:'Recompile invalid objects to restore dependent module functionality'},
+                'fknoidx':        {p:'medium',zh:'为缺失索引的外键列创建索引，避免级联操作导致全表锁等待',                en:'Create indexes on unindexed foreign key columns to avoid full table lock waits'},
+                'stalestats':     {p:'medium',zh:'对统计信息过期的表执行 DBMS_STATS 采集，确保优化器生成最优执行计划',    en:'Gather statistics on stale tables to ensure optimal execution plans'},
+                'pwdexpiry':      {p:'medium',zh:'处理即将过期的用户密码，避免账户锁定影响业务连接',                      en:'Renew expiring passwords to prevent account lockout'},
+                'temp_usage':     {p:'medium',zh:'监控临时表空间使用趋势，必要时扩容以支撑排序和哈希操作',                en:'Monitor temp tablespace usage trend and expand if needed'},
+                'session_count':  {p:'medium',zh:'关注会话使用率趋势，必要时调大 PROCESSES/SESSIONS 参数',                en:'Monitor session usage trend and adjust PROCESSES/SESSIONS if needed'},
+                'redoswitch':     {p:'low',   zh:'评估日志切换频率，考虑增大 Redo Log 文件以减少切换开销',                en:'Evaluate redo log switch frequency and consider larger redo logs'},
+                'unused_indexes': {p:'low',   zh:'评估未使用索引的业务必要性，确认后删除以释放空间和减少 DML 开销',       en:'Evaluate unused indexes and drop confirmed ones to save space and reduce DML overhead'},
+                'bitcoincheck':   {p:'high',  zh:'发现勒索病毒特征，立即隔离数据库并启动应急响应',                        en:'Ransomware signatures detected — isolate database and initiate incident response'},
+                'seqmaxval':      {p:'low',   zh:'关注高使用率序列，必要时调大 MAXVALUE 防止序列耗尽',                    en:'Monitor high-usage sequences and increase MAXVALUE if needed'},
+                'duplicate_indexes':{p:'low', zh:'清理重复索引以减少存储开销和 DML 性能影响',                             en:'Remove duplicate indexes to reduce storage and DML overhead'},
+                'table_fragmentation':{p:'low',zh:'对高碎片表执行在线重整（ALTER TABLE MOVE / SHRINK SPACE）',            en:'Defragment high-fragmentation tables with online reorg'}
+            };
+            abnormals.forEach(function(item) {
+                var advice = _issueAdvice[item];
+                if (advice) {
+                    _priorities[advice.p].push(isEn ? advice.en : advice.zh);
+                } else {
+                    _priorities.medium.push(isEn ? ('Address: ' + friendlyName(item)) : ('处理 ' + friendlyName(item) + ' 相关异常'));
+                }
+            });
+            var _levelLabels = {
+                high:  {zh:'&#128308; 高优先级',  en:'&#128308; High Priority'},
+                medium:{zh:'&#128992; 中优先级',  en:'&#128992; Medium Priority'},
+                low:   {zh:'&#128311; 低优先级',  en:'&#128311; Low Priority'}
+            };
+            ['high','medium','low'].forEach(function(level) {
+                if (!_priorities[level].length) return;
+                var lb = _levelLabels[level];
+                html += '<div class="priority-group"><div class="priority-label">' + (isEn ? lb.en : lb.zh) + '</div>';
+                html += '<ul class="priority-list">';
+                _priorities[level].forEach(function(text) {
+                    html += '<li>' + escapeHtml(text) + '</li>';
+                });
+                html += '</ul></div>';
             });
             html += '</div>';
+            html += '<p class="summary-footer">' + (isEn
+                ? 'For detailed diagnostics and professional recommendations, download the Word report.'
+                : '详细诊断结论和专业处置方案请下载 Word 报告查阅。') + '</p>';
+            html += '</div></div>';
         }
         html += '</div>';
     });
