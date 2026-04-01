@@ -1043,6 +1043,12 @@ function useSampleFile() {
         dt.items.add(file);
         fileInput.files = dt.files;
         updateFileNames(dt.files);
+        /* 自动选择 Oracle 数据库类型 */
+        var oracleRadio = document.querySelector('input[name="dbType"][value="oracle"]');
+        if (oracleRadio) oracleRadio.checked = true;
+        /* 自动选择季检报告类型 */
+        var quarterlyRadio = document.querySelector('input[name="reportType"][value="季"]');
+        if (quarterlyRadio) quarterlyRadio.checked = true;
         var codeInput = document.getElementById('inviteCode');
         codeInput.value = 'DEMO-TRIAL';
         codeInput.style.borderColor = 'var(--accent)';
