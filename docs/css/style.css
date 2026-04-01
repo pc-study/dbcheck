@@ -307,11 +307,11 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .db-type-option input:checked+.db-type-label,.report-type-option input:checked+.option-label{color:var(--text-accent);border-color:rgba(56,189,248,0.3);background:rgba(56,189,248,0.06)}
 .option-desc{display:block;font-size:11px;color:var(--text-dim);font-weight:400;margin-top:2px}
 .btn-upload{width:100%;padding:14px;font-size:15px;margin-top:8px}
-.loading-overlay{display:none;padding:40px;text-align:center}
-.loading-overlay.show{display:flex;flex-direction:column;align-items:center}
-.spinner{width:40px;height:40px;border:3px solid var(--border-dim);border-top-color:var(--accent-cyan);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
+.loading-overlay{display:none;padding:48px 40px;text-align:center;flex-direction:column;align-items:center;justify-content:center}
+.loading-overlay.show{display:flex}
+.spinner{width:44px;height:44px;border:3px solid var(--border-dim);border-top-color:var(--accent-cyan);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:20px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.loading-text{font-size:14px;color:var(--text-secondary)}
+.loading-text{font-size:14px;color:var(--text-secondary);margin-top:4px}
 .results-panel{display:none}
 .results-panel.show{display:block}
 
