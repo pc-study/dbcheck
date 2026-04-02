@@ -119,6 +119,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .nav-links a{padding:8px 14px;font-size:13.5px;font-weight:500;color:var(--text-secondary);border-radius:var(--radius-sm);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--text-primary);background:rgba(255,255,255,0.05)}
 .nav-links .ai-link{background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links .ai-link:hover{background:var(--grad-ai);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:brightness(1.2)}
 .nav-actions{display:flex;align-items:center;gap:8px;margin-left:16px}
 .lang-toggle,.theme-toggle{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);font-size:13px;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .2s;border:1px solid var(--border-dim)}
 .lang-toggle:hover,.theme-toggle:hover{color:var(--text-primary);border-color:var(--border-subtle);background:rgba(255,255,255,0.05)}
